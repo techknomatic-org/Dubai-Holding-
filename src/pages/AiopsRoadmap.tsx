@@ -86,10 +86,10 @@ export const AiopsRoadmap: React.FC<AiopsRoadmapProps> = () => {
       </div>
 
       {/* 2. ROADMAP PROCESS MATRIX CONTAINER */}
-      <div className="flex-1 min-h-0 flex flex-col justify-between gap-2 overflow-hidden">
+      <div className="flex-1 min-h-0 flex flex-col justify-between gap-2 overflow-hidden relative">
 
         {/* 2A. TIMELINE COLUMN HEADERS (WORKSTREAMS + 4 EQUAL QUARTERS) */}
-        <div className="grid grid-cols-12 gap-2 shrink-0 items-stretch">
+        <div className="grid grid-cols-12 gap-2 shrink-0 items-stretch relative">
           {/* Workstreams Column Header Card */}
           <div className="col-span-3 lg:col-span-2.5 rounded-xl bg-[#EDF4FA] dark:bg-white/5 border border-[#D0DFEB] dark:border-white/10 p-2 flex items-center justify-center text-center shadow-2xs">
             <span className="text-xs font-bold text-[#4A6572] dark:text-slate-300 flex items-center gap-1.5">
@@ -98,15 +98,23 @@ export const AiopsRoadmap: React.FC<AiopsRoadmapProps> = () => {
             </span>
           </div>
 
-          {/* 4 Quarter Header Cards (Uniform styling without Q4 highlight) */}
-          <div className="col-span-9 lg:col-span-9.5 grid grid-cols-4 gap-2">
+          {/* 4 Quarter Header Cards */}
+          <div className="col-span-9 lg:col-span-9.5 grid grid-cols-4 gap-2 relative">
+            {/* Q4 Light Vertical Line Indicator */}
+            <div className="absolute top-0 bottom-0 left-[62.5%] -translate-x-1/2 w-0 border-l-2 border-dashed border-[#F59E0B]/70 dark:border-amber-400/60 z-20 pointer-events-none" />
+
             {TIMELINE_QUARTERS.map(q => {
               const Icon = q.icon;
+              const isQ4 = q.key === 'Q4';
 
               return (
                 <div
                   key={q.key}
-                  className="rounded-xl p-1.5 sm:p-2 flex flex-col items-center justify-center text-center transition-all border bg-[#EDF4FA] dark:bg-white/5 border-[#D0DFEB] dark:border-white/10 shadow-2xs"
+                  className={`rounded-xl p-1.5 sm:p-2 flex flex-col items-center justify-center text-center transition-all border shadow-2xs relative ${
+                    isQ4
+                      ? 'bg-[#E8EFF5] dark:bg-[#486B80]/20 border-[#B9D3E5] dark:border-[#486B80]/40'
+                      : 'bg-[#EDF4FA] dark:bg-white/5 border-[#D0DFEB] dark:border-white/10'
+                  }`}
                 >
                   {/* Circular Icon Badge */}
                   <div className="w-6 h-6 rounded-full flex items-center justify-center shadow-2xs bg-[#002D56] text-white mb-0.5">
@@ -134,7 +142,7 @@ export const AiopsRoadmap: React.FC<AiopsRoadmapProps> = () => {
         </div>
 
         {/* 2B. 5 WORKSTREAM ROWS WITH CONTINUOUS CHEVRON PROCESS ARROWS */}
-        <div className="flex-1 flex flex-col justify-between gap-1.5 min-h-0 overflow-hidden">
+        <div className="flex-1 flex flex-col justify-between gap-1.5 min-h-0 overflow-hidden relative">
 
           {/* ============================================================ */}
           {/* ROW 1: Automation Enhancement                                */}
@@ -151,30 +159,33 @@ export const AiopsRoadmap: React.FC<AiopsRoadmapProps> = () => {
             </div>
 
             {/* Right 4-Quarter Timeline Track */}
-            <div className="col-span-9 lg:col-span-9.5 grid grid-cols-4 gap-2 items-stretch h-full">
+            <div className="col-span-9 lg:col-span-9.5 grid grid-cols-4 gap-2 items-stretch h-full relative">
+              {/* Q4 Light Vertical Line Indicator */}
+              <div className="absolute top-0 bottom-0 left-[62.5%] -translate-x-1/2 w-0 border-l-2 border-dashed border-[#F59E0B]/70 dark:border-amber-400/60 z-20 pointer-events-none" />
+
               {/* Chevron 1 (Spans Q2: 1 Col) */}
-              <div className="col-span-1 chevron-first bg-[#EEF2F6] dark:bg-white/8 text-[#1E293B] dark:text-slate-200 p-2 sm:p-2.5 pr-5 flex flex-col justify-center shadow-2xs h-full">
+              <div className="col-span-1 chevron-first bg-[#DCE6ED] dark:bg-[#486B80]/30 text-[#0F2331] dark:text-slate-100 p-2 sm:p-2.5 pr-5 flex flex-col justify-center shadow-2xs h-full">
                 <ul className="space-y-0.5">
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>Existing Automation Review</span>
                   </li>
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>SolarWinds Integration</span>
                   </li>
                 </ul>
               </div>
 
               {/* Chevron 2 (Spans Q3 -> Q1: 3 Cols) */}
-              <div className="col-span-3 chevron-subsequent bg-[#EEF2F6] dark:bg-white/8 text-[#1E293B] dark:text-slate-200 p-2 sm:p-2.5 pl-6 pr-6 flex flex-col justify-center shadow-2xs h-full">
+              <div className="col-span-3 chevron-subsequent bg-[#DCE6ED] dark:bg-[#486B80]/30 text-[#0F2331] dark:text-slate-100 p-2 sm:p-2.5 pl-6 pr-6 flex flex-col justify-center shadow-2xs h-full">
                 <ul className="space-y-0.5">
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>Standardize workflows, orchestration across platform</span>
                   </li>
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>SNOW Integration</span>
                   </li>
                 </ul>
@@ -197,32 +208,35 @@ export const AiopsRoadmap: React.FC<AiopsRoadmapProps> = () => {
             </div>
 
             {/* Right 4-Quarter Timeline Track */}
-            <div className="col-span-9 lg:col-span-9.5 grid grid-cols-4 gap-2 items-stretch h-full">
+            <div className="col-span-9 lg:col-span-9.5 grid grid-cols-4 gap-2 items-stretch h-full relative">
+              {/* Q4 Light Vertical Line Indicator */}
+              <div className="absolute top-0 bottom-0 left-[62.5%] -translate-x-1/2 w-0 border-l-2 border-dashed border-[#F59E0B]/70 dark:border-amber-400/60 z-20 pointer-events-none" />
+
               {/* Chevron 1 (Spans Q2: 1 Col) */}
-              <div className="col-span-1 chevron-first bg-[#EEF2F6] dark:bg-white/8 text-[#1E293B] dark:text-slate-200 p-2 sm:p-2.5 pr-5 flex flex-col justify-center shadow-2xs h-full">
+              <div className="col-span-1 chevron-first bg-[#DCE6ED] dark:bg-[#486B80]/30 text-[#0F2331] dark:text-slate-100 p-2 sm:p-2.5 pr-5 flex flex-col justify-center shadow-2xs h-full">
                 <ul className="space-y-0.5">
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>New Use Case Identification, Review, Feasibility and Deployment</span>
                   </li>
                 </ul>
               </div>
 
               {/* Chevron 2 (Spans Q3: 1 Col) */}
-              <div className="col-span-1 chevron-subsequent bg-[#EEF2F6] dark:bg-white/8 text-[#1E293B] dark:text-slate-200 p-2 sm:p-2.5 pl-6 pr-5 flex flex-col justify-center shadow-2xs h-full">
+              <div className="col-span-1 chevron-subsequent bg-[#DCE6ED] dark:bg-[#486B80]/30 text-[#0F2331] dark:text-slate-100 p-2 sm:p-2.5 pl-6 pr-5 flex flex-col justify-center shadow-2xs h-full">
                 <ul className="space-y-0.5">
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>New Automation Use case development</span>
                   </li>
                 </ul>
               </div>
 
               {/* Chevron 3 (Spans Q4 -> Q1: 2 Cols) */}
-              <div className="col-span-2 chevron-subsequent bg-[#EEF2F6] dark:bg-white/8 text-[#1E293B] dark:text-slate-200 p-2 sm:p-2.5 pl-6 pr-6 flex flex-col justify-center shadow-2xs h-full">
+              <div className="col-span-2 chevron-subsequent bg-[#DCE6ED] dark:bg-[#486B80]/30 text-[#0F2331] dark:text-slate-100 p-2 sm:p-2.5 pl-6 pr-6 flex flex-col justify-center shadow-2xs h-full">
                 <ul className="space-y-0.5">
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>Automation based on trends, events, threshold, incident and requests</span>
                   </li>
                 </ul>
@@ -245,27 +259,30 @@ export const AiopsRoadmap: React.FC<AiopsRoadmapProps> = () => {
             </div>
 
             {/* Right 4-Quarter Timeline Track */}
-            <div className="col-span-9 lg:col-span-9.5 grid grid-cols-4 gap-2 items-stretch h-full">
+            <div className="col-span-9 lg:col-span-9.5 grid grid-cols-4 gap-2 items-stretch h-full relative">
+              {/* Q4 Light Vertical Line Indicator */}
+              <div className="absolute top-0 bottom-0 left-[62.5%] -translate-x-1/2 w-0 border-l-2 border-dashed border-[#F59E0B]/70 dark:border-amber-400/60 z-20 pointer-events-none" />
+
               {/* Q2 Gap / Empty */}
               <div className="col-span-1 flex items-center justify-center text-slate-300 dark:text-slate-600 font-bold text-sm">
                 —
               </div>
 
               {/* Chevron 1 (Spans Q3: 1 Col) */}
-              <div className="col-span-1 chevron-first bg-[#EEF2F6] dark:bg-white/8 text-[#1E293B] dark:text-slate-200 p-2 sm:p-2.5 pr-5 flex flex-col justify-center shadow-2xs h-full">
+              <div className="col-span-1 chevron-first bg-[#DCE6ED] dark:bg-[#486B80]/30 text-[#0F2331] dark:text-slate-100 p-2 sm:p-2.5 pr-5 flex flex-col justify-center shadow-2xs h-full">
                 <ul className="space-y-0.5">
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>Alert Reduction on Solar Wind ITOM TOOL using AI capability</span>
                   </li>
                 </ul>
               </div>
 
               {/* Chevron 2 (Spans Q4 -> Q1: 2 Cols) */}
-              <div className="col-span-2 chevron-subsequent bg-[#EEF2F6] dark:bg-white/8 text-[#1E293B] dark:text-slate-200 p-2 sm:p-2.5 pl-6 pr-6 flex flex-col justify-center shadow-2xs h-full">
+              <div className="col-span-2 chevron-subsequent bg-[#DCE6ED] dark:bg-[#486B80]/30 text-[#0F2331] dark:text-slate-100 p-2 sm:p-2.5 pl-6 pr-6 flex flex-col justify-center shadow-2xs h-full">
                 <ul className="space-y-0.5">
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>Use Case Development</span>
                   </li>
                 </ul>
@@ -288,38 +305,41 @@ export const AiopsRoadmap: React.FC<AiopsRoadmapProps> = () => {
             </div>
 
             {/* Right 4-Quarter Timeline Track */}
-            <div className="col-span-9 lg:col-span-9.5 grid grid-cols-4 gap-2 items-stretch h-full">
+            <div className="col-span-9 lg:col-span-9.5 grid grid-cols-4 gap-2 items-stretch h-full relative">
+              {/* Q4 Light Vertical Line Indicator */}
+              <div className="absolute top-0 bottom-0 left-[62.5%] -translate-x-1/2 w-0 border-l-2 border-dashed border-[#F59E0B]/70 dark:border-amber-400/60 z-20 pointer-events-none" />
+
               {/* Chevron 1 (Spans Q2: 1 Col) */}
-              <div className="col-span-1 chevron-first bg-[#EEF2F6] dark:bg-white/8 text-[#1E293B] dark:text-slate-200 p-2 sm:p-2.5 pr-5 flex flex-col justify-center shadow-2xs h-full">
+              <div className="col-span-1 chevron-first bg-[#DCE6ED] dark:bg-[#486B80]/30 text-[#0F2331] dark:text-slate-100 p-2 sm:p-2.5 pr-5 flex flex-col justify-center shadow-2xs h-full">
                 <ul className="space-y-0.5">
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>AI Team Onboarding</span>
                   </li>
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>AI Use case identification and Feasibility</span>
                   </li>
                 </ul>
               </div>
 
               {/* Chevron 2 (Spans Q3 -> Q1: 3 Cols) */}
-              <div className="col-span-3 chevron-subsequent bg-[#EEF2F6] dark:bg-white/8 text-[#1E293B] dark:text-slate-200 p-2 sm:p-2.5 pl-6 pr-6 flex flex-col justify-center shadow-2xs h-full">
+              <div className="col-span-3 chevron-subsequent bg-[#DCE6ED] dark:bg-[#486B80]/30 text-[#0F2331] dark:text-slate-100 p-2 sm:p-2.5 pl-6 pr-6 flex flex-col justify-center shadow-2xs h-full">
                 <ul className="space-y-0.5">
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>Gen AI powered L2 operations for troubleshooting and ticket handling</span>
                   </li>
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>AI Assisted Incident summarization and RCA</span>
                   </li>
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>Automated Diagnostics</span>
                   </li>
                   <li className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>Anomaly detections</span>
                   </li>
                 </ul>
@@ -342,20 +362,23 @@ export const AiopsRoadmap: React.FC<AiopsRoadmapProps> = () => {
             </div>
 
             {/* Right 4-Quarter Timeline Track */}
-            <div className="col-span-9 lg:col-span-9.5 grid grid-cols-4 gap-2 items-stretch h-full">
+            <div className="col-span-9 lg:col-span-9.5 grid grid-cols-4 gap-2 items-stretch h-full relative">
+              {/* Q4 Light Vertical Line Indicator */}
+              <div className="absolute top-0 bottom-0 left-[62.5%] -translate-x-1/2 w-0 border-l-2 border-dashed border-[#F59E0B]/70 dark:border-amber-400/60 z-20 pointer-events-none" />
+
               {/* Q2 Gap / Empty */}
               <div className="col-span-1 flex items-center justify-center text-slate-300 dark:text-slate-600 font-bold text-sm">
                 —
               </div>
 
               {/* Chevron (Spans Q3 -> Q1: 3 Cols) */}
-              <div className="col-span-3 chevron-first bg-[#EEF2F6] dark:bg-white/8 text-[#1E293B] dark:text-slate-200 p-2 sm:p-2.5 pr-6 flex flex-col justify-center shadow-2xs h-full">
+              <div className="col-span-3 chevron-first bg-[#DCE6ED] dark:bg-[#486B80]/30 text-[#0F2331] dark:text-slate-100 p-2 sm:p-2.5 pr-6 flex flex-col justify-center shadow-2xs h-full">
                 <div className="space-y-0.5">
                   <div className="text-[8px] sm:text-[9px] font-medium leading-tight flex items-start gap-1">
-                    <span className="text-[#486B80] dark:text-sky-400 font-bold shrink-0 leading-none mt-0.5">•</span>
+                    <span className="text-[#3B5B70] dark:text-sky-300 font-bold shrink-0 leading-none mt-0.5">•</span>
                     <span>Evaluation, feasibility, development and deployment of one or two use cases</span>
                   </div>
-                  <div className="pl-4 space-y-0.5 text-[7.5px] sm:text-[8.5px] text-[#475569] dark:text-slate-300">
+                  <div className="pl-4 space-y-0.5 text-[7.5px] sm:text-[8.5px] text-[#2C475A] dark:text-slate-200">
                     <div className="flex items-center gap-1">
                       <span className="font-bold">•</span>
                       <span>Chatbot Use case</span>
