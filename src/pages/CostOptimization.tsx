@@ -330,48 +330,48 @@ export const CostOptimization: React.FC<CostOptimizationProps> = ({
         </div>
 
         {/* RIGHT SECTION (5 cols): STACKED COMPRESSED CARDS */}
-        <div className="lg:col-span-5 flex flex-col gap-3 min-h-0 justify-between">
+        <div className="lg:col-span-5 flex flex-col gap-2.5 min-h-0 justify-between">
           
-          {/* 1. Automation – License Cost Saved (Compressed Card) */}
-          <div className="p-3 rounded-xl bg-white dark:bg-white/5 border border-[#0066B2]/30 dark:border-white/10 shadow-xs flex flex-col justify-between flex-1">
-            <div className="shrink-0 bg-[#0066B2] text-white px-3 py-1.5 rounded-lg flex items-center justify-between mb-2">
+          {/* 1. Automation – License Cost Saved (Compressed Card - Red Marked) */}
+          <div className="p-2.5 rounded-xl bg-white dark:bg-white/5 border border-[#0066B2]/30 dark:border-white/10 shadow-xs flex flex-col shrink-0">
+            <div className="shrink-0 bg-[#0066B2] text-white px-2.5 py-1 rounded-lg flex items-center justify-between mb-1.5">
               <div className="flex items-center gap-1.5">
-                <Settings className="w-4 h-4 text-white" />
-                <span className="text-xs font-bold tracking-tight">
+                <Settings className="w-3.5 h-3.5 text-white" />
+                <span className="text-[11px] sm:text-xs font-bold tracking-tight">
                   Automation – License Cost Saved
                 </span>
               </div>
             </div>
 
-            {/* 4 Compressed Monthly Cards (2x2 or 4-cols) */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 flex-1 items-stretch">
+            {/* 4 Compressed Monthly Cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 items-stretch">
               {automation.monthlyBreakdowns.map((m) => (
                 <div
                   key={m.monthKey}
                   onClick={() => setSelectedMonth(m)}
-                  className="group relative p-2.5 rounded-xl bg-[#F6F2EA]/80 dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#0066B2] dark:hover:border-[#38BDF8] hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col items-center justify-center text-center gap-1.5 flex-1"
+                  className="group relative p-1.5 sm:p-2 rounded-lg bg-[#F6F2EA]/80 dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#0066B2] dark:hover:border-[#38BDF8] hover:shadow-xs transition-all duration-200 cursor-pointer flex flex-col items-center justify-center text-center gap-0.5"
                 >
-                  <div className="w-full flex items-center justify-between pb-1 border-b border-[#E5DFD3] dark:border-white/10">
-                    <span className="font-black text-xs text-[#0066B2] dark:text-[#38BDF8]">
+                  <div className="w-full flex items-center justify-between pb-0.5 border-b border-[#E5DFD3] dark:border-white/10">
+                    <span className="font-black text-[10.5px] sm:text-[11px] text-[#0066B2] dark:text-[#38BDF8]">
                       {m.monthLabel}
                     </span>
-                    <ExternalLink className="w-3 h-3 text-[#4D4D4F] group-hover:text-[#0066B2] dark:group-hover:text-[#38BDF8] transition-colors" />
+                    <ExternalLink className="w-2.5 h-2.5 text-[#4D4D4F] group-hover:text-[#0066B2] dark:group-hover:text-[#38BDF8] transition-colors" />
                   </div>
 
-                  <div className="flex-1 flex flex-col items-center justify-center my-auto py-1">
-                    <div className="text-lg font-black text-[#0A0838] dark:text-white tracking-tight">
+                  <div className="py-0.5 flex flex-col items-center justify-center">
+                    <div className="text-base sm:text-[17px] font-black text-[#0A0838] dark:text-white tracking-tight leading-tight">
                       {m.totalLicensesReleased}
                     </div>
-                    <div className="text-[9.5px] font-bold text-[#4D4D4F] dark:text-slate-400">
+                    <div className="text-[8.5px] sm:text-[9px] font-bold text-[#4D4D4F] dark:text-slate-400 leading-none mt-0.5">
                       Licenses released
                     </div>
                   </div>
 
-                  <div className="w-full pt-1 border-t border-[#E5DFD3] dark:border-white/10 text-center">
-                    <div className="text-[10.5px] font-black text-[#008080] dark:text-[#2DD4BF]">
+                  <div className="w-full pt-0.5 border-t border-[#E5DFD3] dark:border-white/10 text-center">
+                    <div className="text-[9.5px] sm:text-[10px] font-black text-[#008080] dark:text-[#2DD4BF] leading-tight">
                       {formatUSD(m.annualTotalSaving)}
                     </div>
-                    <div className="text-[8.5px] text-[#4D4D4F] dark:text-slate-400">
+                    <div className="text-[8px] text-[#4D4D4F] dark:text-slate-400 leading-none">
                       per year
                     </div>
                   </div>
@@ -380,30 +380,30 @@ export const CostOptimization: React.FC<CostOptimizationProps> = ({
             </div>
           </div>
 
-          {/* 2. CSI (Service Improvement) – Approved & Acknowledged by DH */}
-          <div className="p-3 rounded-xl bg-white dark:bg-white/5 border border-[#0066B2]/30 dark:border-white/10 shadow-xs flex flex-col justify-between flex-1">
-            <div className="shrink-0 bg-[#0066B2] text-white px-3 py-1.5 rounded-lg flex items-center justify-between mb-2">
-              <div className="flex items-center gap-1.5">
-                <Lightbulb className="w-4 h-4 text-white" />
-                <span className="text-xs font-bold tracking-tight">
+          {/* 2. CSI (Service Improvement) – Approved & Acknowledged by DH (Expanded Height & Larger Font - Yellow Marked) */}
+          <div className="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-white/5 border border-[#0066B2]/30 dark:border-white/10 shadow-xs flex flex-col justify-between flex-1 min-h-[220px]">
+            <div className="shrink-0 bg-[#0066B2] text-white px-3 py-1.5 rounded-lg flex items-center justify-between mb-2.5">
+              <div className="flex items-center gap-2">
+                <Lightbulb className="w-4 h-4 text-white shrink-0" />
+                <span className="text-xs sm:text-[13px] font-bold tracking-tight">
                   CSI (Service Improvement) – Approved &amp; Acknowledged by DH
                 </span>
               </div>
             </div>
 
-            {/* Initiative Card */}
-            <div className="p-2.5 rounded-lg bg-[#F0FDF4] dark:bg-white/5 border border-[#DCFCE7] dark:border-white/10 flex items-start mb-2 flex-1">
-              <div className="flex-1 text-[9px]">
-                <div className="font-bold text-[10.5px] text-[#0A0838] dark:text-white leading-tight mb-0.5">
+            {/* Initiative Card with Generous Height and Enhanced Font Size */}
+            <div className="p-3 sm:p-3.5 rounded-xl bg-[#F0FDF4] dark:bg-white/5 border border-[#DCFCE7] dark:border-white/10 flex flex-col justify-between flex-1 mb-2">
+              <div>
+                <div className="font-bold text-xs sm:text-[13px] text-[#0A0838] dark:text-white leading-snug mb-1">
                   {csi.primaryInitiative.title}
                 </div>
-                <div className="font-bold text-[#16A34A] dark:text-[#4ADE80] mb-0.5">
+                <div className="font-bold text-xs sm:text-[12px] text-[#16A34A] dark:text-[#4ADE80] mb-1.5">
                   Benefits -
                 </div>
-                <div className="space-y-0.5 text-[#29251D] dark:text-slate-300 leading-tight">
+                <div className="space-y-1 sm:space-y-1.5 text-[10.5px] sm:text-[11.5px] text-[#29251D] dark:text-slate-200 leading-relaxed">
                   {csi.primaryInitiative.benefits.map((b, idx) => (
-                    <div key={idx} className="flex items-start gap-1">
-                      <span className="font-bold shrink-0">{idx + 1}.</span>
+                    <div key={idx} className="flex items-start gap-1.5">
+                      <span className="font-bold text-[#0A0838] dark:text-sky-300 shrink-0">{idx + 1}.</span>
                       <span>{b}</span>
                     </div>
                   ))}
@@ -411,10 +411,10 @@ export const CostOptimization: React.FC<CostOptimizationProps> = ({
               </div>
             </div>
 
-            {/* Monthly Status Bar */}
-            <div className="py-1 px-2 rounded-md bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-wrap items-center gap-1 text-[9px] text-[#4D4D4F] dark:text-slate-300 shrink-0">
-              <Calendar className="w-3 h-3 text-[#0066B2] shrink-0" />
-              <span className="font-bold shrink-0">Monthly Status:</span>
+            {/* Monthly Status Bar with Clear Larger Font */}
+            <div className="py-1.5 px-3 rounded-lg bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-wrap items-center gap-1.5 text-[10px] sm:text-[11px] text-[#4D4D4F] dark:text-slate-300 shrink-0">
+              <Calendar className="w-3.5 h-3.5 text-[#0066B2] shrink-0" />
+              <span className="font-bold text-[#0A0838] dark:text-white shrink-0">Monthly Status:</span>
               <div className="flex flex-wrap items-center gap-x-2">
                 {csi.monthlyStatuses.map((s, idx) => (
                   <span key={idx}>
