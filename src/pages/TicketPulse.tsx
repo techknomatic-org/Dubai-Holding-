@@ -1505,7 +1505,7 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
                   >
                     <div>
                       <div className="flex items-center justify-between pb-1">
-                        <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#0066B2] dark:text-sky-300">
+                        <span className="text-xs font-semibold text-[#0066B2] dark:text-sky-300">
                           Pending Incidents
                         </span>
                         <Shield className="w-5 h-5 text-[#0066B2]" />
@@ -1529,7 +1529,7 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
                   >
                     <div>
                       <div className="flex items-center justify-between pb-1">
-                        <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#7C3AED] dark:text-purple-300">
+                        <span className="text-xs font-semibold text-[#7C3AED] dark:text-purple-300">
                           Pending Service Requests
                         </span>
                         <Zap className="w-5 h-5 text-[#7C3AED]" />

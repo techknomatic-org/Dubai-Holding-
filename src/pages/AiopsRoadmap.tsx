@@ -402,7 +402,7 @@ export const AiopsRoadmap: React.FC<AiopsRoadmapProps> = () => {
       {/* 3. CLEAN BOTTOM BANNER RIBBON (FULL WIDTH PROCESS CHEVRON) */}
       <div className="shrink-0 pt-0.5">
         <div className="w-full h-7 bg-gradient-to-r from-[#003866] via-[#004C87] to-[#005A9E] flex items-center justify-center px-6 shadow-xs rounded-lg clip-arrow">
-          <span className="text-[10px] sm:text-[10.5px] font-bold text-white text-center tracking-wider uppercase drop-shadow-xs">
+          <span className="text-[10.5px] sm:text-[11px] font-bold text-white text-center tracking-wide drop-shadow-xs">
             From Foundational Automation to Operational AI-Led Service Delivery
           </span>
         </div>
