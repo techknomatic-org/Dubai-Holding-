@@ -469,29 +469,29 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
               </div>
 
               {/* Visual Body */}
-              <div className="flex flex-col justify-between gap-2 min-h-0 flex-1">
+              <div className="flex flex-col justify-between gap-2.5 min-h-0 flex-1">
                 {/* 4 Channels Grid */}
-                <div className="grid grid-cols-4 gap-1.5">
+                <div className="grid grid-cols-4 gap-1.5 flex-1 min-h-0">
                   {channels.map((ch) => {
                     const Icon = ch.icon;
                     return (
                       <div
                         key={ch.id}
-                        className="p-1.5 sm:p-2 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col justify-between gap-1 shadow-xs hover:border-[#0A0838]/30 transition-all"
+                        className="p-2 sm:p-2.5 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col justify-between gap-1.5 shadow-xs hover:border-[#0A0838]/30 transition-all h-full"
                       >
                         <div className="flex items-center justify-between">
-                          <div className="w-5 h-5 rounded-md flex items-center justify-center bg-[#0A0838]/10 text-[#0A0838] dark:bg-white/10 dark:text-white">
-                            <Icon className="w-3 h-3" />
+                          <div className="w-6 h-6 rounded-md flex items-center justify-center bg-[#0A0838]/10 text-[#0A0838] dark:bg-white/10 dark:text-white shadow-2xs">
+                            <Icon className="w-3.5 h-3.5" />
                           </div>
-                          <span className="text-[8.5px] font-mono font-semibold text-[#4D4D4F] dark:text-slate-400">
+                          <span className="text-[9px] font-mono font-bold text-[#4D4D4F] dark:text-slate-400">
                             {ch.pct}%
                           </span>
                         </div>
-                        <div>
-                          <span className="text-[9px] font-medium text-[#4D4D4F] dark:text-slate-400 block whitespace-nowrap">
+                        <div className="mt-1">
+                          <span className="text-[9.5px] sm:text-[10px] font-medium text-[#4D4D4F] dark:text-slate-400 block whitespace-nowrap leading-tight">
                             {ch.label}
                           </span>
-                          <span className="text-xs sm:text-sm font-semibold text-[#29251D] dark:text-white tracking-tight block">
+                          <span className="text-sm sm:text-base font-bold text-[#29251D] dark:text-white tracking-tight block mt-0.5">
                             {ch.count.toLocaleString()}
                           </span>
                         </div>
@@ -501,35 +501,35 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                 </div>
 
                 {/* Automation Maturity Index Box */}
-                <div className="p-2.5 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex items-center justify-between gap-2 shadow-xs">
-                  <div className="space-y-1 min-w-0 flex-1">
+                <div className="p-3 sm:p-3.5 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex items-center justify-between gap-2.5 shadow-xs">
+                  <div className="space-y-1.5 min-w-0 flex-1">
                     <div className="flex items-center gap-1.5 flex-wrap">
-                      <Target className="w-3.5 h-3.5 text-[#0A0838] dark:text-white shrink-0" />
-                      <span className="text-[11px] sm:text-xs font-semibold text-[#29251D] dark:text-white whitespace-nowrap">
+                      <Target className="w-4 h-4 text-[#0A0838] dark:text-white shrink-0" />
+                      <span className="text-xs sm:text-[13px] font-bold text-[#29251D] dark:text-white whitespace-nowrap">
                         Automation Maturity
                       </span>
-                      <span className="px-1.5 py-0.5 rounded-full bg-[#D1EED0] text-[#2E5F13] border border-[#B4DFB1] text-[8px] sm:text-[9px] font-medium flex items-center gap-0.5 shrink-0">
+                      <span className="px-1.5 py-0.5 rounded-full bg-[#D1EED0] text-[#2E5F13] border border-[#B4DFB1] text-[8.5px] sm:text-[9.5px] font-medium flex items-center gap-0.5 shrink-0">
                         <CheckCircle2 className="w-2.5 h-2.5" />
                         {maturityModel.status}
                       </span>
                     </div>
-                    <p className="text-[9px] sm:text-[10px] text-[#4D4D4F] dark:text-slate-400">
+                    <p className="text-[9.5px] sm:text-[10.5px] text-[#4D4D4F] dark:text-slate-400">
                       Target: <strong className="text-[#29251D] dark:text-white font-semibold">{maturityModel.targetPct}%</strong> deflection by {maturityModel.dueDate}
                     </p>
-                    <div className="flex items-center gap-2.5 pt-0.5 text-[9px] text-[#4D4D4F] dark:text-slate-400 font-medium">
+                    <div className="flex items-center gap-3 pt-0.5 text-[9.5px] text-[#4D4D4F] dark:text-slate-400 font-medium">
                       <div className="flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-[#2E5F13]" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#2E5F13]" />
                         <span>Achieved ({maturityModel.achievedPct}%)</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-[#8D5C1A]" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#8D5C1A]" />
                         <span>Target ({maturityModel.targetPct}%)</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Circular Maturity Dial */}
-                  <div className="relative w-15 h-15 sm:w-16 sm:h-16 shrink-0 flex items-center justify-center">
+                  <div className="relative w-16 h-16 sm:w-18 sm:h-18 shrink-0 flex items-center justify-center">
                     <svg className="w-full h-full -rotate-90 transform" viewBox="0 0 120 120">
                       <circle
                         cx="60"
@@ -564,10 +564,10 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                       />
                     </svg>
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-                      <span className="text-[8px] font-semibold text-[#4D4D4F] dark:text-slate-400 leading-tight">
+                      <span className="text-[8.5px] font-semibold text-[#4D4D4F] dark:text-slate-400 leading-tight">
                         Achieved
                       </span>
-                      <span className="text-sm sm:text-base font-semibold text-[#10B981] leading-none mt-0.5">
+                      <span className="text-base sm:text-lg font-bold text-[#10B981] leading-none mt-0.5">
                         {animatedChannels.achievedPct}%
                       </span>
                     </div>
@@ -596,75 +596,75 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
               </div>
 
               {/* Visual Body */}
-              <div className="flex flex-col justify-between gap-2 min-h-0 flex-1">
+              <div className="flex flex-col justify-between gap-2.5 min-h-0 flex-1">
                 {/* Pillar 1: License Harvesting Breakdown */}
-                <div className="p-2 sm:p-2.5 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-xs space-y-1.5">
+                <div className="p-2.5 sm:p-3 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-xs space-y-2 flex-1 min-h-0 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] sm:text-[11px] font-semibold text-[#29251D] dark:text-slate-200 flex items-center gap-1.5 whitespace-nowrap">
-                      <Key className="w-3.5 h-3.5 text-[#0A0838] dark:text-white" />
+                    <span className="text-[11px] sm:text-xs font-semibold text-[#29251D] dark:text-slate-200 flex items-center gap-1.5 whitespace-nowrap">
+                      <Key className="w-4 h-4 text-[#0A0838] dark:text-white" />
                       License Harvesting &amp; Reclamation
                     </span>
-                    <span className="px-2 py-0.5 rounded-full bg-[#E0ECE0] text-[#2E7D32] border border-[#6DA470]/40 font-medium text-[8px] sm:text-[9px] whitespace-nowrap">
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#E0ECE0] text-[#2E7D32] border border-[#6DA470]/40 font-bold text-[8.5px] sm:text-[9.5px] whitespace-nowrap">
                       {adHygiene.licensesReleasedTotal.toLocaleString()} Released
                     </span>
                   </div>
-                  <div className="grid grid-cols-3 gap-1.5">
+                  <div className="grid grid-cols-3 gap-2 flex-1 items-stretch">
                     {adHygiene.licenseBreakdown.map((lic, idx) => (
-                      <div key={idx} className="p-1 sm:p-1.5 rounded-lg bg-[#FFFFFF] dark:bg-white/10 border border-[#E5DFD3] dark:border-white/10 text-center flex flex-col items-center justify-center gap-0.5 shadow-2xs">
-                        <span className="text-[9px] font-medium text-[#4D4D4F] dark:text-slate-400 whitespace-nowrap">{lic.tier}</span>
-                        <span className="text-xs sm:text-sm font-semibold text-[#29251D] dark:text-white">{lic.count.toLocaleString()}</span>
+                      <div key={idx} className="p-2 sm:p-2.5 rounded-xl bg-[#FFFFFF] dark:bg-white/10 border border-[#E5DFD3] dark:border-white/10 text-center flex flex-col items-center justify-center gap-1 shadow-2xs">
+                        <span className="text-[9.5px] sm:text-[10px] font-medium text-[#4D4D4F] dark:text-slate-400 whitespace-nowrap">{lic.tier}</span>
+                        <span className="text-sm sm:text-base font-bold text-[#29251D] dark:text-white">{lic.count.toLocaleString()}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Pillar 2 & 3: Mailbox Governance & Stale Purge */}
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-2.5 flex-1 min-h-0 items-stretch">
                   {/* Mailbox Policies */}
-                  <div className="p-2 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col justify-between gap-1 shadow-xs">
+                  <div className="p-2.5 sm:p-3 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col justify-between gap-2 shadow-xs">
                     <div className="flex items-center justify-between gap-1">
-                      <div className="flex items-center gap-1 min-w-0">
-                        <div className="w-4 h-4 rounded bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
-                          <Mail className="w-2.5 h-2.5" />
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        <div className="w-5 h-5 rounded bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
+                          <Mail className="w-3 h-3" />
                         </div>
-                        <h4 className="text-[10px] font-semibold text-[#29251D] dark:text-slate-200 whitespace-nowrap">
+                        <h4 className="text-[10.5px] sm:text-[11px] font-semibold text-[#29251D] dark:text-slate-200 whitespace-nowrap">
                           Mailbox Policies
                         </h4>
                       </div>
-                      <span className="px-1.5 py-0.5 rounded-full bg-[#D1EED0] text-[#2E5F13] border border-[#B4DFB1] font-medium text-[8px] shrink-0">
+                      <span className="px-1.5 py-0.5 rounded-full bg-[#D1EED0] text-[#2E5F13] border border-[#B4DFB1] font-medium text-[8.5px] shrink-0">
                         Enforced
                       </span>
                     </div>
-                    <div className="p-1 rounded-lg bg-[#FFFFFF] dark:bg-white/10 border border-[#E5DFD3] dark:border-white/10 text-center shadow-2xs">
-                      <span className="text-sm sm:text-base font-semibold text-[#29251D] dark:text-white block">
+                    <div className="p-2 sm:p-2.5 rounded-xl bg-[#FFFFFF] dark:bg-white/10 border border-[#E5DFD3] dark:border-white/10 text-center shadow-2xs flex items-center justify-center flex-1">
+                      <span className="text-base sm:text-lg font-bold text-[#29251D] dark:text-white block">
                         {adHygiene.mailboxPoliciesApplied}
                       </span>
                     </div>
                   </div>
 
                   {/* Stale Identity Items Purged */}
-                  <div className="p-2 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col justify-between gap-1 shadow-xs">
+                  <div className="p-2.5 sm:p-3 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col justify-between gap-2 shadow-xs">
                     <div className="flex items-center justify-between gap-1">
-                      <div className="flex items-center gap-1 min-w-0">
-                        <div className="w-4 h-4 rounded bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
-                          <ShieldCheck className="w-2.5 h-2.5" />
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        <div className="w-5 h-5 rounded bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
+                          <ShieldCheck className="w-3 h-3" />
                         </div>
-                        <h4 className="text-[10px] font-semibold text-[#29251D] dark:text-slate-200 whitespace-nowrap">
+                        <h4 className="text-[10.5px] sm:text-[11px] font-semibold text-[#29251D] dark:text-slate-200 whitespace-nowrap">
                           Stale Identity
                         </h4>
                       </div>
-                      <span className="px-1.5 py-0.5 rounded-full bg-[#D1EED0] text-[#2E5F13] border border-[#B4DFB1] font-medium text-[8px] shrink-0">
+                      <span className="px-1.5 py-0.5 rounded-full bg-[#D1EED0] text-[#2E5F13] border border-[#B4DFB1] font-medium text-[8.5px] shrink-0">
                         {adHygiene.staleItemsDisabledTotal.toLocaleString()} Purged
                       </span>
                     </div>
-                    <div className="grid grid-cols-2 gap-1">
-                      <div className="p-1 rounded-lg bg-[#FFFFFF] dark:bg-white/10 border border-[#E5DFD3] dark:border-white/10 text-center shadow-2xs">
-                        <span className="text-[8px] font-medium text-[#4D4D4F] dark:text-slate-400 block whitespace-nowrap">Computers</span>
-                        <span className="text-[11px] sm:text-xs font-semibold text-[#29251D] dark:text-white">{adHygiene.staleComputersDisabled.toLocaleString()}</span>
+                    <div className="grid grid-cols-2 gap-1.5 flex-1 items-stretch">
+                      <div className="p-1.5 sm:p-2 rounded-xl bg-[#FFFFFF] dark:bg-white/10 border border-[#E5DFD3] dark:border-white/10 text-center shadow-2xs flex flex-col justify-center">
+                        <span className="text-[8.5px] sm:text-[9px] font-medium text-[#4D4D4F] dark:text-slate-400 block whitespace-nowrap">Computers</span>
+                        <span className="text-xs sm:text-sm font-bold text-[#29251D] dark:text-white">{adHygiene.staleComputersDisabled.toLocaleString()}</span>
                       </div>
-                      <div className="p-1 rounded-lg bg-[#FFFFFF] dark:bg-white/10 border border-[#E5DFD3] dark:border-white/10 text-center shadow-2xs">
-                        <span className="text-[8px] font-medium text-[#4D4D4F] dark:text-slate-400 block whitespace-nowrap">User Accounts</span>
-                        <span className="text-[11px] sm:text-xs font-semibold text-[#29251D] dark:text-white">{adHygiene.staleUserAccountsDisabled.toLocaleString()}</span>
+                      <div className="p-1.5 sm:p-2 rounded-xl bg-[#FFFFFF] dark:bg-white/10 border border-[#E5DFD3] dark:border-white/10 text-center shadow-2xs flex flex-col justify-center">
+                        <span className="text-[8.5px] sm:text-[9px] font-medium text-[#4D4D4F] dark:text-slate-400 block whitespace-nowrap">User Accounts</span>
+                        <span className="text-xs sm:text-sm font-bold text-[#29251D] dark:text-white">{adHygiene.staleUserAccountsDisabled.toLocaleString()}</span>
                       </div>
                     </div>
                   </div>
@@ -880,6 +880,15 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
               </div>
             </div>
 
+            {/* Right: Target Completion Date */}
+            <div className="flex items-center gap-1.5 text-xs font-medium">
+              <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#FFFFFF] dark:bg-white/10 border border-[#E5DFD3] dark:border-white/10 text-[10px] sm:text-[11px] font-semibold text-[#4D4D4F] dark:text-slate-300 shadow-2xs">
+                <Clock className="w-3 h-3 text-[#0284C7]" />
+                <span>Target Completion:</span>
+                <strong className="text-[#0A0838] dark:text-white font-mono font-bold">31 Dec 2026</strong>
+              </span>
+            </div>
+
           </div>
 
           {/* DUAL WORKSTREAM CARDS & CENTER FLOW ON THE SAME HORIZONTAL AXIS */}
@@ -974,7 +983,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
               </div>
             </div>
 
-            {/* CENTER CONNECTOR FLOW: Dashed Line -- Active Pill -- Dashed Line -- (32 Total Hub) -- Dashed Line -- Planned Pill -- Dashed Line */}
+            {/* CENTER CONNECTOR FLOW: Dashed Line -- Active Pill -- Dashed Line -- (32 Hub + Total Use Cases below) -- Dashed Line -- Planned Pill -- Dashed Line */}
             <div className="flex items-center justify-center gap-1 sm:gap-1.5 shrink-0 px-0.5">
               {/* Left Connector Dashed Line */}
               <div className="w-1.5 sm:w-2 lg:w-2.5 border-t-2 border-dashed border-[#0A0838]/30 dark:border-white/30" />
@@ -995,17 +1004,19 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
               {/* Center Left Dashed Line */}
               <div className="w-1 sm:w-1.5 border-t-2 border-dashed border-[#0A0838]/30 dark:border-white/30" />
 
-              {/* Central Circular "32 Total Use Cases" Card */}
+              {/* Central Circular "32" with "Total Use Cases" outside below */}
               <div
                 onClick={() => handleOpenStreamModal('TOTAL PIPELINE')}
-                className="w-12 h-12 sm:w-13 sm:h-13 lg:w-14 lg:h-14 rounded-full bg-[#FFFFFF] dark:bg-[#0A0838] border-2 border-[#0A0838] dark:border-white shadow-md flex flex-col items-center justify-center z-10 cursor-pointer group hover:scale-105 transition-all p-1 shrink-0"
+                className="flex flex-col items-center justify-center cursor-pointer group shrink-0"
                 title="Click to view all 32 automation use cases"
               >
-                <span className="text-sm sm:text-base lg:text-lg font-bold text-[#29251D] dark:text-white group-hover:text-[#0A0838] dark:group-hover:text-white transition-colors block leading-none font-mono">
-                  32
-                </span>
-                <span className="text-[6.5px] sm:text-[7.5px] text-[#4D4D4F] dark:text-slate-400 block leading-tight text-center font-medium mt-0.5">
-                  Total<br />Use Cases
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#FFFFFF] dark:bg-[#0A0838] border-2 border-[#0A0838] dark:border-white shadow-md flex items-center justify-center group-hover:scale-105 transition-all">
+                  <span className="text-sm sm:text-base font-bold text-[#29251D] dark:text-white group-hover:text-[#0A0838] dark:group-hover:text-white transition-colors font-mono leading-none">
+                    32
+                  </span>
+                </div>
+                <span className="text-[7.5px] sm:text-[8px] text-[#4D4D4F] dark:text-slate-400 font-bold text-center mt-0.5 whitespace-nowrap leading-tight tracking-tight">
+                  Total Use Cases
                 </span>
               </div>
 
@@ -1647,7 +1658,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
             <div className="p-3 border-t border-[#E5DFD3] dark:border-white/10 bg-[#FAF8F5] dark:bg-white/3 flex items-center justify-end">
               <button
                 onClick={() => setActiveModal(null)}
-                className="px-5 py-1.5 rounded-xl bg-[#0A0838] hover:bg-[#E31837] text-white text-xs font-medium transition-all shadow-xs cursor-pointer"
+                className="px-5 py-2 rounded-xl bg-[#2B2B36] hover:bg-[#1E1E24] text-white text-xs font-bold transition-all shadow-xs cursor-pointer border border-slate-700/30"
               >
                 Close
               </button>
@@ -2011,7 +2022,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
 
               <button
                 onClick={closeModal}
-                className="px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 font-heading font-bold text-xs transition-all cursor-pointer"
+                className="px-5 py-2 rounded-xl bg-[#2B2B36] hover:bg-[#1E1E24] text-white font-heading font-bold text-xs transition-all cursor-pointer border border-slate-700/30 shadow-xs"
               >
                 Close
               </button>
