@@ -208,7 +208,7 @@ export const MomStoryCard: React.FC<MomStoryCardProps> = ({
           ) : action.revisedDueDate ? (
             <span className="text-[#B54708] dark:text-amber-300 font-medium">Revised: {action.revisedDueDate}</span>
           ) : (
-            <span className="text-[#8D5C1A] dark:text-[#F8EDA4] font-medium">On track</span>
+            <span className="text-[#D97706] dark:text-[#FBBF24] font-semibold">On track</span>
           )}
         </div>
       </div>
