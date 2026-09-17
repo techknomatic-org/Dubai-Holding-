@@ -154,7 +154,7 @@ export const App: React.FC = () => {
       case 'delivery': return 'Strategic Delivery | Demand to Project Delivery Dashboard';
       case 'risk': return 'Governance & Resilience | Risk Dashboard & Overdue Overview';
       case 'cost_optimization': return 'Financial Co-Creation | Cost Optimization';
-      case 'aiops_roadmap': return 'Automation & AIOps | AIOPS Roadmap Year 1';
+      case 'aiops_roadmap': return 'Automation & AIOps | AIOps Roadmap Year-1';
       default: return 'Dubai Holding Managed Services';
     }
   };
