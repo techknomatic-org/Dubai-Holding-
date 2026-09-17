@@ -99,19 +99,19 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
         
         {/* STEP 1: Demand Raised & Confirmed */}
         <div className="flex-1 min-w-0 rounded-xl border border-[#0066B2]/30 bg-[#FFFFFF] dark:bg-white/5 shadow-2xs overflow-hidden flex flex-col justify-between">
-          <div className="bg-[#0066B2] px-2.5 py-1.5 flex items-center gap-1.5 text-white">
-            <div className="w-4.5 h-4.5 rounded-full bg-white text-[#0066B2] text-[11px] font-bold flex items-center justify-center shrink-0">
+          <div className="bg-[#0066B2] px-2.5 py-1.5 flex items-center gap-2 text-white">
+            <div className="w-5 h-5 rounded-full bg-white text-[#0066B2] text-xs font-bold flex items-center justify-center shrink-0 shadow-xs">
               1
             </div>
-            <FileText className="w-3.5 h-3.5 text-white/90 shrink-0" />
+            <FileText className="w-4.5 h-4.5 text-white shrink-0" />
             <span className="text-xs font-bold tracking-tight leading-snug">
               Demand Raised &amp; Confirmed
             </span>
           </div>
           <div className="p-2.5 space-y-1.5 text-xs">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5 text-[#4D4D4F] dark:text-slate-300">
-                <Users className="w-3.5 h-3.5 text-[#0066B2]" />
+              <div className="flex items-center gap-2 text-[#4D4D4F] dark:text-slate-300">
+                <Users className="w-4 h-4 text-[#0066B2]" />
                 <span>Total Demands</span>
               </div>
               <span className="font-bold text-[#0066B2] dark:text-[#38BDF8] text-sm">
@@ -119,8 +119,8 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
               </span>
             </div>
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5 text-[#4D4D4F] dark:text-slate-300">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A]" />
+              <div className="flex items-center gap-2 text-[#4D4D4F] dark:text-slate-300">
+                <CheckCircle2 className="w-4 h-4 text-[#16A34A]" />
                 <span>Closed in Jul&apos;26</span>
               </div>
               <span className="font-bold text-[#16A34A] text-sm">
@@ -128,8 +128,8 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
               </span>
             </div>
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5 text-[#4D4D4F] dark:text-slate-300">
-                <Clock className="w-3.5 h-3.5 text-[#D97706]" />
+              <div className="flex items-center gap-2 text-[#4D4D4F] dark:text-slate-300">
+                <Clock className="w-4 h-4 text-[#D97706]" />
                 <span>Work in Progress</span>
               </div>
               <span className="font-bold text-[#D97706] text-sm">
@@ -137,8 +137,8 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
               </span>
             </div>
             <div className="flex items-center justify-between pt-1 border-t border-[#E5DFD3]/80 dark:border-white/10">
-              <div className="flex items-center gap-1.5 text-[#4D4D4F] dark:text-slate-300">
-                <BarChart3 className="w-3.5 h-3.5 text-[#0066B2]" />
+              <div className="flex items-center gap-2 text-[#4D4D4F] dark:text-slate-300">
+                <BarChart3 className="w-4 h-4 text-[#0066B2]" />
                 <span>Effort in Man-days</span>
               </div>
               <span className="font-bold text-[#0066B2] dark:text-[#38BDF8] text-sm">
@@ -151,24 +151,24 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
         {/* Arrow 1 -> 2 */}
         <div className="hidden md:flex items-center justify-center shrink-0 self-center">
           <div className="w-5 h-5 rounded-full bg-[#0066B2]/10 dark:bg-white/10 flex items-center justify-center">
-            <ArrowRight className="w-3 h-3 text-[#0066B2] dark:text-[#38BDF8]" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#0066B2] dark:text-[#38BDF8]" />
           </div>
         </div>
 
-        {/* STEP 2: Approval / Handover */}
+        {/* STEP 2: Project Approval */}
         <div className="flex-1 min-w-0 rounded-xl border border-[#008080]/30 bg-[#FFFFFF] dark:bg-white/5 shadow-2xs overflow-hidden flex flex-col justify-between">
-          <div className="bg-[#008080] px-2.5 py-1.5 flex items-center gap-1.5 text-white">
-            <div className="w-4.5 h-4.5 rounded-full bg-white text-[#008080] text-[11px] font-bold flex items-center justify-center shrink-0">
+          <div className="bg-[#008080] px-2.5 py-1.5 flex items-center gap-2 text-white">
+            <div className="w-5 h-5 rounded-full bg-white text-[#008080] text-xs font-bold flex items-center justify-center shrink-0 shadow-xs">
               2
             </div>
-            <CheckCircle2 className="w-3.5 h-3.5 text-white/90 shrink-0" />
+            <CheckCircle2 className="w-4.5 h-4.5 text-white shrink-0" />
             <span className="text-xs font-bold tracking-tight leading-snug">
-              Approval / Handover
+              Project Approval
             </span>
           </div>
           <div className="p-3 flex flex-col items-center justify-center text-center flex-1 space-y-2">
-            <div className="w-9 h-9 rounded-full bg-[#008080]/10 flex items-center justify-center text-[#008080] dark:text-[#2DD4BF]">
-              <Handshake className="w-5 h-5" />
+            <div className="w-10 h-10 rounded-full bg-[#008080]/10 flex items-center justify-center text-[#008080] dark:text-[#2DD4BF]">
+              <Handshake className="w-5.5 h-5.5" />
             </div>
             <p className="text-xs text-[#4D4D4F] dark:text-slate-300 font-medium leading-relaxed">
               Approved demand transitions into active project tracking
@@ -179,25 +179,25 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
         {/* Arrow 2 -> 3 */}
         <div className="hidden md:flex items-center justify-center shrink-0 self-center">
           <div className="w-5 h-5 rounded-full bg-[#008080]/10 dark:bg-white/10 flex items-center justify-center">
-            <ArrowRight className="w-3 h-3 text-[#008080] dark:text-[#2DD4BF]" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#008080] dark:text-[#2DD4BF]" />
           </div>
         </div>
 
         {/* STEP 3: Project Created / Active Portfolio */}
         <div className="flex-1 min-w-0 rounded-xl border border-[#1D4ED8]/30 bg-[#FFFFFF] dark:bg-white/5 shadow-2xs overflow-hidden flex flex-col justify-between">
-          <div className="bg-[#1D4ED8] px-2.5 py-1.5 flex items-center gap-1.5 text-white">
-            <div className="w-4.5 h-4.5 rounded-full bg-white text-[#1D4ED8] text-[11px] font-bold flex items-center justify-center shrink-0">
+          <div className="bg-[#1D4ED8] px-2.5 py-1.5 flex items-center gap-2 text-white">
+            <div className="w-5 h-5 rounded-full bg-white text-[#1D4ED8] text-xs font-bold flex items-center justify-center shrink-0 shadow-xs">
               3
             </div>
-            <Settings className="w-3.5 h-3.5 text-white/90 shrink-0" />
+            <Settings className="w-4.5 h-4.5 text-white shrink-0" />
             <span className="text-xs font-bold tracking-tight leading-snug">
               Project Created / Active Portfolio
             </span>
           </div>
           <div className="p-2.5 space-y-1.5 text-xs">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5 text-[#4D4D4F] dark:text-slate-300">
-                <Users className="w-3.5 h-3.5 text-[#1D4ED8]" />
+              <div className="flex items-center gap-2 text-[#4D4D4F] dark:text-slate-300">
+                <Users className="w-4 h-4 text-[#1D4ED8]" />
                 <span>Total Projects</span>
               </div>
               <span className="font-bold text-[#1D4ED8] dark:text-[#60A5FA] text-sm">
@@ -205,8 +205,8 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
               </span>
             </div>
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5 text-[#4D4D4F] dark:text-slate-300">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A]" />
+              <div className="flex items-center gap-2 text-[#4D4D4F] dark:text-slate-300">
+                <CheckCircle2 className="w-4 h-4 text-[#16A34A]" />
                 <span>Closed in Jul&apos;26</span>
               </div>
               <span className="font-bold text-[#16A34A] text-sm">
@@ -214,8 +214,8 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
               </span>
             </div>
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-1.5 text-[#4D4D4F] dark:text-slate-300">
-                <Clock className="w-3.5 h-3.5 text-[#D97706]" />
+              <div className="flex items-center gap-2 text-[#4D4D4F] dark:text-slate-300">
+                <Clock className="w-4 h-4 text-[#D97706]" />
                 <span>Work in Progress</span>
               </div>
               <span className="font-bold text-[#D97706] text-sm">
@@ -223,8 +223,8 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
               </span>
             </div>
             <div className="flex items-center justify-between pt-1 border-t border-[#E5DFD3]/80 dark:border-white/10">
-              <div className="flex items-center gap-1.5 text-[#4D4D4F] dark:text-slate-300">
-                <BarChart3 className="w-3.5 h-3.5 text-[#1D4ED8]" />
+              <div className="flex items-center gap-2 text-[#4D4D4F] dark:text-slate-300">
+                <BarChart3 className="w-4 h-4 text-[#1D4ED8]" />
                 <span>Effort in Man-days</span>
               </div>
               <span className="font-bold text-[#1D4ED8] dark:text-[#60A5FA] text-sm">
@@ -237,17 +237,17 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
         {/* Arrow 3 -> 4 */}
         <div className="hidden md:flex items-center justify-center shrink-0 self-center">
           <div className="w-5 h-5 rounded-full bg-[#0284C7]/10 dark:bg-white/10 flex items-center justify-center">
-            <ArrowRight className="w-3 h-3 text-[#0284C7] dark:text-sky-400" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#0284C7] dark:text-sky-400" />
           </div>
         </div>
 
         {/* STEP 4: Execution Tracking */}
         <div className="flex-1 min-w-0 rounded-xl border border-[#0284C7]/30 bg-[#FFFFFF] dark:bg-white/5 shadow-2xs overflow-hidden flex flex-col justify-between">
-          <div className="bg-[#0284C7] px-2.5 py-1.5 flex items-center gap-1.5 text-white">
-            <div className="w-4.5 h-4.5 rounded-full bg-white text-[#0284C7] text-[11px] font-bold flex items-center justify-center shrink-0">
+          <div className="bg-[#0284C7] px-2.5 py-1.5 flex items-center gap-2 text-white">
+            <div className="w-5 h-5 rounded-full bg-white text-[#0284C7] text-xs font-bold flex items-center justify-center shrink-0 shadow-xs">
               4
             </div>
-            <TrendingUp className="w-3.5 h-3.5 text-white/90 shrink-0" />
+            <TrendingUp className="w-4.5 h-4.5 text-white shrink-0" />
             <span className="text-xs font-bold tracking-tight leading-snug">
               Execution Tracking
             </span>
@@ -262,7 +262,7 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
                 onClick={() => setSelectedProjectModal(p)}
                 className="flex items-start gap-1.5 py-0.5 px-1 rounded-md hover:bg-slate-100 dark:hover:bg-white/10 cursor-pointer transition-colors"
               >
-                <span className="w-4 h-4 rounded-full bg-[#0284C7] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">
+                <span className="w-4.5 h-4.5 rounded-full bg-[#0284C7] text-white text-[10.5px] font-bold flex items-center justify-center shrink-0 mt-0.5">
                   {p.id}
                 </span>
                 <span className="text-[11px] font-medium text-[#29251D] dark:text-slate-200 leading-tight" title={p.projectName}>
@@ -276,24 +276,24 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
         {/* Arrow 4 -> 5 */}
         <div className="hidden md:flex items-center justify-center shrink-0 self-center">
           <div className="w-5 h-5 rounded-full bg-[#16A34A]/10 dark:bg-white/10 flex items-center justify-center">
-            <ArrowRight className="w-3 h-3 text-[#16A34A] dark:text-[#4ADE80]" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#16A34A] dark:text-[#4ADE80]" />
           </div>
         </div>
 
-        {/* STEP 5: Closure / Outcome Visibility */}
+        {/* STEP 5: Benefits Realization */}
         <div className="flex-1 min-w-0 rounded-xl border border-[#16A34A]/30 bg-[#FFFFFF] dark:bg-white/5 shadow-2xs overflow-hidden flex flex-col justify-between">
-          <div className="bg-[#16A34A] px-2.5 py-1.5 flex items-center gap-1.5 text-white">
-            <div className="w-4.5 h-4.5 rounded-full bg-white text-[#16A34A] text-[11px] font-bold flex items-center justify-center shrink-0">
+          <div className="bg-[#16A34A] px-2.5 py-1.5 flex items-center gap-2 text-white">
+            <div className="w-5 h-5 rounded-full bg-white text-[#16A34A] text-xs font-bold flex items-center justify-center shrink-0 shadow-xs">
               5
             </div>
-            <Trophy className="w-3.5 h-3.5 text-white/90 shrink-0" />
+            <Trophy className="w-4.5 h-4.5 text-white shrink-0" />
             <span className="text-xs font-bold tracking-tight leading-snug">
-              Closure / Outcome Visibility
+              Benefits Realization
             </span>
           </div>
           <div className="p-3 flex flex-col items-center justify-center text-center flex-1 space-y-2">
-            <div className="w-9 h-9 rounded-full bg-[#16A34A]/10 flex items-center justify-center text-[#16A34A]">
-              <Target className="w-5 h-5" />
+            <div className="w-10 h-10 rounded-full bg-[#16A34A]/10 flex items-center justify-center text-[#16A34A]">
+              <Target className="w-5.5 h-5.5" />
             </div>
             <p className="text-xs text-[#4D4D4F] dark:text-slate-300 font-medium leading-relaxed">
               Closures and progress are continuously tracked via project drill-downs and completion metrics.
