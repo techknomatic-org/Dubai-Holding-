@@ -204,11 +204,11 @@ export const MomStoryCard: React.FC<MomStoryCardProps> = ({
         <div>
           <span className="text-[#4D4D4F] dark:text-slate-400 block text-xs">Target timeline</span>
           {action.status === 'Closed' ? (
-            <span className="text-[#2E7D32] font-medium">Completed within time</span>
+            <span className="text-[#2E5F13] dark:text-[#D1EED0] font-medium">Completed within time</span>
           ) : action.revisedDueDate ? (
-            <span className="text-[#B54708] font-medium">Revised: {action.revisedDueDate}</span>
+            <span className="text-[#B54708] dark:text-amber-300 font-medium">Revised: {action.revisedDueDate}</span>
           ) : (
-            <span className="text-[#C47135] font-medium">On track</span>
+            <span className="text-[#8D5C1A] dark:text-[#F8EDA4] font-medium">On track</span>
           )}
         </div>
       </div>
