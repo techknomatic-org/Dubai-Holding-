@@ -1,6 +1,6 @@
 # Walkthrough: Dubai Holding & Tech Mahindra — Change Log & Session Summary
 
-Last updated: **17 September 2026**
+Last updated: **18 September 2026**
 
 ---
 
@@ -8,34 +8,50 @@ Last updated: **17 September 2026**
 
 ---
 
-### 1. Global Icon System
+### 1. Global Icon System & Color Alignment
 
 Applied a consistent enterprise icon language across the entire application:
 
 - **Icon library:** `lucide-react` — outline style exclusively, no filled or emoji icons.
 - **Stroke weight & size:** Uniform `w-4 h-4` or `w-5 h-5` icons inside `w-7 h-7` / `w-8 h-8` rounded containers.
 - **Semantic mapping:** Each card, KPI, section, and action now uses a contextually relevant icon.
-- **Color system:** All icon containers use the same brand color family throughout (no ad-hoc colors).
+- **Dynamic Color Sync:** On the **Vulnerability Management Dashboard**, the top 6 KPI card icons now match their exact metric color (Red for Open >30 Days, Amber for Open 0–30 Days, Emerald for Exclusions, Sky Blue for Windows, Purple for Non-Windows).
+- **Platform Specific Icons:** Used `<AppWindow />` for Windows Server exposures and `<Terminal />` for Non-Windows / Linux server exposure.
 
 ---
 
-### 2. Agenda Page — New Vulnerability Card
+### 2. Agenda Page — Vulnerability Card & Live Teasers
 
 - Added **Card 05 (Vulnerability Management)** to the main Agenda page between Delivery and Risk.
-- New card order on Agenda: IT Ops → Service Mgmt → Autonomous Ops → **Vulnerability** → Delivery → Risk → Value Creation → Forward View.
+- Card order on Agenda: IT Ops → Service Mgmt → Autonomous Ops → **Vulnerability** → Delivery → Risk → Value Creation → Forward View.
+- Cross-reconciled all live teaser metrics to guarantee 100% data consistency with the detailed dashboards.
 
 ---
 
-### 3. Layout & Spacing Fixes
+### 3. Autonomous Operations & Service Desk Layout Optimization
 
-- **Risk & Resilience page:** Removed redundant `max-w-*` containers to use full viewport width.
-- **Risk & Resilience overdue tree:** Shifted root card upward; added extra connector height; implemented straight orthogonal SVG connector lines.
-- Font size corrected on Agenda page hero circles.
-- "July" month label repositioned to top-right on applicable date cards.
+- **Grid Balancing:** Compressed the Automation Offloading Flow to 4 columns (`lg:col-span-4`) to eliminate excess whitespace, and expanded Active Directory Hygiene to 8 columns (`lg:col-span-8`).
+- **Active Directory Hygiene Cards:** Split "Mailbox Policies Applied" into a clean 2-line header (`Mailbox Policies<br />Applied`) and resized cards to eliminate text clipping and overlap.
+- **Overall Automation Pipeline:**
+  - Placed the `"Total Use Cases"` label directly below the circular `32` badge to avoid overlapping with numbers.
+  - Unhighlighted the Target Completion date badge, rendering it in a crisp, clean neutral container (`bg-neutral-100 dark:bg-neutral-800`).
+  - Matched Target Completion calendar icon styling with the overall icon color system.
+- **Close Button Styling:** Applied high-contrast dark/light styling (`bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900`) for all modal close triggers.
 
 ---
 
-### 4. Number Formatting — Global Standard
+### 4. AIOps Year-1 Roadmap — Layout, Milestone Line & Lifecycle Renaming
+
+- **AIOps Casing Standard:** Standardized the casing strictly to **`AIOps`** everywhere across breadcrumbs, navigation tabs, component titles, and roadmap badges.
+- **Vertical Milestone Phase Line:** Perfectly centered the vertical dashed milestone line directly in the middle of Quarter 4 using a CSS Grid 4-column overlay (`col-start-3` with `left: 50%`).
+- **Chevron Notch Padding & Font Enhancement:** Added `pl-6 sm:pl-7` left padding so text never clips against the chevron notch, and boosted font sizes to `text-sm font-bold` for crystal-clear readability.
+- **Lifecycle Phase Renaming:**
+  - Renamed *"Handover"* → **"Project Approval"**.
+  - Renamed *"Closure / Outcome Visibility"* → **"Benefits Realization"**.
+
+---
+
+### 5. Number Formatting — Global Standard
 
 All numeric values standardized to `en-US` comma-separated format:
 
@@ -45,35 +61,28 @@ All numeric values standardized to `en-US` comma-separated format:
 | `252K` | `252,000` |
 | `8.5K` | `8,500` |
 | `253K` | `253,000` |
+| `4470` | `4,470` |
 
-This standard was applied to:
-- `vulnerabilityData.ts` — all KPI and category values.
-- `VulnerabilityDashboard.tsx` — all rendered metric labels.
-- Agenda card secondary metrics (vulnerability section).
+This standard was applied across all datasets (`vulnerabilityData.ts`, `automationData.ts`, `itopsData.ts`, `riskData.ts`, `costOptimizationData.ts`), rendered labels, and teaser cards.
 
 ---
 
-### 5. Modal & Navigation Standardization
+### 6. Modal & Navigation Standardization
 
-- All modal close buttons changed to the single word **"Close"** (no X, no "Dismiss").
-- All page navigation arrows changed to small `ChevronRight` / `ChevronLeft` Lucide icons.
+- All modal close buttons use high-contrast styling and clear text labels.
+- Ticket Pulse modal cards for "Pending Incidents" and "Pending Service Requests" updated to Title Case (first letter capital only).
+- All page navigation arrows use small `ChevronRight` / `ChevronLeft` Lucide icons.
 
 ---
 
-### 6. Risk & Resilience — Overdue Tree Connector
+### 7. Risk & Resilience — Overdue Tree Connector
 
 Replaced curved bezier SVG arrows with a clean orthogonal connector:
 
-- **Vertical dashed stem** drops straight down from "OVERDUE RISK 5" root card.
+- **Vertical dashed stem** drops straight down from "Overdue Risk (5)" root card.
 - **Horizontal crossbar** spans across; navy junction dot (left) and red junction dot (right).
 - **Left vertical drop:** solid navy line + arrowhead → VMware License Dependency (4).
 - **Right vertical drop:** solid red line + arrowhead → Entity Dependency (1).
-
----
-
-### 7. Autonomous Operations — Red Background Fix
-
-Investigated and resolved the red background on the Autonomous Operations page that was incorrectly applied to the hero metric container.
 
 ---
 
@@ -91,16 +100,16 @@ Audited all "teaser" values on the **Agenda/first page** against actual dashboar
 | Vulnerability · Sublabel | `253K down to 96K` | `252K Open · 25K Approved` | `vulnerabilityData.ts` |
 | Forward View · Key Focus Areas | `23` | `20` | `aiopsRoadmapData.ts` (20 activities) |
 
-Also fixed `momData.ts` which contained the same stale `99.93%` value.
+---
 
 ### 9. Title Case & First Letter Capital Standardization
 
 Standardized text casing so that only the first letter is capitalized (Title Case / Sentence Case) across all dashboards and modals:
-- **Vulnerability Management Dashboard:** Top 6 KPI card titles updated to `Total Open Vulnerabilities`, `Open >30 Days`, `Open 0–30 Days`, `Exclusions / Cleanup Approved`, `Windows Exposure`, and `Non-Windows Exposure`.
-- **AIOPS Roadmap:** Updated `Workstreams` header, quarter phase subtitles (`Discover & Prepare`, `Build & Pilot`, `Scale & Expand`, `Operationalize`), `Current Focus` pill, and the bottom ribbon banner (`From Foundational Automation to Operational AI-Led Service Delivery`).
-- **Risk Dashboard:** Updated `Overdue Risk`, `High Impact`, and `Critical Impact` badges.
-- **Project Delivery Dashboard:** Changed spotlight project title from `QUALYS PATCH MANAGEMENT` to `Qualys Patch Management`.
-- **Autonomous Operations:** Updated donut chart center labels from all-caps to `Zero-Touch`, `TechHub Assist`, `Total Demand`, and `Achieved`.
+- **Vulnerability Management Dashboard:** `Total Open Vulnerabilities`, `Open >30 Days`, `Open 0–30 Days`, `Exclusions / Cleanup Approved`, `Windows Exposure`, and `Non-Windows Exposure`.
+- **AIOps Roadmap:** `Workstreams`, quarter phase subtitles (`Discover & Prepare`, `Build & Pilot`, `Scale & Expand`, `Operationalize`), `Current Focus` pill, and ribbon banner.
+- **Risk Dashboard:** `Overdue Risk`, `High Impact`, and `Critical Impact` badges.
+- **Project Delivery Dashboard:** `Qualys Patch Management`.
+- **Autonomous Operations:** `Zero-Touch`, `TechHub Assist`, `Total Demand`, and `Achieved`.
 - Removed forced CSS `uppercase` text transformations across all pages.
 
 ---
@@ -118,7 +127,7 @@ Standardized text casing so that only the first letter is capitalized (Title Cas
 
 - **Font Family:** Unified to `Inter` across all headings, body, labels, and metrics in `index.css`.
 - **Chapter Header Badges:** Standardized all slide headers to use the `#0066B2` blue brand accent with a pulsing indicator (`• 0X • Chapter Name`).
-- **Paddings & Margins:** Harmonized viewport padding to `p-4 md:p-5 lg:p-6` with standard flex column gaps (`gap-2.5` to `gap-3.5`).
+- **Paddings & Margins:** Harmonized viewport padding to `p-4 md:p-5 lg:p-6` with standard flex column gaps.
 - **Cards & Borders:** Standardized primary cards to `bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 rounded-2xl` and sub-cards to `rounded-xl`.
 
 ---

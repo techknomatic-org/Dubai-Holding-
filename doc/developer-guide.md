@@ -9,10 +9,10 @@ The **Dubai Holding & Tech Mahindra Executive Presentation Platform** is an ente
 |---|---|
 | **Framework** | React 18 + TypeScript (`strict: true`) |
 | **Bundler** | Vite 6.x (`@vitejs/plugin-react`) |
-| **Icons** | Lucide React — outline style, consistent stroke weight |
+| **Icons** | Lucide React — outline style, dynamic metric color binding, semantic icons |
 | **Excel Engine** | `xlsx` (SheetJS) — client-side multi-tab workbook parsing |
 | **Styling** | Tailwind CSS v4 (`@tailwindcss/vite`) + CSS Variables (`src/index.css`) |
-| **Charts** | Native SVG (sparklines, bar, donut, tree connectors) + Recharts |
+| **Charts** | Native SVG (sparklines, bar, donut, straight-line tree connectors) + Recharts |
 | **Live Data** | SharePoint REST API + robust offline fallback to static snapshot datasets |
 
 ---
@@ -29,6 +29,7 @@ Dubai Holdings/
 ├── src/
 │   ├── components/                 # Reusable UI components
 │   │   ├── Header.tsx              # Navigation header with home, prev, next controls
+│   │   ├── LeadershipAttention.tsx # Executive attention and action cards
 │   │   ├── LiveDataBadge.tsx       # Real-time sync badge & refresh trigger
 │   │   ├── MomTimelineBar.tsx      # MoM action timeline bar component
 │   │   ├── SlideWrapper.tsx        # Slide container with entry transitions
@@ -59,6 +60,7 @@ Dubai Holdings/
 │   │   ├── TicketPulse.tsx         # 02: ITSM Ticket Dashboard & Volumetrics
 │   │   ├── ServiceDeskPulse.tsx    # 03: Service Management — omnichannel & SLA
 │   │   ├── AutonomousOps.tsx       # 04: Autonomous Operations — use cases & AD hygiene
+│   │   ├── AutonomousServiceDesk.tsx # 04: Enhanced Autonomous Service Desk & AD Hygiene
 │   │   ├── VulnerabilityDashboard.tsx  # 05: Vulnerability Management
 │   │   ├── ProjectDelivery.tsx     # 06: Delivery — Qualys rollout & project demands
 │   │   ├── RiskDashboard.tsx       # 07: Risk Dashboard & Overdue Risk Detail
@@ -93,7 +95,7 @@ Dubai Holdings/
 [useLiveData Hook → provides { data, isLoading, error, refresh }]
           │
           ▼
-[Page Components → Agenda, ItOpsPulse, VulnerabilityDashboard, etc.]
+[Page Components → Agenda, ItOpsPulse, VulnerabilityDashboard, AiopsRoadmap, etc.]
 ```
 
 ### Key Data Files & Their Sources
@@ -104,7 +106,7 @@ Dubai Holdings/
 | `ticketsData.ts` | `4. Tickets` | `TicketPulse.tsx` |
 | `vulnerabilityData.ts` | Qualys reports | `VulnerabilityDashboard.tsx` |
 | `riskData.ts` | `22_Risk_Dashboard`, `23_Risk_Overdue` | `RiskDashboard.tsx` |
-| `automationData.ts` | `5. Automation` | `AutonomousOps.tsx` |
+| `automationData.ts` | `5. Automation` | `AutonomousOps.tsx`, `AutonomousServiceDesk.tsx` |
 | `costOptimizationData.ts` | `11.Cost Optimization` | `ValueCreation.tsx` |
 | `aiopsRoadmapData.ts` | `8.AIOPS Roadmap` | `AiopsRoadmap.tsx` |
 | `agendaData.ts` | Aggregated from all above | `Agenda.tsx` |
@@ -137,15 +139,15 @@ All design tokens are defined in `src/index.css` under `:root`:
 
 ### Text Casing & Naming Standards
 - **First Letter Capital Only (Title Case / Sentence Case):** All card headers, chart labels, gauge metrics, button texts, and modal titles must use natural Title Case or Sentence Case. Avoid Tailwind `uppercase` class and all-caps text transformations.
-- **Naming Conventions:** Strictly use **`InfraOps`** and **`SecOps`** (PascalCase) across all components, modals, breadcrumbs, card badges, and datasets (not `INFRA OPS`, `SEC OPS`, or space-separated variations).
+- **Naming Conventions:** Strictly use **`AIOps`**, **`InfraOps`**, and **`SecOps`** (PascalCase) across all components, modals, breadcrumbs, card badges, navigation items, and datasets.
+- **Lifecycle Terminology:** Use **Project Approval** (formerly Handover) and **Benefits Realization** (formerly Closure / Outcome Visibility) across all roadmap steps.
 - **Section Badges:** Every presentation slide must render a unified chapter tag using `<span className="w-2 h-2 rounded-full bg-[#0066B2] dark:bg-sky-400 animate-pulse" />` and `<span className="text-xs font-medium text-[#0066B2] dark:text-sky-400">`.
 
 ### Icon System Rules
 - **Library:** `lucide-react` exclusively — no mixing with other icon sets.
 - **Style:** Outline only — no filled, 3D, or emoji icons.
-- **Sizes:** `w-3.5 h-3.5` (micro) → `w-4 h-4` / `w-5 h-5` (standard) → `w-6 h-6` (hero).
-- **Containers:** `w-8 h-8` rounded containers with matching soft background (`bg-[#0A0838]/10 text-[#0A0838] dark:text-white`).
-- **Semantics:** Every icon must be contextually meaningful to its card or section.
+- **Dynamic Metric Color Synchronization:** On dashboards with highlighted figures (such as Vulnerability), icons must dynamically adopt the color matching the metric (Red for >30d, Amber for 0-30d, Emerald for Exclusions, Sky for Windows, Purple for Non-Windows).
+- **Semantics:** Every icon must be contextually meaningful (e.g., `<AppWindow />` for Windows Server and `<Terminal />` for Non-Windows/Linux exposure).
 
 ### Number Formatting Rules
 - All numbers ≥ 1,000 use `en-US` locale comma format: `252,000`, `27,806`, `$485,628`.
@@ -154,7 +156,7 @@ All design tokens are defined in `src/index.css` under `:root`:
 
 ---
 
-## 5. Key Engineering Decisions
+## 5. Key Engineering Decisions & Layout Patterns
 
 ### Agenda ↔ Dashboard Reconciliation
 The `agendaData.ts` card teaser values must always match their source data files:
@@ -173,6 +175,9 @@ The `agendaData.ts` card teaser values must always match their source data files
 The branching connector between the root overdue card and the two leaf cards uses a straight orthogonal SVG layout:
 - Vertical dashed stem from root → horizontal crossbar → two straight vertical drops with `<marker>` arrowheads.
 - Left branch: `#0A0838` navy; Right branch: `#E31837` red.
+
+### AIOps Milestone Overlay Pattern
+The active execution milestone for Quarter 4 is centered using a CSS Grid 4-column overlay with a dashed vertical line placed at `col-start-3` with `left: 50%`. This guarantees precision across all responsive viewport sizes without brittle pixel offsets.
 
 ---
 

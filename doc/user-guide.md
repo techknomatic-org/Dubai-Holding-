@@ -57,15 +57,21 @@ Welcome to the **Dubai Holding & Tech Mahindra Monthly Service Review Platform**
 
 ---
 
-### 04 • Autonomous Operations
+### 04 • Autonomous Operations & Service Desk
 - **Use Cases Tab:** 32 automation use cases (16 InfraOps + 16 SecOps); click any row for full detail modal.
 - **Impact Tab:** Month-by-month automation offload trend (Apr–Jul). Shows TechHub SRs vs Automation SRs.
-- **AD Hygiene Tab:** License reclaim summary, stale account purge counts, mailbox policies applied.
+- **AD Hygiene Section:** License reclaim summary, stale account purge counts, mailbox policies applied.
+- **Overall Automation Pipeline:** Bottom ribbon displays total use case volume (32) and target completion date in clean, neutral executive styling.
 
 ---
 
 ### 05 • Vulnerability Management
-- Top KPI cards: Total Open, Open >30 Days, Open 0–30 Days, Exclusions Approved.
+- **Color-Matched KPI Cards:** Metric icons dynamically match the color tone of each figure:
+  - Red: Open >30 Days (`184,000`)
+  - Amber: Open 0–30 Days (`68,000`)
+  - Emerald: Exclusions Approved (`25,000`)
+  - Sky Blue: Windows Exposure (`208,000`)
+  - Purple: Non-Windows Exposure (`44,000`)
 - **Left panel:** Windows Exposure and Non-Windows Exposure bar indicators.
 - **Right panel:** Top Contributors by Category (Windows Servers, Windows Clients, Linux Servers, Network/DB).
 - **Monthly Trend:** Bar chart showing month-over-month reduction from March baseline.
@@ -107,7 +113,8 @@ Welcome to the **Dubai Holding & Tech Mahindra Monthly Service Review Platform**
 
 ### 09 • Forward View (AIOps Roadmap)
 - **Chevron Roadmap:** 4 quarters (Q2 2026 → Q1 2027) across 5 workstreams.
-- **Q4 2026** is the active quarter — highlighted in red/amber.
+- **Lifecycle Phases:** Project Approval → Build & Pilot → Scale & Expand → Benefits Realization.
+- **Q4 2026** is the active quarter — highlighted with a live beacon and centered vertical milestone dashed line.
 - **Click any activity block** to open its full drilldown: description, technology stack, impact outcome.
 - 20 total activities: 7 Completed, 13 In Progress/Planned.
 
@@ -142,7 +149,7 @@ Welcome to the **Dubai Holding & Tech Mahindra Monthly Service Review Platform**
 **A:** As a raw score out of 5.00 (e.g., `4.54 / 5.00`) matching the IT Operations dashboard display. The target is `4.50`.
 
 **Q: Which quarter is currently active in the AIOps Roadmap?**  
-**A:** **Q4 2026** — highlighted in red/amber with a live beacon indicator.
+**A:** **Q4 2026** — highlighted in red/amber with a live beacon indicator and a centered vertical milestone line.
 
 **Q: What does "Exclusions Approved" mean in Vulnerability Management?**  
 **A:** Vulnerabilities that have been reviewed, assessed as acceptable risk or remediated by policy, and formally approved for exclusion from the open count.

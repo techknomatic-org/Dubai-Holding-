@@ -37,19 +37,23 @@ Covers the **April–July 2026** managed services reporting period.
 
 ### 03 • Service Management
 - **Managed Endpoints:** `10,800+` · **Supported Users:** `18,300+`
-- **July Interaction Volume:** `8,402` (3,703 Tickets + 3,516 Email + 1,129 Calls + 54 Notifications)
+- **July Interaction Volume:** `8,402` (3,703 Tickets + 3,516 Email + 1,129 Calls + 54 Notifications).
 - KPI/SLA trend table across Apr–Jul; email surge tracking (+128% in July).
 
-### 04 • Autonomous Operations
+### 04 • Autonomous Operations & Service Desk
 - **Automated Requests (4,470):** 20.03% zero-touch offload from 22,319 TechHub SRs.
 - **32 Use Cases:** 16 InfraOps + 16 SecOps (18 Active, 14 Planned).
 - **AD Hygiene:** 1,311 licenses released; 2,732 stale accounts disabled; 289 mailbox policies applied.
+- **Optimized Layout:** 4-col Automation Offloading Flow + 8-col Active Directory Hygiene with balanced vertical card spacing.
+- **Total Use Cases & Pipeline:** Clean circle badge with label placed below and neutral target completion date badge.
 
 ### 05 • Vulnerability Management
 - **Total Open Vulnerabilities:** `252,000` (as of Jul-26).
 - **Open >30 Days:** `184,000` · **Open 0–30 Days:** `68,000`.
 - **Exclusions/Cleanup Approved:** `25,000`.
 - **Windows Exposure:** `208,000` · **Non-Windows Exposure:** `44,000`.
+- **Dynamic Color-Coded Badges:** Icons match the exact metric color (Red, Amber, Emerald, Sky, Purple).
+- **Platform Icons:** Windows Server and Terminal icons for distinct platform exposures.
 - Monthly trend: Mar–Jul decline from 253 → 96 open (high/critical) vulnerabilities.
 - Interactive drilldown modals for Windows Servers, Windows Clients, Linux Servers, Network/DB/ADMM.
 
@@ -71,10 +75,12 @@ Covers the **April–July 2026** managed services reporting period.
 - CSI SharePoint Optimization: `$31,200` (22 TB → 9 TB, Nakheel site).
 - **Highest Month:** July — `$257,748`.
 
-### 09 • Forward View
+### 09 • Forward View (AIOps Year-1 Roadmap)
 - **20 AIOps Year-1 Activities** across 5 workstreams (Q2 Foundation → Q1 2027 Scale).
 - Workstreams: *Automation Enhancement, New Use Cases, Tools + AIOps, Gen AI L2 Ops, Agentic AI*.
-- Q4 2026 is the active execution quarter; Azure Foundry architecture sign-off required.
+- **Milestone Precision:** Vertical dashed milestone indicator centered on Quarter 4.
+- **Lifecycle Renaming:** Standardized to **Project Approval** (formerly Handover) and **Benefits Realization** (formerly Closure / Outcome Visibility).
+- **Chevron Padding & Typography:** Elevated font sizing (`text-sm font-bold`) and indent padding past chevron notches.
 
 ---
 
@@ -82,13 +88,13 @@ Covers the **April–July 2026** managed services reporting period.
 
 - **Typography & Font:** Standardized to `Inter` across all headings, body copy, and metrics (`--font-sans`, `--font-heading`, `--font-mono`).
 - **Text Casing Standard:** Title Case / Sentence Case (First Letter Capital Only) across all visual charts, gauges, KPI cards, badges, and modals. Forced CSS `uppercase` is deprecated.
-- **Naming Standard:** Strictly use **`InfraOps`** and **`SecOps`** (PascalCase) across all titles, breadcrumbs, use case badges, and filter tabs.
+- **Naming Standard:** Strictly use **`AIOps`**, **`InfraOps`**, and **`SecOps`** (PascalCase) across all titles, breadcrumbs, use case badges, and filter tabs.
 - **Section Badges:** Unified chapter headers across all pages using the `#0066B2` blue brand accent with a pulsing indicator (`• 0X • Chapter Name`).
 - **Brand Colors:** `#E31837` (Red) · `#0A0838` (Navy) · `#0066B2` (Blue) · `#F6F2EA` (Warm Cream Surface) · `#FFFFFF` (Card/Page Canvas).
-- **Icon Library:** `lucide-react` — clean outline style, consistent stroke weight, semantic mapping, and uniform `w-8 h-8` rounded containers.
+- **Icon Library:** `lucide-react` — clean outline style, matching metric colors, consistent stroke weight, and uniform rounded containers.
 - **Number Format:** All values ≥ 1,000 use `en-US` comma separation (`252,000`, `27,806`, `$485,628`).
 - **Dark Mode:** Full dark / light mode support via Tailwind `dark:` variants.
-- **Modals:** All popups use single word **"Close"** button; all navigation uses small `ChevronRight` arrow icons.
+- **Modals:** All popups use high-contrast **"Close"** buttons; all navigation uses small `ChevronRight` arrow icons.
 
 ---
 
@@ -98,6 +104,22 @@ Covers the **April–July 2026** managed services reporting period.
 - **Styling:** Tailwind CSS v4, Custom CSS Variables Design System (`src/index.css`)
 - **Icons:** Lucide React
 - **Excel/Data:** SheetJS (`xlsx`) — client-side multi-tab workbook parsing
+- **Routing/Presentation:** Fullscreen-ready slide carousel with live keyboard bindings (`←`, `→`, `Space`, `Home`)
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start local dev server
+npm run dev
+
+# Production build & type check
+npm run build
+```
 - **Live Data:** SharePoint REST API (`src/data/sharepointService.ts`) with offline fallback datasets
 - **Charts:** Native SVG (line charts, bar charts, donut charts, tree connectors) + Recharts
 
