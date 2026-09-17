@@ -22,7 +22,7 @@ export const MomTimelineBar: React.FC<MomTimelineBarProps> = ({
             COMMITMENT HORIZON
           </span>
           <span className="text-[10px] font-mono text-slate-400">
-            (29-June-2026 Strategic Connect → 31-August-2026 Current Position)
+            (29 Jun 2026 Strategic Connect → 31 Aug 2026 Current Position)
           </span>
         </div>
 
@@ -55,7 +55,7 @@ export const MomTimelineBar: React.FC<MomTimelineBarProps> = ({
             <div className="w-4 h-4 rounded-full bg-indigo-600 border-2 border-indigo-400 shadow-md flex items-center justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-white" />
             </div>
-            <span className="text-[9px] font-mono text-indigo-300 mt-2 font-semibold">29-JUN</span>
+            <span className="text-[9px] font-mono text-indigo-300 mt-2 font-semibold">29 Jun 2026</span>
             <span className="text-[8px] font-mono text-slate-500 hidden sm:block">LAST CONNECT</span>
           </div>
 
@@ -85,7 +85,7 @@ export const MomTimelineBar: React.FC<MomTimelineBarProps> = ({
                 <div className="flex items-center gap-1 mt-2">
                   <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: nodeBg }} />
                   <span className="text-[10px] font-mono text-slate-400 group-hover:text-slate-200">
-                    {item.status === 'Closed' ? 'Closed' : item.revisedDueDate ? '30-Sep' : '27-Jul'}
+                    {item.status === 'Closed' ? 'Closed' : item.revisedDueDate ? '30 Sep 2026' : '27 Jul 2026'}
                   </span>
                 </div>
               </button>
@@ -97,7 +97,7 @@ export const MomTimelineBar: React.FC<MomTimelineBarProps> = ({
             <div className="w-4 h-4 rounded-full bg-emerald-500 border-2 border-emerald-300 shadow-md flex items-center justify-center animate-pulse">
               <span className="w-1.5 h-1.5 rounded-full bg-white" />
             </div>
-            <span className="text-[9px] font-mono text-emerald-300 mt-2 font-semibold">31-AUG</span>
+            <span className="text-[9px] font-mono text-emerald-300 mt-2 font-semibold">31 Aug 2026</span>
             <span className="text-[8px] font-mono text-slate-500 hidden sm:block">TODAY (REVIEW)</span>
           </div>
         </div>

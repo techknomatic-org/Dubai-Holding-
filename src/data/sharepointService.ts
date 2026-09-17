@@ -993,24 +993,24 @@ function parseCostOptimizationSheet(wb: XLSX.WorkBook): CostOptimizationModel {
 
     const parseMonthHelper = (val: any): { key: 'APR' | 'MAY' | 'JUNE' | 'JULY'; label: string } | null => {
       if (typeof val === 'number') {
-        if (val >= 46110 && val <= 46125) return { key: 'APR', label: 'APR' };
-        if (val >= 46140 && val <= 46155) return { key: 'MAY', label: 'MAY' };
-        if (val >= 46170 && val <= 46185) return { key: 'JUNE', label: 'JUNE' };
-        if (val >= 46200 && val <= 46215) return { key: 'JULY', label: 'JULY' };
+        if (val >= 46110 && val <= 46125) return { key: 'APR', label: 'Apr 26' };
+        if (val >= 46140 && val <= 46155) return { key: 'MAY', label: 'May 26' };
+        if (val >= 46170 && val <= 46185) return { key: 'JUNE', label: 'Jun 26' };
+        if (val >= 46200 && val <= 46215) return { key: 'JULY', label: 'Jul 26' };
       }
       const s = String(val || '').toUpperCase();
-      if (s.includes('APR')) return { key: 'APR', label: 'APR' };
-      if (s.includes('MAY')) return { key: 'MAY', label: 'MAY' };
-      if (s.includes('JUN')) return { key: 'JUNE', label: 'JUNE' };
-      if (s.includes('JUL')) return { key: 'JULY', label: 'JULY' };
+      if (s.includes('APR')) return { key: 'APR', label: 'Apr 26' };
+      if (s.includes('MAY')) return { key: 'MAY', label: 'May 26' };
+      if (s.includes('JUN')) return { key: 'JUNE', label: 'Jun 26' };
+      if (s.includes('JUL')) return { key: 'JULY', label: 'Jul 26' };
       return null;
     };
 
     const autoBreakdowns: Record<string, any> = {
-      APR: { monthKey: 'APR', monthLabel: 'APR', totalLicensesReleased: 0, annualTotalSaving: 0, items: [] },
-      MAY: { monthKey: 'MAY', monthLabel: 'MAY', totalLicensesReleased: 0, annualTotalSaving: 0, items: [] },
-      JUNE: { monthKey: 'JUNE', monthLabel: 'JUNE', totalLicensesReleased: 0, annualTotalSaving: 0, items: [] },
-      JULY: { monthKey: 'JULY', monthLabel: 'JULY', totalLicensesReleased: 0, annualTotalSaving: 0, items: [] }
+      APR: { monthKey: 'APR', monthLabel: 'Apr 26', totalLicensesReleased: 0, annualTotalSaving: 0, items: [] },
+      MAY: { monthKey: 'MAY', monthLabel: 'May 26', totalLicensesReleased: 0, annualTotalSaving: 0, items: [] },
+      JUNE: { monthKey: 'JUNE', monthLabel: 'Jun 26', totalLicensesReleased: 0, annualTotalSaving: 0, items: [] },
+      JULY: { monthKey: 'JULY', monthLabel: 'Jul 26', totalLicensesReleased: 0, annualTotalSaving: 0, items: [] }
     };
 
     let totalAuto = 0;
@@ -1052,7 +1052,7 @@ function parseCostOptimizationSheet(wb: XLSX.WorkBook): CostOptimizationModel {
         const init = String(row[14]);
         const saving = Number(row[15]) || 0;
         const csiMInfo = parseMonthHelper(row[12]);
-        const monthLabel = csiMInfo?.label ? (csiMInfo.label === 'JUNE' ? 'June' : csiMInfo.label === 'JULY' ? 'July' : csiMInfo.label.charAt(0) + csiMInfo.label.slice(1).toLowerCase()) : 'Month';
+        const monthLabel = csiMInfo?.label || 'Month';
 
         if (saving > 0) {
           csiTitle = init;
@@ -1087,7 +1087,7 @@ function parseCostOptimizationSheet(wb: XLSX.WorkBook): CostOptimizationModel {
         const amt = Number(row[24]) || 0;
         const mInfoTot = parseMonthHelper(mVal);
         if (mInfoTot) {
-          const mLabel = mInfoTot.label === 'JUNE' ? 'June' : mInfoTot.label === 'JULY' ? 'July' : mInfoTot.label.charAt(0) + mInfoTot.label.slice(1).toLowerCase();
+          const mLabel = mInfoTot.label;
           monthlyTotals.push({ month: mLabel, amount: amt });
         } else if (String(mVal).toLowerCase().includes('total')) {
           totalAnnual = amt;
@@ -1105,10 +1105,10 @@ function parseCostOptimizationSheet(wb: XLSX.WorkBook): CostOptimizationModel {
     const julMonthly = monthlyTotals.find(m => m.month.toLowerCase().includes('jul'))?.amount || 257748;
 
     const trendSeries = [
-      { monthKey: 'Apr', monthLabel: 'Apr', monthlyAnnualSaving: aprMonthly, cumulativeAnnualSaving: aprMonthly },
-      { monthKey: 'May', monthLabel: 'May', monthlyAnnualSaving: mayMonthly, cumulativeAnnualSaving: aprMonthly + mayMonthly },
-      { monthKey: 'June', monthLabel: 'June', monthlyAnnualSaving: junMonthly, cumulativeAnnualSaving: aprMonthly + mayMonthly + junMonthly },
-      { monthKey: 'July', monthLabel: 'July', monthlyAnnualSaving: julMonthly, cumulativeAnnualSaving: aprMonthly + mayMonthly + junMonthly + julMonthly }
+      { monthKey: 'Apr 26', monthLabel: 'Apr 26', monthlyAnnualSaving: aprMonthly, cumulativeAnnualSaving: aprMonthly },
+      { monthKey: 'May 26', monthLabel: 'May 26', monthlyAnnualSaving: mayMonthly, cumulativeAnnualSaving: aprMonthly + mayMonthly },
+      { monthKey: 'Jun 26', monthLabel: 'Jun 26', monthlyAnnualSaving: junMonthly, cumulativeAnnualSaving: aprMonthly + mayMonthly + junMonthly },
+      { monthKey: 'Jul 26', monthLabel: 'Jul 26', monthlyAnnualSaving: julMonthly, cumulativeAnnualSaving: aprMonthly + mayMonthly + junMonthly + julMonthly }
     ];
 
     const finalTotalAnnual = totalAnnual || (aprMonthly + mayMonthly + junMonthly + julMonthly);
@@ -1118,9 +1118,9 @@ function parseCostOptimizationSheet(wb: XLSX.WorkBook): CostOptimizationModel {
         totalAnnualSavings: finalTotalAnnual,
         automationSavings: totalAuto || 454428,
         csiSavings: totalCSI || 31200,
-        highestMonthName: 'July',
+        highestMonthName: 'Jul 26',
         highestMonthValue: julMonthly,
-        periodLabel: 'Apr-Jul',
+        periodLabel: 'Apr 26 - Jul 26',
         footnote: 'Monthly values represent annualized savings identified in each month.'
       },
       trendSeries,

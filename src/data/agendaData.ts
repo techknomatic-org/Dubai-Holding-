@@ -134,10 +134,10 @@ export const agendaItems: AgendaItem[] = [
     secondaryMetrics: [
       { label: 'Completed Milestones', value: `${EXCEL_QUALYS_SUMMARY.completedTaskCount} / 29` },
       { label: 'Open Backlog Tickets', value: '39' },
-      { label: 'Target Completion', value: EXCEL_QUALYS_SUMMARY.planEndDate }
+      { label: 'Target Completion', value: '09 Oct 2026' }
     ],
     keyThemes: ['Qualys Architecture & Tagging', 'Server CAR Library Scripts', 'Backlog Audited (39 Tickets)', 'UAT/Prod Staging'],
-    executiveTakeaway: `Qualys patch governance underway targeting ${EXCEL_QUALYS_SUMMARY.planEndDate} completion; 39 pending tickets held with 100.00% audit hygiene across queues.`,
+    executiveTakeaway: `Qualys patch governance underway targeting 09 Oct 2026 completion; 39 pending tickets held with 100.00% audit hygiene across queues.`,
     sourcePages: [16, 17, 18],
     position: { x: 1180, y: 320 }
   },

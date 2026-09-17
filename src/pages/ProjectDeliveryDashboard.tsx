@@ -529,7 +529,7 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
                 <div className="text-[9.5px] font-semibold text-[#4D4D4F] dark:text-slate-400 mb-0.5">Jul 2026</div>
                 <div className="w-3 h-3 rounded-full bg-[#0066B2] ring-2 ring-white dark:ring-slate-900" />
                 <div className="text-[9.5px] font-bold text-[#0A0838] dark:text-white mt-0.5">Project Start</div>
-                <div className="text-[8.5px] text-[#4D4D4F] dark:text-slate-400">13-Jul-2026</div>
+                <div className="text-[8.5px] text-[#4D4D4F] dark:text-slate-400">13 Jul 2026</div>
               </div>
 
               {/* Node 2: Aug 2026 (Current) */}
@@ -553,7 +553,7 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
                 <div className="text-[9.5px] font-semibold text-[#4D4D4F] dark:text-slate-400 mb-0.5">Oct 2026</div>
                 <div className="w-3 h-3 rounded-full bg-[#475569] dark:bg-slate-300 ring-2 ring-white dark:ring-slate-900" />
                 <div className="text-[9.5px] font-bold text-[#0A0838] dark:text-white mt-0.5">Planned End</div>
-                <div className="text-[8.5px] text-[#4D4D4F] dark:text-slate-400">09-Oct-2026</div>
+                <div className="text-[8.5px] text-[#4D4D4F] dark:text-slate-400">09 Oct 2026</div>
               </div>
             </div>
           </div>

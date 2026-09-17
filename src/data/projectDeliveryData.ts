@@ -103,9 +103,9 @@ export const defaultProjectDeliveryData: ProjectDeliveryModel = {
     completedTaskCount: 7,
     ongoingTaskCount: 22,
     planStartDate: '2026-07-13',
-    planStartDateFormatted: '13-July-2026',
+    planStartDateFormatted: '13 Jul 2026',
     planEndDate: '2026-10-09',
-    planEndDateFormatted: '09-Oct-2026',
+    planEndDateFormatted: '09 Oct 2026',
     sourceNote: '22 tasks in flight across QGS, endpoints and servers; slide lists 13 named ongoing task lines.',
     completedTasks: [
       'QGS topology and tagging planning',

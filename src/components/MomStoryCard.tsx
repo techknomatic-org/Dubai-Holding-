@@ -227,7 +227,7 @@ export const MomStoryCard: React.FC<MomStoryCardProps> = ({
             </p>
           </div>
           <div className="mt-3 pt-2 border-t border-[#E5DFD3] dark:border-white/5 text-xs text-[#4D4D4F] dark:text-slate-400 flex items-center justify-between">
-            <span>Connect: 29-Jun-2026</span>
+            <span>Connect: 29 Jun 2026</span>
             <span className="text-[#0A0838] dark:text-slate-200 font-medium">Agreed target</span>
           </div>
         </div>

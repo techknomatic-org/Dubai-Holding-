@@ -576,7 +576,7 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
                         ))}
                       </div>
                       <span className="text-xs font-mono font-bold text-[#0A0838] dark:text-white mt-2 px-3 py-1 rounded-md bg-[#0A0838]/10 dark:bg-white/10">
-                        Aug-26 (17 Risks)
+                        Aug 26 (17 Risks)
                       </span>
                     </div>
 
@@ -609,7 +609,7 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
                         ))}
                       </div>
                       <span className="text-xs font-mono font-bold text-[#0A0838] dark:text-white mt-2 px-3 py-1 rounded-md bg-[#0A0838]/10 dark:bg-white/10">
-                        Sep-26 (7 Risks)
+                        Sep 26 (7 Risks)
                       </span>
                     </div>
 
@@ -641,7 +641,7 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
                         ))}
                       </div>
                       <span className="text-xs font-mono font-bold text-[#0A0838] dark:text-white mt-2 px-3 py-1 rounded-md bg-[#0A0838]/10 dark:bg-white/10">
-                        Oct-26 (1 Risk)
+                        Oct 26 (1 Risk)
                       </span>
                     </div>
 

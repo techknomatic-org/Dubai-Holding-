@@ -1,4 +1,4 @@
-﻿// ============================================================================
+// ============================================================================
 // DUBAI HOLDINGS & TECH MAHINDRA MANAGED SERVICES
 // SLIDE 05 DATA MODEL: TICKET SUMMARY & TEAM VOLUMETRICS
 // Exact Data from User Table & Source Sheets
@@ -38,7 +38,7 @@ export interface TicketCategoryItem {
 export const ticketMonthlyClosures: MonthlyTicketClosure[] = [
   {
     monthKey: '2026-04',
-    monthLabel: 'Apr-26',
+    monthLabel: 'Apr 26',
     incidents: 1488,
     serviceRequests: 6519,
     total: 8007,
@@ -46,7 +46,7 @@ export const ticketMonthlyClosures: MonthlyTicketClosure[] = [
   },
   {
     monthKey: '2026-05',
-    monthLabel: 'May-26',
+    monthLabel: 'May 26',
     incidents: 1325,
     serviceRequests: 4340,
     total: 5665,
@@ -54,7 +54,7 @@ export const ticketMonthlyClosures: MonthlyTicketClosure[] = [
   },
   {
     monthKey: '2026-06',
-    monthLabel: 'Jun-26',
+    monthLabel: 'Jun 26',
     incidents: 1176,
     serviceRequests: 5882,
     total: 7058,
@@ -62,7 +62,7 @@ export const ticketMonthlyClosures: MonthlyTicketClosure[] = [
   },
   {
     monthKey: '2026-07',
-    monthLabel: 'Jul-26',
+    monthLabel: 'Jul 26',
     incidents: 1498,
     serviceRequests: 5578,
     total: 7076,
@@ -70,7 +70,7 @@ export const ticketMonthlyClosures: MonthlyTicketClosure[] = [
   },
   {
     monthKey: '2026-08',
-    monthLabel: 'Aug-26',
+    monthLabel: 'Aug 26',
     incidents: 0,
     serviceRequests: 0,
     total: 0,
@@ -78,7 +78,7 @@ export const ticketMonthlyClosures: MonthlyTicketClosure[] = [
   },
   {
     monthKey: '2026-09',
-    monthLabel: 'Sep-26',
+    monthLabel: 'Sep 26',
     incidents: 0,
     serviceRequests: 0,
     total: 0,

@@ -308,7 +308,7 @@ export const CostOptimization: React.FC<CostOptimizationProps> = ({
             <div className="absolute right-4 top-2 max-w-[245px] p-2.5 rounded-xl bg-[#F0F7FF] dark:bg-white/10 border border-[#0066B2]/30 dark:border-white/20 shadow-xs flex flex-col gap-0.5 pointer-events-none">
               <div className="text-[11.5px] font-black text-[#0066B2] dark:text-[#38BDF8] flex items-center gap-1">
                 <TrendingUp className="w-3.5 h-3.5" />
-                <span>Cumulative Apr-Jul: {formatUSD(kpis.totalAnnualSavings)}</span>
+                <span>Cumulative Apr 26 - Jul 26: {formatUSD(kpis.totalAnnualSavings)}</span>
               </div>
               <div className="text-[9.5px] text-[#4D4D4F] dark:text-slate-300 font-medium leading-tight">
                 Strong acceleration driven mainly by Automation license optimization.
@@ -392,10 +392,7 @@ export const CostOptimization: React.FC<CostOptimizationProps> = ({
             </div>
 
             {/* Initiative Card */}
-            <div className="p-2.5 rounded-lg bg-[#F0FDF4] dark:bg-white/5 border border-[#DCFCE7] dark:border-white/10 flex items-start gap-2.5 mb-2 flex-1">
-              <div className="w-7 h-7 rounded-lg bg-[#008080] text-white flex items-center justify-center font-black text-xs shrink-0 shadow-2xs">
-                S
-              </div>
+            <div className="p-2.5 rounded-lg bg-[#F0FDF4] dark:bg-white/5 border border-[#DCFCE7] dark:border-white/10 flex items-start mb-2 flex-1">
               <div className="flex-1 text-[9px]">
                 <div className="font-bold text-[10.5px] text-[#0A0838] dark:text-white leading-tight mb-0.5">
                   {csi.primaryInitiative.title}
@@ -450,7 +447,7 @@ export const CostOptimization: React.FC<CostOptimizationProps> = ({
                 </div>
                 <div>
                   <h3 className="text-base font-black tracking-tight">
-                    {selectedMonth.monthLabel} 2026 – License Cost Optimization
+                    {selectedMonth.monthLabel} – License Cost Optimization
                   </h3>
                   <p className="text-xs text-white/80">
                     Itemized breakdown of released licenses and annualized cost savings

@@ -7,9 +7,44 @@ import {
   EXCEL_RISK_SUMMARY 
 } from './excelDataSource';
 
+export function formatDateDDMMMYYYY(dateStr: string | null | undefined): string {
+  if (!dateStr) return '';
+  const str = dateStr.trim();
+  const isoMatch = str.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (isoMatch) {
+    const [, y, m, d] = isoMatch;
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const monthName = months[parseInt(m, 10) - 1] || m;
+    return `${d} ${monthName} ${y}`;
+  }
+  const dmyMatch = str.match(/^(\d{1,2})[-/ ]([A-Za-z]+)[-/ ](\d{2,4})$/);
+  if (dmyMatch) {
+    let [, d, m, y] = dmyMatch;
+    if (d.length === 1) d = `0${d}`;
+    if (y.length === 2) y = `20${y}`;
+    const monthsShort: Record<string, string> = {
+      january: 'Jan', jan: 'Jan',
+      february: 'Feb', feb: 'Feb',
+      march: 'Mar', mar: 'Mar',
+      april: 'Apr', apr: 'Apr',
+      may: 'May',
+      june: 'Jun', jun: 'Jun',
+      july: 'Jul', jul: 'Jul',
+      august: 'Aug', aug: 'Aug',
+      september: 'Sep', sept: 'Sep', sep: 'Sep',
+      october: 'Oct', oct: 'Oct',
+      november: 'Nov', nov: 'Nov',
+      december: 'Dec', dec: 'Dec'
+    };
+    const shortM = monthsShort[m.toLowerCase()] || m.slice(0, 3);
+    return `${d} ${shortM} ${y}`;
+  }
+  return str;
+}
+
 export const meetingMetadata: MeetingMetadata = {
   subject: 'Strategic Leadership Connect — Monthly Service Review',
-  meetingDate: '29-June-2026',
+  meetingDate: '29 Jun 2026',
   timeRange: '16:00 – 17:00 GST',
   client: 'Dubai Holding',
   provider: 'Tech Mahindra',
@@ -20,6 +55,8 @@ export const meetingMetadata: MeetingMetadata = {
 // Map each action item strictly from EXCEL_MOM_ACTIONS (Sheet 02_MOM_Actions)
 export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
   const actionNo = raw.Action_No;
+  const formattedOrigDate = formatDateDDMMMYYYY(raw.Original_Due_Date);
+  const formattedRevisedDate = raw.Revised_Due_Date ? formatDateDDMMMYYYY(raw.Revised_Due_Date) : undefined;
 
   if (actionNo === 1) {
     return {
@@ -29,8 +66,8 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
       type: raw.Type,
       typeDescription: raw.Type_Description,
       owner: raw.Owner,
-      originalDueDate: raw.Original_Due_Date,
-      revisedDueDate: raw.Revised_Due_Date || undefined,
+      originalDueDate: formattedOrigDate,
+      revisedDueDate: formattedRevisedDate,
       status: raw.Status,
       remarks: raw.Remarks || 'Baseline established',
       sourcePage: raw.Source_Page,
@@ -41,7 +78,7 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
           highlightText: 'Full operational stabilization across 10,800+ enterprise endpoints with 99.81% infrastructure availability maintained.',
           keyMetrics: [
             { label: 'Endpoints Managed', value: '10,800+' },
-            { label: 'Contract Baseline', value: '1st Apr 2026' },
+            { label: 'Contract Baseline', value: '01 Apr 2026' },
             { label: 'Infra Availability', value: '99.81%' }
           ],
           evidenceNote: 'Seamless handover without SLA disruption; 13 Infra risks identified and closed.'
@@ -67,8 +104,8 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
       type: raw.Type,
       typeDescription: raw.Type_Description,
       owner: raw.Owner,
-      originalDueDate: raw.Original_Due_Date,
-      revisedDueDate: raw.Revised_Due_Date || undefined,
+      originalDueDate: formattedOrigDate,
+      revisedDueDate: formattedRevisedDate,
       status: raw.Status,
       remarks: raw.Remarks || 'Included in deck',
       sourcePage: raw.Source_Page,
@@ -92,7 +129,7 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
           governanceNote: 'ServiceDesk automation and bulk user provisioning active; server self-healing in validation.'
         },
         nextMove: {
-          targetDate: '30-Sep-2026',
+          targetDate: '30 Sep 2026',
           actionOwner: 'TechM Automation Lead',
           strategicNextStep: 'Deploy remaining 14 automated workflows across SecOps and complete multi-agent ticket routing pilot.',
           leadershipActionNeeded: 'Approve entity-level service account permissions for cross-tenant automation runners.'
@@ -102,6 +139,7 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
   }
 
   if (actionNo === 3) {
+    const formattedPlanEnd = formatDateDDMMMYYYY(EXCEL_QUALYS_SUMMARY.planEndDate) || '09 Oct 2026';
     return {
       actionNo: 3,
       title: 'Qualys Patch Management Rollout',
@@ -109,8 +147,8 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
       type: raw.Type,
       typeDescription: raw.Type_Description,
       owner: raw.Owner,
-      originalDueDate: raw.Original_Due_Date,
-      revisedDueDate: raw.Revised_Due_Date || undefined,
+      originalDueDate: formattedOrigDate,
+      revisedDueDate: formattedRevisedDate,
       status: raw.Status,
       remarks: raw.Remarks || 'Project progress tracking',
       sourcePage: raw.Source_Page,
@@ -124,7 +162,7 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
             { label: 'Rollout Progress', value: `${EXCEL_QUALYS_SUMMARY.completionPct.toFixed(2)}%` },
             { label: 'Completed Tasks', value: `${EXCEL_QUALYS_SUMMARY.completedTaskCount} / 29` },
             { label: 'Vuln Reduction', value: '253K → 96K' },
-            { label: 'Target Completion', value: EXCEL_QUALYS_SUMMARY.planEndDate }
+            { label: 'Target Completion', value: formattedPlanEnd }
           ],
           evidenceNote: 'Open Critical-High-Medium vulnerabilities reduced by 62.00% (253K in Apr to 96K in Jul).'
         },
@@ -134,7 +172,7 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
           governanceNote: 'Agent profiles & QGS topology configured. Server CAR library scripts under testing.'
         },
         nextMove: {
-          targetDate: EXCEL_QUALYS_SUMMARY.planEndDate,
+          targetDate: formattedPlanEnd,
           actionOwner: 'TechM Security PMO',
           strategicNextStep: 'Finalize CAR scripts for Windows/Linux servers and execute scheduled patch cycles across entities.',
           leadershipActionNeeded: 'Endorse maintenance reboot windows across business units for non-disruptive server patching.'
@@ -151,8 +189,8 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
       type: raw.Type,
       typeDescription: raw.Type_Description,
       owner: raw.Owner,
-      originalDueDate: raw.Original_Due_Date,
-      revisedDueDate: raw.Revised_Due_Date || undefined,
+      originalDueDate: formattedOrigDate,
+      revisedDueDate: formattedRevisedDate,
       status: raw.Status,
       remarks: raw.Remarks || 'Included in deck',
       sourcePage: raw.Source_Page,
@@ -190,8 +228,8 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
       type: raw.Type,
       typeDescription: raw.Type_Description,
       owner: raw.Owner,
-      originalDueDate: raw.Original_Due_Date,
-      revisedDueDate: raw.Revised_Due_Date || undefined,
+      originalDueDate: formattedOrigDate,
+      revisedDueDate: formattedRevisedDate,
       status: raw.Status,
       remarks: raw.Remarks || 'Pending Tickets Analysis updated',
       sourcePage: raw.Source_Page,
@@ -221,6 +259,7 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
   }
 
   // Action No 6
+  const revisedTargetDisplay = formattedRevisedDate || '30 Sep 2026';
   return {
     actionNo: 6,
     title: 'Single Pane of Glass via Azure Foundry Capabilities',
@@ -228,8 +267,8 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
     type: raw.Type,
     typeDescription: raw.Type_Description,
     owner: raw.Owner,
-    originalDueDate: raw.Original_Due_Date,
-    revisedDueDate: raw.Revised_Due_Date || undefined,
+    originalDueDate: formattedOrigDate,
+    revisedDueDate: formattedRevisedDate,
     status: raw.Status,
     remarks: raw.Remarks || '03 Foundry SMEs on-boarded',
     sourcePage: raw.Source_Page,
@@ -242,17 +281,17 @@ export const momActions: MomActionItem[] = EXCEL_MOM_ACTIONS.map(raw => {
         keyMetrics: [
           { label: 'Foundry SMEs Onboarded', value: '03' },
           { label: 'Consolidation Scope', value: '8 Dashboards' },
-          { label: 'Target MVP Date', value: raw.Revised_Due_Date || '2026-09-30' }
+          { label: 'Target MVP Date', value: revisedTargetDisplay }
         ],
         evidenceNote: 'Strategic initiative to replace multiple disparate reports with unified executive telemetry.'
       },
       currentState: {
-        statusText: `Open (Revised Target: ${raw.Revised_Due_Date}) — SME team mobilized; formal use-case approval in progress.`,
+        statusText: `Open (Revised Target: ${revisedTargetDisplay}) — SME team mobilized; formal use-case approval in progress.`,
         completionPct: 40,
         governanceNote: 'Draft blueprint completed. Awaiting Dubai Holding architectural review.'
       },
       nextMove: {
-        targetDate: raw.Revised_Due_Date || '2026-09-30',
+        targetDate: revisedTargetDisplay,
         actionOwner: raw.Owner,
         strategicNextStep: 'Conduct joint architectural workshop with Dubai Holding IT leadership to freeze MVP scope and initiate pipeline integration.',
         leadershipActionNeeded: 'Authorize cloud tenant environment access and sign off on Phase 1 use case priority list.'

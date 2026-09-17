@@ -78,33 +78,33 @@ export const defaultCostOptimizationData: CostOptimizationModel = {
     totalAnnualSavings: 485628,
     automationSavings: 454428,
     csiSavings: 31200,
-    highestMonthName: 'July',
+    highestMonthName: 'Jul 26',
     highestMonthValue: 257748,
-    periodLabel: 'Apr-Jul',
+    periodLabel: 'Apr 26 - Jul 26',
     footnote: 'Monthly values represent annualized savings identified in each month.'
   },
   trendSeries: [
     {
-      monthKey: 'Apr',
-      monthLabel: 'Apr',
+      monthKey: 'Apr 26',
+      monthLabel: 'Apr 26',
       monthlyAnnualSaving: 103680,
       cumulativeAnnualSaving: 103680
     },
     {
-      monthKey: 'May',
-      monthLabel: 'May',
+      monthKey: 'May 26',
+      monthLabel: 'May 26',
       monthlyAnnualSaving: 21000,
       cumulativeAnnualSaving: 124680
     },
     {
-      monthKey: 'June',
-      monthLabel: 'June',
+      monthKey: 'Jun 26',
+      monthLabel: 'Jun 26',
       monthlyAnnualSaving: 103200,
       cumulativeAnnualSaving: 227880
     },
     {
-      monthKey: 'July',
-      monthLabel: 'July',
+      monthKey: 'Jul 26',
+      monthLabel: 'Jul 26',
       monthlyAnnualSaving: 257748,
       cumulativeAnnualSaving: 485628
     }
@@ -115,7 +115,7 @@ export const defaultCostOptimizationData: CostOptimizationModel = {
     monthlyBreakdowns: [
       {
         monthKey: 'APR',
-        monthLabel: 'APR',
+        monthLabel: 'Apr 26',
         totalLicensesReleased: 134,
         annualTotalSaving: 72480,
         items: [
@@ -137,7 +137,7 @@ export const defaultCostOptimizationData: CostOptimizationModel = {
       },
       {
         monthKey: 'MAY',
-        monthLabel: 'MAY',
+        monthLabel: 'May 26',
         totalLicensesReleased: 70,
         annualTotalSaving: 21000,
         items: [
@@ -159,7 +159,7 @@ export const defaultCostOptimizationData: CostOptimizationModel = {
       },
       {
         monthKey: 'JUNE',
-        monthLabel: 'JUNE',
+        monthLabel: 'Jun 26',
         totalLicensesReleased: 149,
         annualTotalSaving: 103200,
         items: [
@@ -188,7 +188,7 @@ export const defaultCostOptimizationData: CostOptimizationModel = {
       },
       {
         monthKey: 'JULY',
-        monthLabel: 'JULY',
+        monthLabel: 'Jul 26',
         totalLicensesReleased: 704,
         annualTotalSaving: 257748,
         items: [
@@ -235,9 +235,9 @@ export const defaultCostOptimizationData: CostOptimizationModel = {
       remarks: "SIP was presented in April'26 monthly deck and cost saving mentioned in slide. Domain - SharePoint"
     },
     monthlyStatuses: [
-      { month: 'May', text: 'No SIP having cost saving' },
-      { month: 'June', text: 'No SIP having cost saving' },
-      { month: 'July', text: 'No SIP having cost saving' }
+      { month: 'May 26', text: 'No SIP having cost saving' },
+      { month: 'Jun 26', text: 'No SIP having cost saving' },
+      { month: 'Jul 26', text: 'No SIP having cost saving' }
     ],
     subtotalAprJul: 31200,
     remarks: "SIP was presented in April'26 monthly deck and cost saving mentioned in slide. Domain - SharePoint"
@@ -245,10 +245,10 @@ export const defaultCostOptimizationData: CostOptimizationModel = {
   grandTotal: {
     totalAnnualSavings: 485628,
     monthlyBreakdown: [
-      { month: 'Apr', amount: 103680 },
-      { month: 'May', amount: 21000 },
-      { month: 'June', amount: 103200 },
-      { month: 'July', amount: 257748 }
+      { month: 'Apr 26', amount: 103680 },
+      { month: 'May 26', amount: 21000 },
+      { month: 'Jun 26', amount: 103200 },
+      { month: 'Jul 26', amount: 257748 }
     ]
   }
 };
