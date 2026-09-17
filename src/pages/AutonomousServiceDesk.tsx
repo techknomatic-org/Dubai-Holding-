@@ -619,31 +619,31 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                 </div>
 
                 {/* Pillar 2 & 3: Mailbox Governance & Stale Purge */}
-                <div className="grid grid-cols-2 gap-2.5 flex-1 min-h-0 items-stretch">
-                  {/* Mailbox Policies */}
-                  <div className="p-2.5 sm:p-3 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col justify-between gap-2 shadow-xs">
-                    <div className="flex items-center justify-between gap-1">
-                      <div className="flex items-center gap-1.5 min-w-0">
+                <div className="grid grid-cols-12 gap-2 flex-1 min-h-0 items-stretch">
+                  {/* Mailbox Policies (Compressed width, 2-line header) */}
+                  <div className="col-span-4 p-2 sm:p-2.5 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col justify-between gap-1.5 shadow-xs">
+                    <div className="flex items-start justify-between gap-1">
+                      <div className="flex items-center gap-1 min-w-0">
                         <div className="w-5 h-5 rounded bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
                           <Mail className="w-3 h-3" />
                         </div>
-                        <h4 className="text-[10.5px] sm:text-[11px] font-semibold text-[#29251D] dark:text-slate-200 whitespace-nowrap">
-                          Mailbox Policies
+                        <h4 className="text-[10px] sm:text-[10.5px] font-semibold text-[#29251D] dark:text-slate-200 leading-tight">
+                          Mailbox<br />Policies
                         </h4>
                       </div>
-                      <span className="px-1.5 py-0.5 rounded-full bg-[#D1EED0] text-[#2E5F13] border border-[#B4DFB1] font-medium text-[8.5px] shrink-0">
+                      <span className="px-1 py-0.5 rounded-full bg-[#D1EED0] text-[#2E5F13] border border-[#B4DFB1] font-medium text-[7.5px] sm:text-[8px] shrink-0">
                         Enforced
                       </span>
                     </div>
-                    <div className="p-2 sm:p-2.5 rounded-xl bg-[#FFFFFF] dark:bg-white/10 border border-[#E5DFD3] dark:border-white/10 text-center shadow-2xs flex items-center justify-center flex-1">
+                    <div className="p-1.5 sm:p-2 rounded-xl bg-[#FFFFFF] dark:bg-white/10 border border-[#E5DFD3] dark:border-white/10 text-center shadow-2xs flex items-center justify-center flex-1">
                       <span className="text-base sm:text-lg font-bold text-[#29251D] dark:text-white block">
                         {adHygiene.mailboxPoliciesApplied}
                       </span>
                     </div>
                   </div>
 
-                  {/* Stale Identity Items Purged */}
-                  <div className="p-2.5 sm:p-3 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col justify-between gap-2 shadow-xs">
+                  {/* Stale Identity Items Purged (Expanded width for generous spacing) */}
+                  <div className="col-span-8 p-2 sm:p-2.5 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col justify-between gap-1.5 shadow-xs">
                     <div className="flex items-center justify-between gap-1">
                       <div className="flex items-center gap-1.5 min-w-0">
                         <div className="w-5 h-5 rounded bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
@@ -653,7 +653,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                           Stale Identity
                         </h4>
                       </div>
-                      <span className="px-1.5 py-0.5 rounded-full bg-[#D1EED0] text-[#2E5F13] border border-[#B4DFB1] font-medium text-[8.5px] shrink-0">
+                      <span className="px-1.5 py-0.5 rounded-full bg-[#D1EED0] text-[#2E5F13] border border-[#B4DFB1] font-medium text-[8px] sm:text-[8.5px] shrink-0">
                         {adHygiene.staleItemsDisabledTotal.toLocaleString()} Purged
                       </span>
                     </div>
@@ -883,7 +883,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
             {/* Right: Target Completion Date */}
             <div className="flex items-center gap-1.5 text-xs font-medium">
               <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#FFFFFF] dark:bg-white/10 border border-[#E5DFD3] dark:border-white/10 text-[10px] sm:text-[11px] font-semibold text-[#4D4D4F] dark:text-slate-300 shadow-2xs">
-                <Clock className="w-3 h-3 text-[#0284C7]" />
+                <Clock className="w-3 h-3 text-[#0A0838] dark:text-white" />
                 <span>Target Completion:</span>
                 <strong className="text-[#0A0838] dark:text-white font-mono font-bold">31 Dec 2026</strong>
               </span>
@@ -1007,7 +1007,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
               {/* Central Circular "32" with "Total Use Cases" outside below */}
               <div
                 onClick={() => handleOpenStreamModal('TOTAL PIPELINE')}
-                className="flex flex-col items-center justify-center cursor-pointer group shrink-0"
+                className="flex flex-col items-center justify-center cursor-pointer group shrink-0 pt-0.5"
                 title="Click to view all 32 automation use cases"
               >
                 <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#FFFFFF] dark:bg-[#0A0838] border-2 border-[#0A0838] dark:border-white shadow-md flex items-center justify-center group-hover:scale-105 transition-all">
@@ -1015,7 +1015,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                     32
                   </span>
                 </div>
-                <span className="text-[7.5px] sm:text-[8px] text-[#4D4D4F] dark:text-slate-400 font-bold text-center mt-0.5 whitespace-nowrap leading-tight tracking-tight">
+                <span className="text-[7.5px] sm:text-[8px] text-[#4D4D4F] dark:text-slate-400 font-bold text-center mt-1 sm:mt-1.5 whitespace-nowrap leading-tight tracking-tight">
                   Total Use Cases
                 </span>
               </div>
