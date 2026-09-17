@@ -119,16 +119,16 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
           {/* Top 5 Summary KPI Cards */}
           <div className="grid grid-cols-5 gap-2.5 my-1.5 shrink-0">
             {/* 1. Total */}
-            <div className="p-2.5 sm:p-3 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs hover:shadow-xs transition-all flex flex-col justify-between group hover:border-[#0A0838]/40 text-left min-h-[72px]">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-lg bg-[#0A0838]/5 text-[#0A0838] dark:text-white flex items-center justify-center">
+            <div className="p-2.5 sm:p-3 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs hover:shadow-xs transition-all flex flex-col items-center justify-center text-center group hover:border-[#0A0838]/40 min-h-[72px]">
+              <div className="flex items-center justify-center gap-1.5 text-center">
+                <div className="w-5 h-5 rounded-lg bg-[#0A0838]/5 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
                   <Layers className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-xs font-semibold text-[#4D4D4F] dark:text-slate-300">
                   Total
                 </span>
               </div>
-              <div className="mt-1.5 flex items-baseline">
+              <div className="mt-1 flex items-center justify-center text-center">
                 <span className="text-xl sm:text-2xl font-black text-[#0A0838] dark:text-white font-mono leading-none">
                   {riskSummaryKPIs.total}
                 </span>
@@ -136,16 +136,16 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
             </div>
 
             {/* 2. Open */}
-            <div className="p-2.5 sm:p-3 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs hover:shadow-xs transition-all flex flex-col justify-between group hover:border-[#0284C7]/40 text-left min-h-[72px]">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-lg bg-[#0284C7]/10 text-[#0284C7] flex items-center justify-center">
+            <div className="p-2.5 sm:p-3 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs hover:shadow-xs transition-all flex flex-col items-center justify-center text-center group hover:border-[#0284C7]/40 min-h-[72px]">
+              <div className="flex items-center justify-center gap-1.5 text-center">
+                <div className="w-5 h-5 rounded-lg bg-[#0284C7]/10 text-[#0284C7] flex items-center justify-center shrink-0">
                   <AlertCircle className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-xs font-semibold text-[#4D4D4F] dark:text-slate-300">
                   Open
                 </span>
               </div>
-              <div className="mt-1.5 flex items-baseline">
+              <div className="mt-1 flex items-center justify-center text-center">
                 <span className="text-xl sm:text-2xl font-black text-[#0284C7] font-mono leading-none">
                   {riskSummaryKPIs.open}
                 </span>
@@ -153,16 +153,16 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
             </div>
 
             {/* 3. Closed */}
-            <div className="p-2.5 sm:p-3 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs hover:shadow-xs transition-all flex flex-col justify-between group hover:border-[#10B981]/40 text-left min-h-[72px]">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-lg bg-[#10B981]/10 text-[#10B981] flex items-center justify-center">
+            <div className="p-2.5 sm:p-3 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs hover:shadow-xs transition-all flex flex-col items-center justify-center text-center group hover:border-[#10B981]/40 min-h-[72px]">
+              <div className="flex items-center justify-center gap-1.5 text-center">
+                <div className="w-5 h-5 rounded-lg bg-[#10B981]/10 text-[#10B981] flex items-center justify-center shrink-0">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-xs font-semibold text-[#4D4D4F] dark:text-slate-300">
                   Closed
                 </span>
               </div>
-              <div className="mt-1.5 flex items-baseline">
+              <div className="mt-1 flex items-center justify-center text-center">
                 <span className="text-xl sm:text-2xl font-black text-[#10B981] font-mono leading-none">
                   {riskSummaryKPIs.closed}
                 </span>
@@ -170,16 +170,16 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
             </div>
 
             {/* 4. New Risks */}
-            <div className="p-2.5 sm:p-3 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs hover:shadow-xs transition-all flex flex-col justify-between group hover:border-amber-500/40 text-left min-h-[72px]">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center">
+            <div className="p-2.5 sm:p-3 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs hover:shadow-xs transition-all flex flex-col items-center justify-center text-center group hover:border-amber-500/40 min-h-[72px]">
+              <div className="flex items-center justify-center gap-1.5 text-center">
+                <div className="w-5 h-5 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0">
                   <Sparkles className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-xs font-semibold text-[#4D4D4F] dark:text-slate-300 truncate">
                   New Risks
                 </span>
               </div>
-              <div className="mt-1.5 flex items-baseline">
+              <div className="mt-1 flex items-center justify-center text-center">
                 <span className="text-xl sm:text-2xl font-black text-[#EA580C] font-mono leading-none">
                   {riskSummaryKPIs.newRisks}
                 </span>
@@ -187,16 +187,16 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
             </div>
 
             {/* 5. Overdue */}
-            <div className="p-2.5 sm:p-3 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-red-200 dark:border-red-900/40 shadow-2xs hover:shadow-xs transition-all flex flex-col justify-between group hover:border-[#E31837] text-left min-h-[72px]">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-lg bg-red-50 dark:bg-red-950/40 text-[#E31837] flex items-center justify-center">
+            <div className="p-2.5 sm:p-3 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-red-200 dark:border-red-900/40 shadow-2xs hover:shadow-xs transition-all flex flex-col items-center justify-center text-center group hover:border-[#E31837] min-h-[72px]">
+              <div className="flex items-center justify-center gap-1.5 text-center">
+                <div className="w-5 h-5 rounded-lg bg-red-50 dark:bg-red-950/40 text-[#E31837] flex items-center justify-center shrink-0">
                   <ShieldAlert className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-xs font-semibold text-[#E31837]">
                   Overdue
                 </span>
               </div>
-              <div className="mt-1.5 flex items-baseline">
+              <div className="mt-1 flex items-center justify-center text-center">
                 <span className="text-xl sm:text-2xl font-black text-[#E31837] font-mono leading-none">
                   {riskSummaryKPIs.overdue}
                 </span>
