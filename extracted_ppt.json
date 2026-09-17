@@ -1,0 +1,1242 @@
+[
+  {
+    "slide_num": 1,
+    "text": [
+      "Managed Services IT Infra & Security"
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 2,
+    "text": [
+      "AGENDA",
+      "2",
+      "Minutes of Meeting : Last Meeting",
+      "4",
+      "Autonomous Service Desk Operations",
+      "6",
+      "5",
+      "1",
+      "7",
+      "Automation : Progress Summary",
+      "8",
+      "3",
+      "IT Operations & Service Management  Dashboard \u2013 Apr to July",
+      "Projects & Demand Support",
+      "Pending Ticket Analysis",
+      "Vulnerability Remediation : Progress Summary",
+      "9",
+      "Value Co creation: IT Infra",
+      "Value Co creation: IT Security"
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 3,
+    "text": [
+      "Minutes of Meeting: Last Meeting",
+      "I = Information",
+      "A = Action",
+      "Closed",
+      "On going",
+      "Open"
+    ],
+    "tables": [
+      [
+        [
+          "Subject",
+          "Strategic Leadership Connect \u2013 Monthly Business Review",
+          "",
+          ""
+        ],
+        [
+          "Date",
+          "29-June-2026",
+          "Time",
+          "16:00 hr. to 17:00 hr."
+        ]
+      ],
+      [
+        [
+          "",
+          "Action Items",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "#",
+          "Action",
+          "Type",
+          "Owner",
+          "Due Date",
+          "Status",
+          "Remarks"
+        ],
+        [
+          "1",
+          "New Contract commenced w.e.f 1st Apr\u20192026. Last two months MS support highlights and efforts consumed in value co-creation, presented by TechM Delivery Head (Sudesh)",
+          "I",
+          "TechM",
+          "29-June-26",
+          "Closed",
+          ""
+        ],
+        [
+          "2",
+          "TechM to present the Automation and AI Progress w.r.t 32 USE CASE presented during RFP defence proposal, in next review meeting.",
+          "A",
+          "TechM",
+          "27-July-26",
+          "On going",
+          "Included in deck"
+        ],
+        [
+          "3",
+          "Patching through Qualys TOOL has been tested successfully. TechM to present the Qualys Patching status in next review meeting.",
+          "A",
+          "TechM",
+          "27-July-26",
+          "On going",
+          "Project Progress included in deck."
+        ],
+        [
+          "4",
+          "TechM to present the Open Ticket Summary and Ticket Resolution Trend through Automation. Purpose is to review the progress",
+          "A",
+          "TechM",
+          "27-July-26",
+          "Closed",
+          "Included in deck"
+        ],
+        [
+          "5.",
+          "On Hold Tickets will be audited for proper justification and update compliance on ITSM TOOL",
+          "A",
+          "TechM",
+          "27-July-26",
+          "Closed",
+          "Pending Tickets Analysis updated in deck"
+        ],
+        [
+          "6.",
+          "Explore possibility to create single pane of glass using Azure Foundry capabilities, instead of multiple Power BI Dash-boards currently used for Operational purpose",
+          "A",
+          "TechM",
+          "27-July-26\n30-Sept 26",
+          "Open",
+          "03 Foundry SMEs on-boarded, USE CASE identification and approval in progress"
+        ]
+      ]
+    ]
+  },
+  {
+    "slide_num": 4,
+    "text": [
+      "IT Operations Dashboard:",
+      "Monthly performance trend view across availability, satisfaction, change success, major incident volume, and reporting KPI status.",
+      "Availability",
+      "99.81%",
+      "July",
+      "CSAT",
+      "4.54",
+      "July",
+      "Change records",
+      "99",
+      "July",
+      "Major Incident created",
+      "2",
+      "July",
+      "KPI Met",
+      "29 / 30",
+      "July applicable KPIs, 1 Not Met",
+      "Change Volume (Avg. 90 per month)",
+      "Major Incident Volume",
+      "SLA / KPI Reporting Status",
+      "Key observations",
+      "Steady INFRA Availability with July at 99.81%.",
+      "CSAT maintained at 4.54.",
+      "Change success at 99% in July.",
+      "No Major Incidents reported in May & June",
+      ".",
+      "Availability (%)",
+      "CSAT Score"
+    ],
+    "tables": [
+      [
+        [
+          "Month",
+          "Total KPIs",
+          "Applicable",
+          "Met",
+          "Not Met"
+        ],
+        [
+          "Apr-26",
+          "56",
+          "29",
+          "28",
+          "1"
+        ],
+        [
+          "May-26",
+          "56",
+          "29",
+          "29",
+          "0"
+        ],
+        [
+          "Jun-26",
+          "56",
+          "46",
+          "46",
+          "0"
+        ],
+        [
+          "July\u201926",
+          "56",
+          "30",
+          "29",
+          "1"
+        ]
+      ]
+    ]
+  },
+  {
+    "slide_num": 5,
+    "text": [
+      "Ticket Summary : Apr to July",
+      "27,806",
+      "Total Tickets Closed",
+      "5,487",
+      "Incidents Closed",
+      "22,319",
+      "Service Requests (SCTASK) Closed",
+      "Monthly Closure Trend",
+      "INC by Group",
+      "SR by Group",
+      "Source: ServiceNow ticket closure data, Apr\u2013Jun 2026.  Groups: Service Desk = Techhub Service Desk; Security = IT Security; EUS = DHGS + DHHQ Site Support; Infra = all remaining IT functions.",
+      "Top 5 INC Categories",
+      "Top 5 SR Categories"
+    ],
+    "tables": [
+      [
+        [
+          "INC Category",
+          "Count"
+        ],
+        [
+          "Monitoring Alert",
+          "2,577"
+        ],
+        [
+          "SOC",
+          "690"
+        ],
+        [
+          "Email",
+          "375"
+        ],
+        [
+          "Account Locked",
+          "192"
+        ],
+        [
+          "Shared Folder",
+          "173"
+        ]
+      ],
+      [
+        [
+          "SR Category",
+          "Count"
+        ],
+        [
+          "Leaver Deactivation (FTE Account disable)",
+          "3,717"
+        ],
+        [
+          "Consultant Outsource Account (extend disable or create FTC)",
+          "2,249"
+        ],
+        [
+          "Distribution Group Services (add remove members or create DL)",
+          "1,778"
+        ],
+        [
+          "Shared Folder Management",
+          "1,657"
+        ],
+        [
+          "Shared Mailbox Management",
+          "1183"
+        ]
+      ]
+    ]
+  },
+  {
+    "slide_num": 6,
+    "text": [
+      "Service Management Dashboard :",
+      "10800+",
+      "End Points Devices",
+      "18300+",
+      "Users Count",
+      "Volumetric handled @ Service Desk : July"
+    ],
+    "tables": [
+      [
+        [
+          "Service Desk Parameters",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "KPI/SLA",
+          "Baseline",
+          "Apr\u201926",
+          "May\u201926",
+          "Jun\u201926",
+          "July\u201926"
+        ],
+        [
+          "Average Call talk time",
+          "10:00",
+          "2:05",
+          "2:12\u200b",
+          "2:21\u200b",
+          "2:05"
+        ],
+        [
+          "Average Answer Time",
+          "0:10",
+          "0:06\u200b",
+          "0:06\u200b",
+          "0:07\u200b",
+          "0:06"
+        ],
+        [
+          "Email",
+          "NA",
+          "1846",
+          "1472",
+          "1542",
+          "3516"
+        ],
+        [
+          "Notifications",
+          "NA",
+          "58",
+          "49",
+          "49",
+          "54"
+        ]
+      ]
+    ]
+  },
+  {
+    "slide_num": 7,
+    "text": [
+      "Value Co creation : Service Management Office (Autonomous Service Desk)",
+      "Monthly interaction volume, automation progress and AI multi-agent roadmap",
+      "Current Monthly ServiceDesk Volume",
+      "Avg. interactions received per month",
+      "3,613",
+      "Tickets",
+      "3,084",
+      "Emails",
+      "1,265",
+      "Calls",
+      "49",
+      "Notifications",
+      "8,011",
+      "Total monthly interactions",
+      "Autonomous Service Desk Maturity Index",
+      "ACHIEVED",
+      "12%",
+      "Targe 30%",
+      "12% current",
+      "By 31st Dec\u20192026",
+      "Use Case Pipeline",
+      "23",
+      "Ticket Automations Deployed",
+      "2",
+      "Tickets\u00a0Automations",
+      "in\u00a0progress",
+      "Continuous ticket analysis to identify more automation opportunities",
+      "Email & Notification Multi-Agent Framework ( AI )",
+      "VIP notification",
+      "AI issue summarization and escalation. \u2013 In Testing phase",
+      "Follow-up replies",
+      "Auto-draft responses for user emails.",
+      "Recommendation bot",
+      "Offering and mitigation guidance from KB, SOP and TechHub.",
+      "Sentiment alerts",
+      "Analyzes ratings and flags negative-review patterns.",
+      "4",
+      "AI based Automations in\u00a0progress",
+      "Tools - Power Automate , Copilot Studio",
+      "Service Offerings Automation",
+      "Calendar Access / Delegation",
+      "Provide access to an employee\u2019s caldendar to a requestor",
+      "Licensed Software Access",
+      "Provide access to licensed software by AD group additions",
+      "Tools \u2013 PowerShell , Ansible"
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 8,
+    "text": [
+      "Automation use cases: Progress Summary",
+      "32 Categories",
+      "16 with SEC OPS, 16 with INFRA OPS",
+      "17",
+      "Active USE CASES \u2013 Including SEC & INFRA OPS categories",
+      "~70%",
+      "Target Completion by 31st Dec\u20192026",
+      "There are 39 additional USE CASES Active \u2013 In all 56",
+      "#",
+      "SECURITY AUTOMATION USE CASE SECURITY",
+      "ACTIVE COMPONENTS / DETAIL",
+      "STATUS",
+      "1",
+      "Threat intelligence platforms",
+      "Threat Intelligence automation",
+      "ACTIVE",
+      "2",
+      "Security awareness training platforms",
+      "Malicious URL Click Automation",
+      "ACTIVE",
+      "3",
+      "Automated security configuration management",
+      "MDI Windows audit-policy config; security baseline & hardening automation",
+      "ACTIVE",
+      "4",
+      "Data Loss Prevention (DLP) solutions",
+      "Mailbox Forwarding Compliance Automation",
+      "ACTIVE",
+      "5",
+      "Network segmentation with automated rules",
+      "ETA: March 2027",
+      "Dated",
+      "6",
+      "User & Entity Behavior Analytics (UEBA)",
+      "Part of tool features - Sentinel",
+      "TBD",
+      "7",
+      "Endpoint protection deployment",
+      "Automate Endpoint Deployment",
+      "ACTIVE",
+      "8",
+      "Automated communication tools",
+      "ETA: March 2027",
+      "Dated",
+      "9",
+      "GRC platforms",
+      "ETA: June 2027",
+      "Dated",
+      "10",
+      "Risk assessment with automated workflows",
+      "ETA: June 2027",
+      "Dated",
+      "11",
+      "Vendor risk management platforms",
+      "ETA: June 2027",
+      "Dated",
+      "ACTIVE",
+      "12",
+      "Security Information & Event Mgmt (SIEM)",
+      "Active and Operation Ready",
+      "13",
+      "Intrusion Detection & Prevention (IDPS)",
+      "ETA: December 2026",
+      "TBD",
+      "ACTIVE",
+      "14",
+      "Security Orchestration & Response (SOAR)",
+      "SOAR automated incident response & orchestration (in progress)",
+      "TBD",
+      "15",
+      "Automated data backup processes",
+      "ETA: December 2026",
+      "TBD",
+      "16",
+      "Configuration management tools",
+      "Kiosk device automation via Windows Autopilot / Intune (in progress)",
+      "TBD",
+      "ACTIVE",
+      "ACTIVE ACTIVE",
+      "ACTIVE",
+      "ACTIVE",
+      "ACTIVE",
+      "Dated",
+      "DAted"
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 9,
+    "text": [
+      "Automation use cases: Progress Summary",
+      "32 Categories",
+      "16 with INFRA OPS, 16 with SEC OPS",
+      "17",
+      "Active USE CASES \u2013 Including INFRA & SEC OPS categories",
+      "72%",
+      "Target Completion by 31st Dec\u20192026",
+      "#",
+      "AUTOMATION USE CASE INFRA",
+      "ACTIVE COMPONENTS / DETAIL",
+      "STATUS",
+      "1",
+      "Enforcement of access control policies",
+      "Disable/Enable AD & stale accounts, Admin creation, Azure RBAC removal, Guest cleanup, Linux user mgmt",
+      "ACTIVE",
+      "2",
+      "App performance monitoring & vuln scanning",
+      "Exchange Health Check, OS Compliance Report",
+      "ACTIVE",
+      "3",
+      "Basic patch management",
+      "Linux package updates, Daily patch download to DH repos, Linux patching automation",
+      "ACTIVE",
+      "4",
+      "Automated error reports",
+      "AD replication & cleanup reporting, Health check & backup reports, exception-based reporting",
+      "ACTIVE",
+      "5",
+      "Service catalog with ML & NLP auto-assignment",
+      "Post API integration success between Service Now ITSM TOOL and TechM Automation platform ; will be attempted with support of DH Governance Team and ITSM Vendor partner.",
+      "TBD",
+      "6",
+      "Incident monitoring, logging & dispatching",
+      "TBD",
+      "7",
+      "Predictive analytics for proactive support",
+      "Service Management Automation \u2014 pre-empt O365 outages via proactive support requests",
+      "ACTIVE",
+      "8",
+      "Predictive incident management & prevention",
+      "Target date \u2014 31 Dec 2026",
+      "DATED",
+      "9",
+      "Automated resolution for known issues",
+      "Resource-group & OS file-system cleanup, periodic app service restart, generic FS cleanup",
+      "ACTIVE",
+      "10",
+      "Automated approval workflows",
+      "AD Clean up exercise is in progress, post that it will be attempted.",
+      "TBD",
+      "11",
+      "Autonomous service request fulfillment",
+      "DL mgmt, Account & line-manager updates, Shared mailbox mgmt, Azure App Registration",
+      "ACTIVE",
+      "12",
+      "Personalized self-service experiences",
+      "Approach and requirement alignment with DH Stake holder to begin.",
+      "TBD",
+      "13",
+      "Automated asset discovery & inventory",
+      "Target date \u2014 31 Dec 2026",
+      "DATED",
+      "14",
+      "Integration with monitoring & alerting tools",
+      "Hyper-V failover cluster reporting via monitoring engine",
+      "ACTIVE",
+      "15",
+      "AI-powered chatbots & virtual agents",
+      "Target date \u2014 30 Oct 2026",
+      "DATED",
+      "16",
+      "Automated disaster recovery orchestration",
+      "Approach and expectation realignment with DH Stake holders to begin.",
+      "TBD"
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 10,
+    "text": [
+      "Automation & AI OPS : Progress Summary",
+      "Total Requests Processed with Automation : 4470",
+      "Total SR closed on Tech-hub:  22319",
+      "% Automation: 20.02%",
+      "Order Counts [ 01 Apr 2026 \u2013 31st July 2026]",
+      "1311 Licenses released",
+      "-  825  SPE-F1",
+      "-   335  SPE-E5",
+      "-  151 MS-E7",
+      "1189 Stale Computers Disabled",
+      "1543 Stale User Accounts Disabled",
+      "289 Mailboxes Policies",
+      "Applied",
+      "Cleanups & AD Hygiene",
+      "Business Benefit with Ticket Automation @ Service Desk",
+      "* Access and group additions complete in seconds instead of sitting in queues.",
+      "* New hires get instant tool access on day one without IT delays.",
+      "* Portal requests are fulfilled automatically 24/7 without waiting for business hours.",
+      "* Accounts are disabled immediately upon HR approval to close security gaps.",
+      "* Every execution is logged automatically to ensure total audit compliance.",
+      "* Scripted updates enforce consistent data across Active Directory and Entra ID."
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 11,
+    "text": [
+      "Vulnerability Mitigation : DH Appreciation for Good Work"
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 12,
+    "text": [
+      "Vulnerability Mitigation Progress Summary",
+      "Open Vulnerabilities in Critical-High-Medium bucket reduced from 253K in Apr\u201926 to 96K in July\u201926"
+    ],
+    "tables": [
+      [
+        [
+          "Period",
+          "Description",
+          "Mitigated Count\n(Mar-Apr-May-Jun-Jul)"
+        ],
+        [
+          "Mar\u201926 \u2013 Jul\u201926",
+          "Vulnerabilities Fixed/Mitigated\n(C \u2013 Critical, H \u2013 High, M \u2013 Medium)",
+          "646K"
+        ]
+      ],
+      [
+        [
+          "Description",
+          "Vulnerabilities Count"
+        ],
+        [
+          "Open Vulnerabilities (Age >30 Days, QDS [40...100])",
+          "96K  (Jul\u201926 end)"
+        ],
+        [
+          "Open Vulnerabilities (Age <=30 Days, All)",
+          "231K (Jul\u201926 end)"
+        ]
+      ]
+    ]
+  },
+  {
+    "slide_num": 13,
+    "text": [
+      "Value Co creation : IT Infra",
+      "13",
+      "Infra Risk closed",
+      "679",
+      "Azure recommendation actioned",
+      "100%",
+      "DPR firewall & switch refresh",
+      "100%",
+      "Meydan voice refresh, all sites",
+      "11K+",
+      "E7 license on boarding",
+      "40/40",
+      "F5 exposures remediated",
+      "Infrastructure Optimization",
+      "DHCP consolidated 7/7; core switch, server-farm and TOR upgrades across DHE, DHH, DHAM and DHCM",
+      "Firewall upgrades delivered at TMS, Roxy Khawaneej, Roxy JBR, JPS and District One",
+      "Sun Financial platform (OS & DB), VGS One and 2 AKS production platforms upgraded",
+      "16 domain controllers standardized; 1 enterprise storage platform upgraded",
+      "Windows 11 25H2 golden image released; 422 devices upgraded to 23H2",
+      "DHE HQ ISP link upgraded, adding connectivity and bandwidth headroom.",
+      "New Voice Telephony (Sprinkler) introduced for DHRE.",
+      "Security Posture Improvement",
+      "15/15 domains hardened against anonymous login; 14 domains remediated for legacy encryption",
+      "Zscaler baseline enforced across 21 Nakheel sites; FortiAnalyzer and firewall upgrades completed",
+      "25 Azure SQL Managed Instances onboarded to Sentinel; Q1 Azure recommendations actioned",
+      "VMware ESXi remediation completed at 13 locations; 2 critical firewall platforms upgraded",
+      "ISE, vCenter, Exchange Accelerator, PAM and backup platforms remediated",
+      "Unapproved software removed and hardening applied across servers and endpoints",
+      "Obsolescence & Risk Closure",
+      "13 IT operations risks formally closed across the quarter and July",
+      "Legacy Oracle ERP and Exadata workloads migrated to OCI; on-prem estate decommissioned",
+      "EOL SQL Servers migrated; on-prem Exchange service decommissioned",
+      "EOL DHCP servers at DHHQ replaced and cut over with no service impact",
+      "DMS database purge reclaimed 375 GB; 275 obsolete SMTP objects removed",
+      "Cable tagging and rearrangement closed at Al Seef, Outlet Village, Boxpark and Khawaneej",
+      "In flight: Meydan network refresh 85%   \u00b7  Qualys Patch Management rollout 24%  \u00b7 MS Teams Telephony for DHGS \u2013 75%"
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 14,
+    "text": [
+      "Value Co creation : IT Security",
+      "Cybersecurity Excellence: Email Domain & Governance Achievements",
+      "MAILBOX FORWARDING",
+      "COMPLIANCE",
+      "AUTOMATION",
+      "AUTOMATED GOVERNANCE",
+      "FOR MAILBOX INTEGRITY",
+      "A new Power Automate workflow now provides 24/7 monitoring of critical mailbox activities, including New-InboxRule, Set-InboxRule, and Update-InboxRule detections.",
+      "STREAMLINED",
+      "COMPLIANCE WORKFLOW",
+      "The system automatically identifies mailbox forwarding changes and prepares compliance notification emails, drastically reducing the need for manual monitoring.",
+      "OPERATIONAL READINESS",
+      "& BUSINESS OUTCOME",
+      "The solution is fully completed and ready for deployment, offering improved governance visibility and a significant reduction in manual operational overhead.",
+      "DNS & Email",
+      "Infrastructure Reliability",
+      "SPF & DMARC",
+      "AUTHENTICATION",
+      "STABILITY",
+      "Collaborated with Microsoft to resolve temporary authentication failures and improve DNS timeout retry handling, leading to fewer delivery inconsistencies.",
+      "SENDGRID",
+      "INFRASTRUCTURE",
+      "ENHANCEMENT",
+      "Standardized reverse DNS (rDNS/PTR) configuration across dedicated SendGrid IP plans to align with industry best practices.",
+      "ENHANCED GLOBAL",
+      "DELIVERY & REPUTATION",
+      "These infrastructure improvements have strengthened sender reputation and ensured higher reliability for external email delivery platforms."
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 15,
+    "text": [
+      "Value Co creation : IT Security",
+      "Cyber Security Strategic Achievements: Connectivity, AI & Zero Trust",
+      "Operational milestones executed to drive frictionless user adoption, robust risk mitigation, and unified secure access.",
+      "ZScaler-ZPA High Availability",
+      "Service Resilience & App Connectivity",
+      "KEY BENEFIT ON ADOPTION",
+      "Guarantees continuous uptime and instant failover, eliminating connectivity friction to build user confidence and accelerate remote-work migration.",
+      "Active-Active Resiliency",
+      "Redundant App Connect gateways ensure uninterrupted application access, preventing single points of failure during core operations.",
+      "Dynamic traffic load balancing minimizes latency and connection timeouts, significantly improving user experience.",
+      "Enterprise-grade high availability provides an invisible security layer that drives trust and high compliance across the organization.",
+      "Copilot Security Guardrails",
+      "AI Landing Zone Secure Implementation",
+      "KEY BENEFIT ON ADOPTION",
+      "Establishes transparent compliance policies and automated data loss prevention, empowering departments to leverage generative AI with total confidence.",
+      "Data Loss Prevention (DLP)",
+      "Robust cloud-native landing zone protocols guarantee sensitive corporate IP, credentials, and data remain protected.",
+      "Built-in guardrails monitor input prompts and outputs to prevent accidental exposure of personally identifiable info (PII).",
+      "Enables business units to innovate safely under a verified, secure compliance model, encouraging organization-wide tool adoption.",
+      "Governance & Compliance",
+      "Zero Trust User Migration",
+      "Ejadah, Idama & Arkan Security Alignment",
+      "KEY BENEFIT ON ADOPTION",
+      "Consolidates and standardizes access for three legacy entities, giving users frictionless, context-aware secure access with single sign-on (SSO).",
+      "Three-Entity Consolidation",
+      "Unifies Ejadah, Idama, and Arkan security architectures into a single secure control plane for frictionless collaboration.",
+      "Replaces complex, slow legacy VPNs with strict context-aware, posture-verified network access control (ZTNA).",
+      "A modern single-sign-on (SSO) portal removes login friction, driving extremely high adoption and adherence to security policies."
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 16,
+    "text": [
+      "Pending Ticket Analysis",
+      "Open backlog held with TechM assignment groups - position as of 20 August 2026",
+      "39",
+      "PENDING INCIDENTS",
+      "174",
+      "PENDING SCTASKS",
+      "213",
+      "TOTAL PENDING",
+      "Pending incidents ageing statistics",
+      "Pending service tasks (SCTASK) ageing statistics",
+      "User dependency \u2013 Tickets ON HOLD by USER request for observation.",
+      "Vendor dependency \u2013 Response awaited from Principal OEM, support Ticket raised.",
+      "Onsite dependency \u2013 Awaiting Service validation by onsite support team.",
+      "Late assignment \u2013 Ticket was assigned after 6 month by DHH Application team",
+      "DH Security Team \u2013 Awaiting DHIS team action.",
+      "Change dependency \u2013 83% are server decommissioning; remaining related to commissioning and network activity.",
+      "Bulk Request \u2013 Multiple TASK /Activity in single SR, Majority related to vulnerability remediation.",
+      "User dependency \u2013 Awaiting Service validation by onsite support team."
+    ],
+    "tables": [
+      [
+        [
+          "Assignment Grp",
+          "\u2264 2",
+          "3- 5",
+          "5-10",
+          "10-20",
+          "20-30",
+          "\u2265 30",
+          "\u2265 60",
+          "\u2265 90",
+          "Total"
+        ],
+        [
+          "DH - IT Security",
+          "22",
+          "",
+          "12",
+          "1",
+          "3",
+          "3",
+          "1",
+          "15",
+          "57"
+        ],
+        [
+          "DH - IT Wintel & DC Ops",
+          "11",
+          "",
+          "7",
+          "5",
+          "8",
+          "5",
+          "",
+          "",
+          "36"
+        ],
+        [
+          "DH - IT Networks",
+          "5",
+          "",
+          "6",
+          "7",
+          "3",
+          "1",
+          "",
+          "",
+          "22"
+        ],
+        [
+          "DHHQ - Site Support",
+          "12",
+          "",
+          "3",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "15"
+        ],
+        [
+          "Techhub Service Desk Team",
+          "7",
+          "1",
+          "3",
+          "1",
+          "",
+          "",
+          "",
+          "",
+          "12"
+        ],
+        [
+          "DH - IT ADMM",
+          "6",
+          "",
+          "4",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "10"
+        ],
+        [
+          "DH - IT Cloud Ops",
+          "6",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "6"
+        ],
+        [
+          "DH - IT Backup & Storage",
+          "3",
+          "",
+          "1",
+          "1",
+          "",
+          "",
+          "",
+          "",
+          "5"
+        ],
+        [
+          "DH - IT SharePoint & Web Apps",
+          "2",
+          "",
+          "2",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "4"
+        ],
+        [
+          "DH - IT UNIX",
+          "3",
+          "",
+          "",
+          "",
+          "",
+          "1",
+          "",
+          "",
+          "4"
+        ],
+        [
+          "DHGS - Site Support",
+          "2",
+          "",
+          "1",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "3"
+        ],
+        [
+          "Grand Total",
+          "79",
+          "1",
+          "39",
+          "15",
+          "14",
+          "10",
+          "1",
+          "15",
+          "174"
+        ]
+      ],
+      [
+        [
+          "Assignment Grp",
+          "\u2264 2",
+          "3- 5",
+          "5-10",
+          "10-20",
+          "20-30",
+          "\u2265 90",
+          "Total"
+        ],
+        [
+          "DH - IT Networks",
+          "9",
+          "2",
+          "2",
+          "2",
+          "",
+          "",
+          "15"
+        ],
+        [
+          "DH - IT Cloud Ops",
+          "7",
+          "",
+          "1",
+          "",
+          "",
+          "",
+          "8"
+        ],
+        [
+          "DH - IT Wintel & DC Ops",
+          "3",
+          "",
+          "",
+          "",
+          "1",
+          "1",
+          "5"
+        ],
+        [
+          "DH - IT Backup & Storage",
+          "1",
+          "",
+          "1",
+          "1",
+          "",
+          "",
+          "3"
+        ],
+        [
+          "Techhub Service Desk Team",
+          "3",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "3"
+        ],
+        [
+          "DH - IT ADMM",
+          "2",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "2"
+        ],
+        [
+          "DHHQ - Site Support",
+          "1",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1"
+        ],
+        [
+          "DHGS - Site Support",
+          "1",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1"
+        ],
+        [
+          "DH - IT Security",
+          "",
+          "",
+          "1",
+          "",
+          "",
+          "",
+          "1"
+        ],
+        [
+          "Grand Total",
+          "27",
+          "2",
+          "5",
+          "3",
+          "1",
+          "1",
+          "39"
+        ]
+      ]
+    ]
+  },
+  {
+    "slide_num": 17,
+    "text": [
+      "Project & Demand : July",
+      "Projects",
+      "Demands Summary"
+    ],
+    "tables": [
+      [
+        [
+          "Top Projects & Demands Summary",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Project Name",
+          "Status",
+          "Efforts in Man Days",
+          "Estimated Completion Date",
+          "Team Engaged"
+        ],
+        [
+          "Meydan Network Refresh",
+          "Implementation is in progress",
+          "8",
+          "30th Sept 2026",
+          "Network Data"
+        ],
+        [
+          "Meydan Voice Refresh",
+          "Implementation is in progress",
+          "12",
+          "31st August 2026",
+          "Network Voice"
+        ],
+        [
+          "Qualys PM and ETM",
+          "Implementation is in progress",
+          "12",
+          "30th October 2026",
+          "Asset , Patch"
+        ],
+        [
+          "DPR Firewall & Distribution Switches upgrade",
+          "Completed",
+          "4",
+          "NA",
+          "Network Data"
+        ]
+      ]
+    ]
+  },
+  {
+    "slide_num": 18,
+    "text": [
+      "Qualys Patch Management : Project Status",
+      "August 2026",
+      "24% complete",
+      "COMPLETED",
+      "7",
+      "tasks delivered",
+      "\u2713   QGS topology and tagging planning",
+      "\u2713   Initial PM high-level design",
+      "\u2713   Demand meeting",
+      "\u2713   PM tagging workshop",
+      "\u2713   Agent configuration profile - \u201cPM setting\u201d",
+      "\u2713   License settings",
+      "\u2713   Server health check script",
+      "ONGOING",
+      "22",
+      "tasks in flight across QGS, endpoints and servers",
+      "QGS deployment and configuration",
+      "PM QGS and subnet mapping",
+      "EDR and network whitelisting",
+      "QGS-based Windows endpoints - 3rd party jobs",
+      "QGS-based Windows UAT endpoints - OS jobs",
+      "QGS-based Windows prod endpoints - OS jobs",
+      "No-QGS Windows endpoints - 3rd party jobs",
+      "Windows servers UAT - OS jobs",
+      "Windows servers prod - OS jobs",
+      "Windows servers - 3rd party jobs",
+      "Linux servers - jobs",
+      "Servers\u2019 CAR library scripts",
+      "Endpoints\u2019 CAR library scripts",
+      "Plan Start Date : 13-July-2026",
+      "Plan End Date : 09-Oct-2026"
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 19,
+    "text": [],
+    "tables": []
+  },
+  {
+    "slide_num": 20,
+    "text": [
+      "RISK Dashboard"
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 21,
+    "text": [
+      "4-related to VMWARE license dependency\u00a0.",
+      "1 related to Entity dependency",
+      "Overdue RISK (reduced to 5 as on 26th Aug)"
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 22,
+    "text": [
+      "Value Saved in Dollars"
+    ],
+    "tables": [
+      [
+        [
+          "Category",
+          "Description",
+          "Apr",
+          "May",
+          "June",
+          "July",
+          "Total \u000b(Apr-Jul)",
+          "Remarks"
+        ],
+        [
+          "Automation",
+          "License Cost Saved - E5..etc",
+          "134 Licenses released\u000b -  40  SPE-F1 --> Unit cost $10      ($400/month), ($4800/year)\u000b -  94  SPE-E5 --> Unit cost $60      ($5640/month, ($67680/year)",
+          "70 Licenses released\u000b -  49  SPE-F1--> Unit cost $10      ($490/month), ($5880/year)\u000b -  21  SPE-E5 --> Unit cost $60      ($1260/month, ($15120/year)",
+          "149 Licenses released\u000b -  38  SPE-F1 --> Unit cost $10      ($380/month), ($4560/year)\u000b -  71  SPE-E5 --> Unit cost $60      ($4260/month, ($51120/year)\u000b -  40 MICROSOFT_365_E7 --> Unit cost $99 ($3960/month, ($47520/year)",
+          "704 Licenses released\u000b -  533  SPE-F1 --> Unit cost $10 ($5330/month), ($63960/year)\u000b -  20  SPE-E5   --> Unit cost $60  ($1200/month, ($14400/year)\u000b -  151 MICROSOFT_365_E7 --> Unit cost $99 ($14949/month, ($179388/year)",
+          "454,428.00",
+          "License Details/count presented in monthly deck. Unit cost taken from internet market"
+        ],
+        [
+          "CSI (Service Improvement)",
+          "Any savings approved & Acknowledged by DH",
+          "SIP - DDA SharePoint Site Storage Optimization, Automation\u000b\u000bBenefits - \u000b1. Operational Efficiency: Streamlined DDA site storage and version management, reducing manual cleanup efforts. Site collection size optimized from 22 TB to 9 TB\u000b2. Compliance Boosting: Reduced site risk level, with new data growth\u00a0 same site can be used for long period of time\u000b3. Accuracy: Ensured precise identification and removal of redundant version files, with zero data  loss\u000b4. Cost saving: Reclaimed ~13 TB of storage, cost saving of $31200 per year",
+          "No SIP having cost saving",
+          "No SIP having cost saving",
+          "No SIP having cost saving",
+          "31,200.00",
+          "SIP was presented in April'26 monthly deck and cost saving mentioned in slide. Domain - SharePoint"
+        ],
+        [
+          "TOTAL (USD Annual Savings)",
+          "",
+          "103,680.00",
+          "21,000.00",
+          "103,200.00",
+          "257,748.00",
+          "485,628.00",
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "slide_num": 23,
+    "text": [
+      "Automation and AIOps KEY FOCUS \u2013 Year 1",
+      "23",
+      "Automation Enhancement",
+      "New Automation Use Cases",
+      "Tools + AIOps",
+      "Gen AI L2/L2 Ops",
+      "Agentic AI",
+      "Q2\u2019 2026",
+      "Q3\u2019 2026",
+      "Q4\u2019 2026",
+      "Q1\u2019 2027",
+      "Existing Automation Review",
+      "SolarWinds Integration",
+      "Standardize workflows, orchestration across platform",
+      "SNOW Integration",
+      "New Use Case Identification, Review, Feasibility and Deployment",
+      "New Automation Use case development",
+      "Automation based on trends, events, threshold, incident and requests",
+      "AI Team Onboarding",
+      "AI Use case identification and Feasibility",
+      "Use Case Development",
+      "Gen AI powered L2 operations for troubleshooting and ticket handling",
+      "AI Assisted Incident summarization and RCA",
+      "Automated Diagnostics",
+      "Anomaly detections",
+      "Evaluation, feasibility, development and deployment of one or two use cases",
+      "Chatbot Use case",
+      "Knowledge base use case",
+      "Incident Resolution",
+      "Service Request fulfillment",
+      "Alert Reduction on Solar Wind ITOM TOOL using AI capability"
+    ],
+    "tables": []
+  },
+  {
+    "slide_num": 24,
+    "text": [
+      "Automation use cases: DH Plan"
+    ],
+    "tables": []
+  }
+]
