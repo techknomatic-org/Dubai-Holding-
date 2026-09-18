@@ -227,8 +227,8 @@ export const AutomationImpact: React.FC<AutomationImpactProps> = ({
               Tickets Automated
             </span>
           </div>
-          <div className="mt-2">
-            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
+          <div className="mt-2 text-center">
+            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight block">
               {heroKPIs.ticketsAutomated.toLocaleString()}
             </span>
           </div>
@@ -244,8 +244,8 @@ export const AutomationImpact: React.FC<AutomationImpactProps> = ({
               Automation Achieved
             </span>
           </div>
-          <div className="mt-2">
-            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
+          <div className="mt-2 text-center">
+            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight block">
               {heroKPIs.automationAchievedPct.toFixed(1)}%
             </span>
           </div>
@@ -261,8 +261,8 @@ export const AutomationImpact: React.FC<AutomationImpactProps> = ({
               Use Cases Live
             </span>
           </div>
-          <div className="mt-2">
-            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
+          <div className="mt-2 text-center">
+            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight block">
               {heroKPIs.useCasesLive}
             </span>
           </div>
@@ -278,8 +278,8 @@ export const AutomationImpact: React.FC<AutomationImpactProps> = ({
               SOPs Automated
             </span>
           </div>
-          <div className="mt-2">
-            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
+          <div className="mt-2 text-center">
+            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight block">
               {heroKPIs.overallSOPsAutomated}
             </span>
           </div>
@@ -1156,7 +1156,8 @@ export const AutomationImpact: React.FC<AutomationImpactProps> = ({
             <div className="p-3 border-t border-[#E5DFD3] dark:border-white/10 bg-[#FAF8F5] dark:bg-white/3 flex items-center justify-end">
               <button
                 onClick={() => setActiveModal(null)}
-                className="px-5 py-1.5 rounded-xl bg-[#0A0838] hover:bg-[#E31837] text-white text-xs font-medium transition-all shadow-xs cursor-pointer"
+                className="px-5 py-2 rounded-xl bg-[#0A0838] hover:bg-[#0A0838]/90 text-white !text-white text-xs font-bold transition-all shadow-xs cursor-pointer"
+                style={{ color: '#ffffff' }}
               >
                 Close
               </button>

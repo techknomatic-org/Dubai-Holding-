@@ -665,12 +665,12 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
 
         {/* Card 1: Total Closed + Embedded Trend */}
         <div className={`p-3.5 rounded-2xl transition-all duration-300 flex items-center justify-between bg-[#F6F2EA] dark:bg-white/5 border ${selectedTotalMonth ? 'border-[#0A0838] shadow-sm' : 'border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 shadow-xs'}`}>
-          <div className="flex flex-col justify-between pr-2">
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-7 h-7 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:bg-white/10 dark:text-white flex items-center justify-center">
+          <div className="flex flex-col items-center justify-center text-center flex-1 pr-2">
+            <div className="flex items-center justify-center gap-2 mb-1 w-full">
+              <div className="w-7 h-7 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:bg-white/10 dark:text-white flex items-center justify-center shrink-0">
                 <CheckCircle2 className="w-3.5 h-3.5" />
               </div>
-              <span className="text-sm font-medium text-[#4D4D4F] dark:text-slate-300">
+              <span className="text-sm font-medium text-[#4D4D4F] dark:text-slate-300 whitespace-nowrap">
                 Total Tickets Closed
               </span>
               {selectedTotalMonth && (
@@ -683,7 +683,7 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
                 </button>
               )}
             </div>
-            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
+            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight text-center font-mono">
               {(selectedTotalMonth
                 ? (safeActuals.find(m => m.monthLabel === selectedTotalMonth)?.total ?? 0)
                 : (ticketSummaryKPIs.totalClosed || 27806)
@@ -708,12 +708,12 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
 
         {/* Card 2: Service Requests (SCTASK) + Embedded Trend */}
         <div className={`p-3.5 rounded-2xl transition-all duration-300 flex items-center justify-between bg-[#F6F2EA] dark:bg-white/5 border ${selectedSrMonth ? 'border-[#0A0838] shadow-sm' : 'border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/50 shadow-xs'}`}>
-          <div className="flex flex-col justify-between pr-2">
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-7 h-7 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:bg-white/10 dark:text-white flex items-center justify-center">
+          <div className="flex flex-col items-center justify-center text-center flex-1 pr-2">
+            <div className="flex items-center justify-center gap-2 mb-1 w-full">
+              <div className="w-7 h-7 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:bg-white/10 dark:text-white flex items-center justify-center shrink-0">
                 <FileText className="w-3.5 h-3.5" />
               </div>
-              <span className="text-sm font-medium text-[#4D4D4F] dark:text-slate-300">
+              <span className="text-sm font-medium text-[#4D4D4F] dark:text-slate-300 whitespace-nowrap">
                 Service Requests
               </span>
               {selectedSrMonth && (
@@ -726,7 +726,7 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
                 </button>
               )}
             </div>
-            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
+            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight text-center font-mono">
               {(selectedSrMonth
                 ? (safeActuals.find(m => m.monthLabel === selectedSrMonth)?.serviceRequests ?? 0)
                 : (ticketSummaryKPIs.serviceRequestsClosed || 22319)
@@ -751,12 +751,12 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
 
         {/* Card 3: Incidents (INC) + Embedded Trend */}
         <div className={`p-3.5 rounded-2xl transition-all duration-300 flex items-center justify-between bg-[#F6F2EA] dark:bg-white/5 border ${selectedIncMonth ? 'border-[#4D4D4F] shadow-sm' : 'border-[#E5DFD3] dark:border-white/10 hover:border-[#4D4D4F]/40 shadow-xs'}`}>
-          <div className="flex flex-col justify-between pr-2">
-            <div className="flex items-center gap-2 mb-1">
-              <div className="w-7 h-7 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:bg-white/10 dark:text-white flex items-center justify-center">
+          <div className="flex flex-col items-center justify-center text-center flex-1 pr-2">
+            <div className="flex items-center justify-center gap-2 mb-1 w-full">
+              <div className="w-7 h-7 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:bg-white/10 dark:text-white flex items-center justify-center shrink-0">
                 <AlertTriangle className="w-3.5 h-3.5" />
               </div>
-              <span className="text-sm font-medium text-[#4D4D4F] dark:text-slate-300">
+              <span className="text-sm font-medium text-[#4D4D4F] dark:text-slate-300 whitespace-nowrap">
                 Incidents
               </span>
               {selectedIncMonth && (
@@ -769,7 +769,7 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
                 </button>
               )}
             </div>
-            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
+            <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight text-center font-mono">
               {(selectedIncMonth
                 ? (safeActuals.find(m => m.monthLabel === selectedIncMonth)?.incidents ?? 0)
                 : (ticketSummaryKPIs.incidentsClosed || 5487)
@@ -1295,14 +1295,14 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
                   className="p-3.5 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 hover:shadow-md hover:scale-[1.015] transition-all cursor-pointer flex flex-col justify-between group shadow-2xs"
                   title="Click to view full backlog overview"
                 >
-                  <div className="flex items-center justify-between pb-1">
+                  <div className="flex items-center justify-center gap-1.5 pb-1 text-center">
+                    <Layers className="w-4 h-4 text-[#0A0838] dark:text-slate-300 group-hover:scale-110 transition-transform shrink-0" />
                     <span className="text-[11px] font-semibold text-[#0A0838] dark:text-slate-300">
                       Total Pending
                     </span>
-                    <Layers className="w-4 h-4 text-[#0A0838] dark:text-slate-300 group-hover:scale-110 transition-transform" />
                   </div>
 
-                  <div className="my-auto">
+                  <div className="my-auto text-center">
                     <div className="text-3xl lg:text-4xl font-extrabold text-[#0A0838] dark:text-white font-mono tracking-tight">
                       213
                     </div>
@@ -1323,14 +1323,14 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
                   className="p-3.5 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 hover:shadow-md hover:scale-[1.015] transition-all cursor-pointer flex flex-col justify-between group shadow-2xs"
                   title="Click to drill down into 9 incident groups"
                 >
-                  <div className="flex items-center justify-between pb-1">
+                  <div className="flex items-center justify-center gap-1.5 pb-1 text-center">
+                    <Shield className="w-4 h-4 text-[#0A0838] dark:text-slate-300 group-hover:scale-110 transition-transform shrink-0" />
                     <span className="text-[11px] font-semibold text-[#0A0838] dark:text-slate-300">
                       Pending Incidents
                     </span>
-                    <Shield className="w-4 h-4 text-[#0A0838] dark:text-slate-300 group-hover:scale-110 transition-transform" />
                   </div>
 
-                  <div className="my-auto">
+                  <div className="my-auto text-center">
                     <div className="text-3xl lg:text-4xl font-extrabold text-[#0A0838] dark:text-white font-mono tracking-tight">
                       39
                     </div>
@@ -1351,14 +1351,14 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
                   className="p-3.5 rounded-2xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 hover:shadow-md hover:scale-[1.015] transition-all cursor-pointer flex flex-col justify-between group shadow-2xs"
                   title="Click to drill down into 11 SCTASK groups"
                 >
-                  <div className="flex items-center justify-between pb-1">
+                  <div className="flex items-center justify-center gap-1.5 pb-1 text-center">
+                    <Zap className="w-4 h-4 text-[#0A0838] dark:text-slate-300 group-hover:scale-110 transition-transform shrink-0" />
                     <span className="text-[11px] font-semibold text-[#0A0838] dark:text-slate-300">
                       Pending SCTasks
                     </span>
-                    <Zap className="w-4 h-4 text-[#0A0838] dark:text-slate-300 group-hover:scale-110 transition-transform" />
                   </div>
 
-                  <div className="my-auto">
+                  <div className="my-auto text-center">
                     <div className="text-3xl lg:text-4xl font-extrabold text-[#0A0838] dark:text-white font-mono tracking-tight">
                       174
                     </div>
@@ -1607,26 +1607,26 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
                             </div>
 
                             {/* 4-Stage Distribution */}
-                            <div className="grid grid-cols-4 gap-2 text-[10px] font-mono py-1.5 px-2.5 rounded-xl bg-[#F6F2EA] dark:bg-white/5">
+                            <div className="grid grid-cols-4 gap-2 text-[10px] font-mono py-1.5 px-2.5 rounded-xl bg-[#F6F2EA] dark:bg-white/5 text-center">
                               <div>
                                 <span className="text-slate-400 block text-[7.5px] uppercase font-sans font-semibold">≤2 Days</span>
-                                <strong className="text-slate-800 dark:text-slate-200 text-xs font-bold">{grp.under2}</strong>
+                                <strong className="text-slate-800 dark:text-slate-200 text-xs font-bold block">{grp.under2}</strong>
                               </div>
                               <div>
                                 <span className="text-slate-400 block text-[7.5px] uppercase font-sans font-semibold">3-10 Days</span>
-                                <strong className="text-slate-800 dark:text-slate-200 text-xs font-bold">
+                                <strong className="text-slate-800 dark:text-slate-200 text-xs font-bold block">
                                   {(grp.days3to5 || 0) + (grp.days5to10 || 0)}
                                 </strong>
                               </div>
                               <div>
                                 <span className="text-slate-400 block text-[7.5px] uppercase font-sans font-semibold">10-30 Days</span>
-                                <strong className="text-slate-800 dark:text-slate-200 text-xs font-bold">
+                                <strong className="text-slate-800 dark:text-slate-200 text-xs font-bold block">
                                   {(grp.days10to20 || 0) + (grp.days20to30 || 0)}
                                 </strong>
                               </div>
                               <div>
                                 <span className="text-slate-400 block text-[7.5px] uppercase font-sans font-semibold">≥30-90+ Days</span>
-                                <strong className="text-slate-800 dark:text-slate-200 text-xs font-bold">
+                                <strong className="text-slate-800 dark:text-slate-200 text-xs font-bold block">
                                   {(grp.days30to60 || 0) + (grp.days60to90 || 0) + (grp.over90 || 0)}
                                 </strong>
                               </div>
@@ -2123,7 +2123,8 @@ export const TicketPulse: React.FC<TicketPulseProps> = ({
                 )}
                 <button
                   onClick={closeDrilldown}
-                  className="px-4 py-1.5 rounded-xl bg-[#0A0838] hover:bg-[#0A0838]/80 text-white text-xs font-bold transition-all shadow-xs cursor-pointer"
+                  className="px-4 py-1.5 rounded-xl bg-[#0A0838] hover:bg-[#0A0838]/80 text-white !text-white text-xs font-bold transition-all shadow-xs cursor-pointer"
+                  style={{ color: '#ffffff' }}
                 >
                   Done
                 </button>

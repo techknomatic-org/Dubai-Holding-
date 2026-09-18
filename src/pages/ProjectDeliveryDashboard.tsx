@@ -458,25 +458,33 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
             <div className="col-span-7 grid grid-cols-2 gap-2.5 h-full">
               
               {/* Tile 1: Start Date */}
-              <div className="p-3 rounded-2xl bg-white dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-[#F0F7FF] dark:bg-white/10 flex items-center justify-center shrink-0 border border-[#DBEAFE]/80 dark:border-white/10">
-                  <Calendar className="w-4 h-4 text-[#0066B2] dark:text-[#38BDF8]" />
+              <div className="p-2.5 sm:p-3 rounded-2xl bg-white dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs flex flex-col items-center justify-center text-center group">
+                <div className="flex items-center justify-center gap-1.5 mb-1">
+                  <div className="w-6 h-6 rounded-lg bg-[#F0F7FF] dark:bg-white/10 flex items-center justify-center shrink-0 border border-[#DBEAFE]/80 dark:border-white/10 shadow-2xs">
+                    <Calendar className="w-3.5 h-3.5 text-[#0066B2] dark:text-[#38BDF8]" />
+                  </div>
+                  <span className="text-[10px] sm:text-[10.5px] text-[#4D4D4F] dark:text-slate-400 font-semibold leading-tight">
+                    Start Date
+                  </span>
                 </div>
-                <div>
-                  <div className="text-[10px] text-[#4D4D4F] dark:text-slate-400 font-medium leading-none">Start Date</div>
-                  <div className="text-xs font-bold text-[#0A0838] dark:text-white mt-1 leading-none">{spotlightProject.planStartDateFormatted}</div>
-                </div>
+                <span className="text-xs sm:text-sm font-bold text-[#0A0838] dark:text-white mt-0.5 font-mono leading-none block text-center">
+                  {spotlightProject.planStartDateFormatted}
+                </span>
               </div>
 
               {/* Tile 2: Planned End Date */}
-              <div className="p-3 rounded-2xl bg-white dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-[#F0F7FF] dark:bg-white/10 flex items-center justify-center shrink-0 border border-[#DBEAFE]/80 dark:border-white/10">
-                  <Calendar className="w-4 h-4 text-[#0066B2] dark:text-[#38BDF8]" />
+              <div className="p-2.5 sm:p-3 rounded-2xl bg-white dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs flex flex-col items-center justify-center text-center group">
+                <div className="flex items-center justify-center gap-1.5 mb-1">
+                  <div className="w-6 h-6 rounded-lg bg-[#F0F7FF] dark:bg-white/10 flex items-center justify-center shrink-0 border border-[#DBEAFE]/80 dark:border-white/10 shadow-2xs">
+                    <Calendar className="w-3.5 h-3.5 text-[#0066B2] dark:text-[#38BDF8]" />
+                  </div>
+                  <span className="text-[10px] sm:text-[10.5px] text-[#4D4D4F] dark:text-slate-400 font-semibold leading-tight">
+                    Planned End Date
+                  </span>
                 </div>
-                <div>
-                  <div className="text-[10px] text-[#4D4D4F] dark:text-slate-400 font-medium leading-none">Planned End Date</div>
-                  <div className="text-xs font-bold text-[#0A0838] dark:text-white mt-1 leading-none">{spotlightProject.planEndDateFormatted}</div>
-                </div>
+                <span className="text-xs sm:text-sm font-bold text-[#0A0838] dark:text-white mt-0.5 font-mono leading-none block text-center">
+                  {spotlightProject.planEndDateFormatted}
+                </span>
               </div>
 
               {/* Tile 3: Completed Tasks */}
@@ -485,15 +493,19 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
                   setActiveTaskTab('completed');
                   setIsTasksModalOpen(true);
                 }}
-                className="p-3 rounded-2xl bg-white dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs flex items-center gap-2.5 cursor-pointer hover:border-[#16A34A] hover:shadow-md transition-all group"
+                className="p-2.5 sm:p-3 rounded-2xl bg-white dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs flex flex-col items-center justify-center text-center cursor-pointer hover:border-[#16A34A] hover:shadow-xs transition-all group"
               >
-                <div className="w-8 h-8 rounded-full bg-[#16A34A] text-white flex items-center justify-center shrink-0 shadow-2xs">
-                  <Check className="w-4 h-4 stroke-[3]" />
+                <div className="flex items-center justify-center gap-1.5 mb-1">
+                  <div className="w-6 h-6 rounded-full bg-[#16A34A] text-white flex items-center justify-center shrink-0 shadow-2xs">
+                    <Check className="w-3.5 h-3.5 stroke-[3]" />
+                  </div>
+                  <span className="text-[10px] sm:text-[10.5px] text-[#4D4D4F] dark:text-slate-400 font-semibold leading-tight">
+                    Completed Tasks
+                  </span>
                 </div>
-                <div>
-                  <div className="text-[10px] text-[#4D4D4F] dark:text-slate-400 font-medium leading-none">Completed Tasks</div>
-                  <div className="text-base font-black text-[#16A34A] mt-1 leading-none">{spotlightProject.completedTaskCount}</div>
-                </div>
+                <span className="text-lg sm:text-xl font-black text-[#16A34A] mt-0.5 font-mono leading-none block text-center">
+                  {spotlightProject.completedTaskCount}
+                </span>
               </div>
 
               {/* Tile 4: Ongoing Tasks */}
@@ -502,15 +514,19 @@ export const ProjectDeliveryDashboard: React.FC<ProjectDeliveryDashboardProps> =
                   setActiveTaskTab('ongoing');
                   setIsTasksModalOpen(true);
                 }}
-                className="p-3 rounded-2xl bg-white dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs flex items-center gap-2.5 cursor-pointer hover:border-[#D97706] hover:shadow-md transition-all group"
+                className="p-2.5 sm:p-3 rounded-2xl bg-white dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs flex flex-col items-center justify-center text-center cursor-pointer hover:border-[#D97706] hover:shadow-xs transition-all group"
               >
-                <div className="w-8 h-8 rounded-full bg-[#D97706] text-white flex items-center justify-center shrink-0 shadow-2xs">
-                  <Clock className="w-4 h-4" />
+                <div className="flex items-center justify-center gap-1.5 mb-1">
+                  <div className="w-6 h-6 rounded-full bg-[#D97706] text-white flex items-center justify-center shrink-0 shadow-2xs">
+                    <Clock className="w-3.5 h-3.5" />
+                  </div>
+                  <span className="text-[10px] sm:text-[10.5px] text-[#4D4D4F] dark:text-slate-400 font-semibold leading-tight">
+                    Ongoing Tasks
+                  </span>
                 </div>
-                <div>
-                  <div className="text-[10px] text-[#4D4D4F] dark:text-slate-400 font-medium leading-none">Ongoing Tasks</div>
-                  <div className="text-base font-black text-[#D97706] mt-1 leading-none">{spotlightProject.ongoingTaskCount}</div>
-                </div>
+                <span className="text-lg sm:text-xl font-black text-[#D97706] mt-0.5 font-mono leading-none block text-center">
+                  {spotlightProject.ongoingTaskCount}
+                </span>
               </div>
 
             </div>

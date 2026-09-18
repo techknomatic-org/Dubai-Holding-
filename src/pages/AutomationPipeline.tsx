@@ -548,16 +548,16 @@ export const AutomationPipeline: React.FC<AutomationPipelineProps> = ({
                 className="group p-4 rounded-2xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 shadow-xs hover:shadow-md hover:scale-[1.01] transition-all cursor-pointer flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
+                  <div className="flex items-center justify-center gap-1.5 mb-1 text-center">
+                    <Layers className="w-4 h-4 text-[#0A0838] dark:text-slate-300 group-hover:scale-110 transition-transform shrink-0" />
                     <span className="text-xs font-medium text-[#4D4D4F] dark:text-slate-300">
-                      Identified
+                      Total Use Cases
                     </span>
-                    <Layers className="w-4 h-4 text-[#4D4D4F] dark:text-slate-400 group-hover:text-[#0A0838] transition-colors" />
                   </div>
-                  <div className="text-3xl font-semibold text-[#29251D] dark:text-white my-1">
+                  <div className="text-3xl font-semibold text-[#29251D] dark:text-white my-1 font-mono text-center">
                     {activeStreamMeta.stats.total}
                   </div>
-                  <p className="text-xs text-[#4D4D4F] dark:text-slate-400">
+                  <p className="text-xs text-[#4D4D4F] dark:text-slate-400 text-center">
                     All scoped automation use cases
                   </p>
                 </div>
@@ -570,23 +570,23 @@ export const AutomationPipeline: React.FC<AutomationPipelineProps> = ({
               {/* CARD 2: ACTIVE */}
               <div
                 onClick={() => handleOpenStatusModal('ACTIVE')}
-                className="group p-4 rounded-2xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 shadow-xs hover:shadow-md hover:scale-[1.01] transition-all cursor-pointer flex flex-col justify-between"
+                className="group p-4 rounded-2xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#2E5F13]/50 shadow-xs hover:shadow-md hover:scale-[1.01] transition-all cursor-pointer flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-xs font-medium text-[#0A0838] dark:text-slate-200">
+                  <div className="flex items-center justify-center gap-1.5 mb-1 text-center">
+                    <Zap className="w-4 h-4 text-[#2E5F13] dark:text-emerald-400 group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-xs font-medium text-[#2E5F13] dark:text-emerald-400">
                       Active
                     </span>
-                    <Zap className="w-4 h-4 text-[#0A0838] dark:text-slate-300 group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="text-3xl font-semibold text-[#0A0838] dark:text-white my-1">
+                  <div className="text-3xl font-semibold text-[#2E5F13] dark:text-emerald-400 my-1 font-mono text-center">
                     {activeStreamMeta.stats.active}
                   </div>
-                  <p className="text-xs text-[#4D4D4F] dark:text-slate-400">
+                  <p className="text-xs text-[#4D4D4F] dark:text-slate-400 text-center">
                     Live production &amp; self-healing
                   </p>
                 </div>
-                <div className="mt-3.5 pt-2.5 border-t border-[#E5DFD3] dark:border-white/10 flex items-center justify-between text-xs font-medium text-[#0A0838] dark:text-slate-200 group-hover:text-[#0A0838] transition-colors">
+                <div className="mt-3.5 pt-2.5 border-t border-[#E5DFD3] dark:border-white/10 flex items-center justify-between text-xs font-medium text-[#2E5F13] dark:text-emerald-400 group-hover:text-[#2E5F13] transition-colors">
                   <span>View {activeStreamMeta.stats.active} active cases</span>
                   <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </div>
@@ -595,23 +595,23 @@ export const AutomationPipeline: React.FC<AutomationPipelineProps> = ({
               {/* CARD 3: PLANNED */}
               <div
                 onClick={() => handleOpenStatusModal('PLANNED')}
-                className="group p-4 rounded-2xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 shadow-xs hover:shadow-md hover:scale-[1.01] transition-all cursor-pointer flex flex-col justify-between"
+                className="group p-4 rounded-2xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#8D5C1A]/50 shadow-xs hover:shadow-md hover:scale-[1.01] transition-all cursor-pointer flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-xs font-medium text-[#4D4D4F] dark:text-slate-300">
+                  <div className="flex items-center justify-center gap-1.5 mb-1 text-center">
+                    <Clock className="w-4 h-4 text-[#8D5C1A] dark:text-amber-400 group-hover:scale-110 transition-transform shrink-0" />
+                    <span className="text-xs font-medium text-[#8D5C1A] dark:text-amber-400">
                       Planned
                     </span>
-                    <Clock className="w-4 h-4 text-[#4D4D4F] dark:text-slate-400 group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="text-3xl font-semibold text-[#4D4D4F] dark:text-slate-300 my-1">
+                  <div className="text-3xl font-semibold text-[#8D5C1A] dark:text-amber-400 my-1 font-mono text-center">
                     {activeStreamMeta.stats.planned}
                   </div>
-                  <p className="text-xs text-[#4D4D4F] dark:text-slate-400">
+                  <p className="text-xs text-[#4D4D4F] dark:text-slate-400 text-center">
                     Scheduled backlog &amp; milestone ETAs
                   </p>
                 </div>
-                <div className="mt-3.5 pt-2.5 border-t border-[#E5DFD3] dark:border-white/10 flex items-center justify-between text-xs font-medium text-[#4D4D4F] dark:text-slate-300 group-hover:text-[#0A0838] transition-colors">
+                <div className="mt-3.5 pt-2.5 border-t border-[#E5DFD3] dark:border-white/10 flex items-center justify-between text-xs font-medium text-[#8D5C1A] dark:text-amber-400 group-hover:text-[#8D5C1A] transition-colors">
                   <span>View {activeStreamMeta.stats.planned} planned cases</span>
                   <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </div>
@@ -867,9 +867,10 @@ export const AutomationPipeline: React.FC<AutomationPipelineProps> = ({
               </span>
               <button
                 onClick={closeModal}
-                className="px-4 py-1.5 rounded-xl bg-slate-200/80 dark:bg-white/10 hover:bg-slate-300 dark:hover:bg-white/20 font-heading font-bold text-xs transition-colors"
+                className="px-5 py-2 rounded-xl bg-[#0A0838] hover:bg-[#0A0838]/90 text-white !text-white font-heading font-bold text-xs transition-all cursor-pointer shadow-xs"
+                style={{ color: '#ffffff' }}
               >
-                Done
+                Close
               </button>
             </div>
 

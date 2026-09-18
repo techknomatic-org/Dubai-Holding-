@@ -122,69 +122,66 @@ export const CostOptimization: React.FC<CostOptimizationProps> = ({
       {/* 2. TOP 4 KPI CARDS */}
       <div className="shrink-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
-          
           {/* KPI 1: Total Annual Savings */}
-          <div className="p-3 rounded-xl bg-white dark:bg-white/5 border border-[#0066B2]/20 dark:border-white/10 shadow-2xs flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-[#0066B2]/10 text-[#0066B2] dark:text-[#38BDF8] flex items-center justify-center shrink-0">
-              <BarChart3 className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-[#4D4D4F] dark:text-slate-300 leading-tight">
+          <div className="p-2.5 sm:p-3 rounded-2xl bg-white dark:bg-white/5 border border-[#0066B2]/20 dark:border-white/10 shadow-2xs hover:shadow-xs transition-all flex flex-col items-center justify-center text-center group">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <div className="w-6 h-6 rounded-lg bg-[#0066B2]/10 text-[#0066B2] dark:text-[#38BDF8] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-2xs">
+                <BarChart3 className="w-3.5 h-3.5" />
+              </div>
+              <span className="text-xs font-semibold text-[#4D4D4F] dark:text-slate-300 leading-tight">
                 Total Annual Savings
-              </div>
-              <div className="text-xl font-black text-[#0066B2] dark:text-white tracking-tight mt-0.5">
-                {formatUSD(kpis.totalAnnualSavings)}
-              </div>
+              </span>
             </div>
+            <span className="text-xl sm:text-2xl font-black text-[#0066B2] dark:text-white font-mono leading-none mt-0.5 block text-center">
+              {formatUSD(kpis.totalAnnualSavings)}
+            </span>
           </div>
 
           {/* KPI 2: Automation Savings */}
-          <div className="p-3 rounded-xl bg-white dark:bg-white/5 border border-[#008080]/20 dark:border-white/10 shadow-2xs flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-[#008080]/10 text-[#008080] dark:text-[#2DD4BF] flex items-center justify-center shrink-0">
-              <Settings className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-[#4D4D4F] dark:text-slate-300 leading-tight">
+          <div className="p-2.5 sm:p-3 rounded-2xl bg-white dark:bg-white/5 border border-[#008080]/20 dark:border-white/10 shadow-2xs hover:shadow-xs transition-all flex flex-col items-center justify-center text-center group">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <div className="w-6 h-6 rounded-lg bg-[#008080]/10 text-[#008080] dark:text-[#2DD4BF] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-2xs">
+                <Settings className="w-3.5 h-3.5" />
+              </div>
+              <span className="text-xs font-semibold text-[#4D4D4F] dark:text-slate-300 leading-tight">
                 Automation Savings
-              </div>
-              <div className="text-xl font-black text-[#008080] dark:text-[#2DD4BF] tracking-tight mt-0.5">
-                {formatUSD(kpis.automationSavings)}
-              </div>
+              </span>
             </div>
+            <span className="text-xl sm:text-2xl font-black text-[#008080] dark:text-[#2DD4BF] font-mono leading-none mt-0.5 block text-center">
+              {formatUSD(kpis.automationSavings)}
+            </span>
           </div>
 
           {/* KPI 3: CSI Savings */}
-          <div className="p-3 rounded-xl bg-white dark:bg-white/5 border border-[#0A0838]/20 dark:border-white/10 shadow-2xs flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-[#0A0838]/10 dark:bg-white/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
-              <Users className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-xs font-bold text-[#4D4D4F] dark:text-slate-300 leading-tight">
+          <div className="p-2.5 sm:p-3 rounded-2xl bg-white dark:bg-white/5 border border-[#0A0838]/20 dark:border-white/10 shadow-2xs hover:shadow-xs transition-all flex flex-col items-center justify-center text-center group">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <div className="w-6 h-6 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-2xs">
+                <Users className="w-3.5 h-3.5" />
+              </div>
+              <span className="text-xs font-semibold text-[#4D4D4F] dark:text-slate-300 leading-tight">
                 CSI / Service Improvement Savings
-              </div>
-              <div className="text-xl font-black text-[#0A0838] dark:text-white tracking-tight mt-0.5">
-                {formatUSD(kpis.csiSavings)}
-              </div>
+              </span>
             </div>
+            <span className="text-xl sm:text-2xl font-black text-[#0A0838] dark:text-white font-mono leading-none mt-0.5 block text-center">
+              {formatUSD(kpis.csiSavings)}
+            </span>
           </div>
 
           {/* KPI 4: Highest Month */}
-          <div className="p-3 rounded-xl bg-white dark:bg-white/5 border border-[#0066B2]/20 dark:border-white/10 shadow-2xs flex items-center justify-between gap-3">
-            <div className="flex items-center gap-3 min-w-0">
-              <div className="w-10 h-10 rounded-lg bg-[#0066B2]/10 text-[#0066B2] dark:text-[#38BDF8] flex items-center justify-center shrink-0">
-                <Trophy className="w-5 h-5" />
+          <div className="p-2.5 sm:p-3 rounded-2xl bg-white dark:bg-white/5 border border-[#0066B2]/20 dark:border-white/10 shadow-2xs hover:shadow-xs transition-all flex flex-col items-center justify-center text-center group relative">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <div className="w-6 h-6 rounded-lg bg-[#0066B2]/10 text-[#0066B2] dark:text-[#38BDF8] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-2xs">
+                <Trophy className="w-3.5 h-3.5" />
               </div>
-              <div className="min-w-0">
-                <div className="text-xs font-bold text-[#4D4D4F] dark:text-slate-300 leading-tight truncate">
-                  Highest Month
-                </div>
-                <div className="text-xl font-black text-[#0066B2] dark:text-white tracking-tight mt-0.5">
-                  {formatUSD(kpis.highestMonthValue)}
-                </div>
-              </div>
+              <span className="text-xs font-semibold text-[#4D4D4F] dark:text-slate-300 leading-tight">
+                Highest Month
+              </span>
+              <span className="px-1.5 py-0.2 rounded-md bg-[#0066B2]/10 dark:bg-[#38BDF8]/15 text-[#0066B2] dark:text-[#38BDF8] text-[10px] font-bold tracking-wide border border-[#0066B2]/20 dark:border-white/10 shrink-0">
+                {kpis.highestMonthName}
+              </span>
             </div>
-            <span className="self-start px-2 py-0.5 rounded-md bg-[#0066B2]/10 dark:bg-[#38BDF8]/15 text-[#0066B2] dark:text-[#38BDF8] text-xs font-bold tracking-wide border border-[#0066B2]/20 dark:border-white/10 shrink-0">
-              {kpis.highestMonthName}
+            <span className="text-xl sm:text-2xl font-black text-[#0066B2] dark:text-white font-mono leading-none mt-0.5 block text-center">
+              {formatUSD(kpis.highestMonthValue)}
             </span>
           </div>
 
@@ -542,7 +539,8 @@ export const CostOptimization: React.FC<CostOptimizationProps> = ({
             <div className="p-3 bg-[#F6F2EA] dark:bg-white/5 border-t border-[#E5DFD3] dark:border-white/10 flex items-center justify-end">
               <button
                 onClick={() => setSelectedMonth(null)}
-                className="px-4 py-1.5 rounded-lg bg-[#0066B2] text-white text-xs font-bold hover:bg-[#0066B2]/90 transition-colors cursor-pointer"
+                className="px-4 py-1.5 rounded-lg bg-[#0066B2] text-white !text-white text-xs font-bold hover:bg-[#0066B2]/90 transition-colors cursor-pointer"
+                style={{ color: '#ffffff' }}
               >
                 Close
               </button>

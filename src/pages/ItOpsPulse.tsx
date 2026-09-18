@@ -307,8 +307,8 @@ export const ItOpsPulse: React.FC<ItOpsPulseProps> = ({
                 </span>
               </div>
 
-              <div className="my-2">
-                <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
+              <div className="my-2 text-center">
+                <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight block">
                   {recAvail.availabilityPct.toFixed(2)}%
                 </span>
               </div>
@@ -341,13 +341,11 @@ export const ItOpsPulse: React.FC<ItOpsPulseProps> = ({
                 </span>
               </div>
 
-              <div className="my-2">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
-                    {recCsat.csat.toFixed(2)}
-                  </span>
-                  <span className="text-xs text-[#4D4D4F] dark:text-slate-400 font-normal">/ 5.00</span>
-                </div>
+              <div className="my-2 flex items-baseline justify-center gap-1">
+                <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
+                  {recCsat.csat.toFixed(2)}
+                </span>
+                <span className="text-xs text-[#4D4D4F] dark:text-slate-400 font-normal">/ 5.00</span>
               </div>
 
               <p className="text-xs text-[#4D4D4F] dark:text-slate-300 font-normal border-t border-[#E5DFD3] dark:border-white/10 pt-2 line-clamp-1">
@@ -378,8 +376,8 @@ export const ItOpsPulse: React.FC<ItOpsPulseProps> = ({
                 </span>
               </div>
 
-              <div className="my-2">
-                <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
+              <div className="my-2 text-center">
+                <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight block">
                   {recChange.changeSuccessPct.toFixed(2)}%
                 </span>
               </div>
@@ -407,24 +405,13 @@ export const ItOpsPulse: React.FC<ItOpsPulseProps> = ({
                     Major Incidents
                   </span>
                 </div>
-                {recIncidents.majorIncidents === 0 ? (
-                  <span className="px-2 py-0.5 rounded-full bg-[#0A0838]/10 text-[11px] font-medium text-[#0A0838] dark:text-slate-200">
-                    Zero Incidents
-                  </span>
-                ) : (
-                  <span className="px-2 py-0.5 rounded-full bg-[#0A0838]/10 text-[11px] font-medium text-[#0A0838] dark:text-slate-200">
-                    1 Incident
-                  </span>
-                )}
               </div>
 
-              <div className="my-2">
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
-                    {recIncidents.majorIncidents}
-                  </span>
-                  <span className="text-xs text-[#4D4D4F] dark:text-slate-400 font-normal">Incidents</span>
-                </div>
+              <div className="my-2 flex items-baseline justify-center gap-1.5">
+                <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
+                  {recIncidents.majorIncidents}
+                </span>
+                <span className="text-xs text-[#4D4D4F] dark:text-slate-400 font-normal">Incidents</span>
               </div>
 
               <p className="text-xs text-[#4D4D4F] dark:text-slate-300 font-normal border-t border-[#E5DFD3] dark:border-white/10 pt-2 line-clamp-1">
@@ -455,8 +442,8 @@ export const ItOpsPulse: React.FC<ItOpsPulseProps> = ({
                 </span>
               </div>
 
-              <div className="my-2">
-                <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
+              <div className="my-2 text-center">
+                <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight block">
                   {recKpis.kpisMet} / {recKpis.kpisApplicable || 30}
                 </span>
               </div>

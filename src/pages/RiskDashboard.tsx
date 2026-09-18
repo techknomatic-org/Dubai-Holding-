@@ -740,7 +740,7 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
                   </div>
 
                   {/* Right Side: Interactive Legend Breakdown */}
-                  <div className="flex flex-col gap-1.5 p-3 sm:p-3.5 rounded-2xl bg-white dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs w-full max-w-[280px]">
+                  <div className="flex flex-col gap-1.5 p-3 sm:p-3.5 rounded-2xl bg-white dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs w-full max-w-[340px] shrink-0">
                     <div className="text-[10.5px] font-bold uppercase tracking-wider text-[#4D4D4F] dark:text-slate-400 border-b border-[#E5DFD3]/80 dark:border-white/10 pb-1 flex items-center justify-between">
                       <span>Closure Categories</span>
                       <span className="font-mono font-bold text-[#2E7D32]">4 Closed</span>
@@ -757,7 +757,7 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
                           key={item.dependency}
                           onMouseEnter={() => setHoveredClosure({ dependency: item.dependency, count: item.count, color: item.color })}
                           onMouseLeave={() => setHoveredClosure(null)}
-                          className={`flex items-center justify-between px-2 py-1.5 rounded-xl transition-all cursor-pointer ${
+                          className={`flex items-center justify-between px-2 py-1.5 rounded-xl transition-all cursor-pointer gap-2 ${
                             isHovered
                               ? 'bg-[#0A0838]/10 dark:bg-white/15 scale-[1.02]'
                               : 'hover:bg-black/5 dark:hover:bg-white/5'
@@ -765,7 +765,7 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
                         >
                           <div className="flex items-center gap-2 min-w-0">
                             <span className="w-2.5 h-2.5 rounded-full shrink-0 shadow-xs" style={{ backgroundColor: item.color }} />
-                            <span className="text-xs font-bold text-[#29251D] dark:text-white truncate">
+                            <span className="text-xs font-bold text-[#29251D] dark:text-white whitespace-nowrap">
                               {item.dependency}
                             </span>
                           </div>
@@ -993,7 +993,8 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
               </span>
               <button
                 onClick={() => setActiveModal(null)}
-                className="px-4 py-1.5 rounded-lg bg-[#0A0838] text-white text-xs font-semibold cursor-pointer hover:bg-[#0A0838]/80 transition-all"
+                className="px-4 py-1.5 rounded-lg bg-[#0A0838] text-white !text-white text-xs font-semibold cursor-pointer hover:bg-[#0A0838]/80 transition-all"
+                style={{ color: '#ffffff' }}
               >
                 Close
               </button>
@@ -1071,7 +1072,8 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
               </span>
               <button
                 onClick={() => setActiveModal(null)}
-                className="px-4 py-1.5 rounded-lg bg-[#0A0838] text-white text-xs font-semibold cursor-pointer hover:bg-[#0A0838]/80 transition-all"
+                className="px-4 py-1.5 rounded-lg bg-[#0A0838] text-white !text-white text-xs font-semibold cursor-pointer hover:bg-[#0A0838]/80 transition-all"
+                style={{ color: '#ffffff' }}
               >
                 Close
               </button>
@@ -1163,7 +1165,8 @@ export const RiskDashboard: React.FC<RiskDashboardProps> = () => {
               <span className="text-[#4D4D4F] dark:text-slate-400">Category: <strong>{selectedRiskDetail.category}</strong></span>
               <button
                 onClick={() => setSelectedRiskDetail(null)}
-                className="px-4 py-1.5 rounded-lg bg-[#0A0838] text-white text-xs font-semibold cursor-pointer hover:bg-[#0A0838]/80 transition-all"
+                className="px-4 py-1.5 rounded-lg bg-[#0A0838] text-white !text-white text-xs font-semibold cursor-pointer hover:bg-[#0A0838]/80 transition-all"
+                style={{ color: '#ffffff' }}
               >
                 Close
               </button>

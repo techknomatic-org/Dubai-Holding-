@@ -249,9 +249,9 @@ export const MomStoryCard: React.FC<MomStoryCardProps> = ({
             {action.story.progress.keyMetrics && (
               <div className="grid grid-cols-2 gap-2 my-2">
                 {action.story.progress.keyMetrics.map((m, idx) => (
-                  <div key={idx} className="p-2 rounded-lg bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 text-center">
-                    <span className="text-xs text-[#4D4D4F] dark:text-slate-400 block truncate font-normal">{m.label}</span>
-                    <span className="text-sm font-semibold text-[#0A0838] dark:text-slate-200">{m.value}</span>
+                  <div key={idx} className="p-2 rounded-lg bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 text-center flex flex-col items-center justify-center min-h-[46px]">
+                    <span className="text-[10.5px] sm:text-[11px] text-[#4D4D4F] dark:text-slate-400 block font-normal leading-tight">{m.label}</span>
+                    <span className="text-sm font-semibold text-[#0A0838] dark:text-slate-200 mt-0.5">{m.value}</span>
                   </div>
                 ))}
               </div>

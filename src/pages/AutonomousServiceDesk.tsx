@@ -99,7 +99,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
   const [animStage, setAnimStage] = useState<number>(0);
   const [hoveredChannel, setHoveredChannel] = useState<string | null>(null);
   const [leftTab, setLeftTab] = useState<'volume' | 'ad_hygiene'>('volume');
-  const [activeModal, setActiveModal] = useState<'zero-touch' | 'techhub' | 'smart-routing' | 'ad-hygiene' | 'volume-maturity' | null>(null);
+  const [activeModal, setActiveModal] = useState<'zero-touch' | 'techhub' | 'smart-routing' | 'ad-hygiene' | 'volume-maturity' | 'total-demand' | null>(null);
   const [hoveredOffloadSlice, setHoveredOffloadSlice] = useState<'zero-touch' | 'techhub' | null>(null);
   const [selectedOffloadSlice, setSelectedOffloadSlice] = useState<'zero-touch' | 'techhub' | null>(null);
 
@@ -339,7 +339,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
   const targetProgress = (maturityModel.targetPct / 100) * circumference;
 
   return (
-    <div className={`h-full w-full flex flex-col justify-between p-4 md:p-5 lg:p-6 gap-3 relative overflow-hidden bg-[#FFFFFF] dark:bg-[#0A0838] text-[#29251D] dark:text-white transition-opacity duration-700 select-none ${isLoading ? 'opacity-70' : 'opacity-100'}`}>
+    <div className={`h-full w-full flex flex-col justify-between p-3 sm:p-4 lg:p-4 gap-2 sm:gap-2.5 relative overflow-hidden bg-[#FFFFFF] dark:bg-[#0A0838] text-[#29251D] dark:text-white transition-opacity duration-700 select-none ${isLoading ? 'opacity-70' : 'opacity-100'}`}>
 
       {/* 1. TOP HEADER */}
       <div className={`shrink-0 transition-all duration-700 ${animStage >= 1 ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-3'}`}>
@@ -351,7 +351,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                 04 • Autonomous Operations
               </span>
             </div>
-            <h1 className="text-2xl font-semibold tracking-tight text-[#29251D] dark:text-white">
+            <h1 className="text-xl sm:text-2xl font-semibold tracking-tight text-[#29251D] dark:text-white">
               Autonomous Service Desk &amp; Automation Offloading
             </h1>
           </div>
@@ -369,99 +369,113 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
       </div>
 
       {/* 2. TOP HERO IMPACT KPI CARDS */}
-      <div className={`shrink-0 grid grid-cols-2 lg:grid-cols-4 gap-3 transition-all duration-700 ${animStage >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+      <div className={`shrink-0 grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 transition-all duration-700 ${animStage >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
 
         {/* Card 1: Tickets Automated */}
-        <div className="p-3 px-4 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-xs flex items-center justify-between group hover:border-[#0A0838]/40 transition-all">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
-              <Bot className="w-4 h-4" />
+        <div className="p-2.5 px-3 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-xs flex flex-col justify-between items-center text-center group hover:border-[#0A0838]/40 transition-all">
+          <div className="flex items-center justify-center gap-2">
+            <div className="w-6 h-6 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
+              <Bot className="w-3.5 h-3.5" />
             </div>
-            <span className="text-sm font-medium text-[#4D4D4F] dark:text-slate-300">
+            <span className="text-xs sm:text-sm font-medium text-[#4D4D4F] dark:text-slate-300">
               Tickets Automated
             </span>
           </div>
-          <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
-            {heroKPIs.ticketsAutomated.toLocaleString()}
-          </span>
+          <div className="mt-0.5 text-center">
+            <span className="text-xl sm:text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight block font-mono">
+              {heroKPIs.ticketsAutomated.toLocaleString()}
+            </span>
+          </div>
         </div>
 
         {/* Card 2: Automation Achieved */}
-        <div className="p-3 px-4 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-xs flex items-center justify-between group hover:border-[#0A0838]/40 transition-all">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
-              <Zap className="w-4 h-4" />
+        <div className="p-2.5 px-3 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-xs flex flex-col justify-between items-center text-center group hover:border-[#0A0838]/40 transition-all">
+          <div className="flex items-center justify-center gap-2">
+            <div className="w-6 h-6 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
+              <Zap className="w-3.5 h-3.5" />
             </div>
-            <span className="text-sm font-medium text-[#4D4D4F] dark:text-slate-300">
+            <span className="text-xs sm:text-sm font-medium text-[#4D4D4F] dark:text-slate-300">
               Automation Achieved
             </span>
           </div>
-          <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
-            {heroKPIs.automationAchievedPct.toFixed(1)}%
-          </span>
+          <div className="mt-0.5 text-center">
+            <span className="text-xl sm:text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight block font-mono">
+              {heroKPIs.automationAchievedPct.toFixed(1)}%
+            </span>
+          </div>
         </div>
 
         {/* Card 3: Use Cases Live */}
-        <div className="p-3 px-4 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-xs flex items-center justify-between group hover:border-[#0A0838]/40 transition-all">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
-              <Workflow className="w-4 h-4" />
+        <div className="p-2.5 px-3 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-xs flex flex-col justify-between items-center text-center group hover:border-[#0A0838]/40 transition-all">
+          <div className="flex items-center justify-center gap-2">
+            <div className="w-6 h-6 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
+              <Workflow className="w-3.5 h-3.5" />
             </div>
-            <span className="text-sm font-medium text-[#4D4D4F] dark:text-slate-300">
+            <span className="text-xs sm:text-sm font-medium text-[#4D4D4F] dark:text-slate-300">
               Use Cases Live
             </span>
           </div>
-          <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
-            {heroKPIs.useCasesLive}
-          </span>
+          <div className="mt-0.5 text-center">
+            <span className="text-xl sm:text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight block font-mono">
+              {heroKPIs.useCasesLive}
+            </span>
+          </div>
         </div>
 
         {/* Card 4: SOPs Automated */}
-        <div className="p-3 px-4 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-xs flex items-center justify-between group hover:border-[#0A0838]/40 transition-all">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
-              <FileCheck className="w-4 h-4" />
+        <div className="p-2.5 px-3 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-xs flex flex-col justify-between items-center text-center group hover:border-[#0A0838]/40 transition-all">
+          <div className="flex items-center justify-center gap-2">
+            <div className="w-6 h-6 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0">
+              <FileCheck className="w-3.5 h-3.5" />
             </div>
-            <span className="text-sm font-medium text-[#4D4D4F] dark:text-slate-300">
+            <span className="text-xs sm:text-sm font-medium text-[#4D4D4F] dark:text-slate-300">
               SOPs Automated
             </span>
           </div>
-          <span className="text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight">
-            {heroKPIs.overallSOPsAutomated}
-          </span>
+          <div className="mt-0.5 text-center">
+            <span className="text-xl sm:text-2xl font-semibold text-[#29251D] dark:text-white tracking-tight block font-mono">
+              {heroKPIs.overallSOPsAutomated}
+            </span>
+          </div>
         </div>
 
-      </div>      {/* 3. DUAL COMPARTMENT SECTION (8 Cols Left | 4 Cols Right for compressed donut and expanded AD hygiene) */}
-      <div className={`flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch transition-all duration-700 ${animStage >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+      </div>
+
+      {/* 3. DUAL COMPARTMENT SECTION (8 Cols Left | 4 Cols Right for compressed donut and expanded AD hygiene) */}
+      <div className={`flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-12 gap-2.5 sm:gap-3 items-stretch transition-all duration-700 ${animStage >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
 
         {/* COMPARTMENT 1 (LEFT 8 COLS): OPERATIONAL ANALYTICS & GOVERNANCE */}
-        <div className="lg:col-span-8 p-3 md:p-3.5 rounded-2xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-xs flex flex-col justify-between overflow-hidden">
+        <div className="lg:col-span-8 p-2.5 sm:p-3 rounded-2xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-xs flex flex-col justify-between overflow-hidden">
 
-          <div className="flex items-center justify-between pb-1.5 border-b border-[#E5DFD3] dark:border-white/10 shrink-0">
+          <div className="flex items-center justify-between pb-1 border-b border-[#E5DFD3] dark:border-white/10 shrink-0">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shadow-inner">
-                <Cpu className="w-3.5 h-3.5" />
+              <div className="w-5 h-5 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shadow-inner">
+                <Cpu className="w-3 h-3" />
               </div>
-              <span className="text-sm font-semibold text-[#29251D] dark:text-slate-200">
+              <span className="text-xs sm:text-sm font-semibold text-[#29251D] dark:text-slate-200">
                 Operational Analytics &amp; Governance
               </span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 py-1 items-stretch flex-1 min-h-0">
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-2.5 py-1 items-stretch flex-1 min-h-0">
             {/* Card 1: Volume & Maturity (5 Cols) */}
-            <div className="sm:col-span-5 p-3 md:p-3.5 rounded-xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs flex flex-col justify-between text-left h-full gap-2">
+            <div className="sm:col-span-5 p-2.5 sm:p-3 rounded-xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 shadow-2xs flex flex-col justify-between text-left h-full gap-2">
               {/* Header */}
-              <div className="flex items-center justify-between pb-1.5 border-b border-[#E5DFD3]/70 dark:border-white/10 shrink-0">
+              <div
+                onClick={() => setActiveModal('volume-maturity')}
+                className="flex items-center justify-between pb-1 border-b border-[#E5DFD3]/70 dark:border-white/10 shrink-0 cursor-pointer group/hdr hover:opacity-80 transition-opacity"
+                title="Click to inspect Service Desk Volume & Maturity breakdown"
+              >
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0 shadow-2xs">
-                    <Cpu className="w-4 h-4" />
+                  <div className="w-6 h-6 rounded-lg bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shrink-0 shadow-2xs group-hover/hdr:scale-105 transition-transform">
+                    <Cpu className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-[13px] font-semibold text-[#29251D] dark:text-white leading-tight">
+                    <h3 className="text-xs sm:text-[12.5px] font-semibold text-[#29251D] dark:text-white leading-tight">
                       Service Desk Volume &amp; Maturity
                     </h3>
-                    <p className="text-[10px] text-[#4D4D4F] dark:text-slate-400 font-normal">
+                    <p className="text-[9.5px] text-[#4D4D4F] dark:text-slate-400 font-normal">
                       {totalInteractions.toLocaleString()} Total Inbound / Month
                     </p>
                   </div>
@@ -469,29 +483,29 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
               </div>
 
               {/* Visual Body */}
-              <div className="flex flex-col justify-between gap-2.5 min-h-0 flex-1">
-                {/* 4 Channels Grid */}
-                <div className="grid grid-cols-4 gap-1.5 flex-1 min-h-0">
+              <div className="flex flex-col justify-between gap-2 min-h-0 flex-1">
+                {/* 4 Channels Grid - Compressed & Middle Aligned */}
+                <div className="grid grid-cols-4 gap-1.5 items-stretch py-0.5">
                   {channels.map((ch) => {
                     const Icon = ch.icon;
                     return (
                       <div
                         key={ch.id}
-                        className="p-1.5 sm:p-2 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col justify-between gap-1 shadow-xs hover:border-[#0A0838]/30 transition-all h-full"
+                        className="p-1.5 sm:p-2 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col items-center justify-center text-center gap-1 shadow-xs hover:border-[#0A0838]/30 transition-all"
                       >
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-center gap-1">
                           <div className="w-5 h-5 rounded-md flex items-center justify-center bg-[#0A0838]/10 text-[#0A0838] dark:bg-white/10 dark:text-white shadow-2xs">
                             <Icon className="w-3 h-3" />
                           </div>
-                          <span className="text-[8.5px] font-mono font-bold text-[#4D4D4F] dark:text-slate-400">
+                          <span className="text-[9px] font-mono font-bold text-[#4D4D4F] dark:text-slate-400">
                             {ch.pct}%
                           </span>
                         </div>
-                        <div className="mt-0.5">
-                          <span className="text-[9px] font-medium text-[#4D4D4F] dark:text-slate-400 block whitespace-nowrap leading-tight truncate">
+                        <div className="text-center w-full mt-0.5">
+                          <span className="text-[8.5px] sm:text-[9px] font-medium text-[#4D4D4F] dark:text-slate-400 block leading-tight">
                             {ch.label}
                           </span>
-                          <span className="text-xs sm:text-sm font-bold text-[#29251D] dark:text-white tracking-tight block mt-0.5">
+                          <span className="text-xs sm:text-sm font-bold text-[#29251D] dark:text-white tracking-tight block mt-0.5 font-mono">
                             {ch.count.toLocaleString()}
                           </span>
                         </div>
@@ -501,35 +515,38 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                 </div>
 
                 {/* Automation Maturity Index Box */}
-                <div className="p-2.5 sm:p-3 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex items-center justify-between gap-2 shadow-xs">
-                  <div className="space-y-1 min-w-0 flex-1">
-                    <div className="flex items-center gap-1.5 flex-wrap">
-                      <Target className="w-3.5 h-3.5 text-[#0A0838] dark:text-white shrink-0" />
-                      <span className="text-xs font-bold text-[#29251D] dark:text-white whitespace-nowrap">
-                        Automation Maturity
-                      </span>
-                      <span className="px-1.5 py-0.5 rounded-full bg-[#D1EED0] text-[#2E5F13] border border-[#B4DFB1] text-[8.5px] font-medium flex items-center gap-0.5 shrink-0">
-                        <CheckCircle2 className="w-2.5 h-2.5" />
-                        {maturityModel.status}
-                      </span>
+                <div className="p-3 sm:p-3.5 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex items-center justify-between gap-3 shadow-xs flex-1 min-h-0">
+                  <div className="space-y-2 min-w-0 flex-1 flex flex-col items-center justify-center text-center h-full py-1">
+                    <div className="flex flex-col items-center justify-center text-center">
+                      <div className="flex items-center justify-center gap-1.5 flex-wrap mb-1">
+                        <Target className="w-4 h-4 text-[#0A0838] dark:text-white shrink-0" />
+                        <span className="text-xs sm:text-sm font-bold text-[#29251D] dark:text-white whitespace-nowrap">
+                          Automation Maturity
+                        </span>
+                        <span className="px-2 py-0.5 rounded-full bg-[#D1EED0] text-[#2E5F13] border border-[#B4DFB1] text-[8.5px] sm:text-[9px] font-medium flex items-center gap-0.5 shrink-0">
+                          <CheckCircle2 className="w-2.5 h-2.5" />
+                          {maturityModel.status}
+                        </span>
+                      </div>
+                      <p className="text-[10.5px] sm:text-[11px] text-[#4D4D4F] dark:text-slate-400">
+                        Target: <strong className="text-[#29251D] dark:text-white font-semibold">{maturityModel.targetPct}%</strong> by {maturityModel.dueDate}
+                      </p>
                     </div>
-                    <p className="text-[9.5px] text-[#4D4D4F] dark:text-slate-400">
-                      Target: <strong className="text-[#29251D] dark:text-white font-semibold">{maturityModel.targetPct}%</strong> by {maturityModel.dueDate}
-                    </p>
-                    <div className="flex items-center gap-2 pt-0.5 text-[9px] text-[#4D4D4F] dark:text-slate-400 font-medium flex-wrap">
-                      <div className="flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-[#2E5F13]" />
+
+                    <div className="flex items-center justify-center gap-3 pt-1 text-[9.5px] sm:text-[10px] text-[#4D4D4F] dark:text-slate-400 font-medium flex-wrap">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#2E5F13]" />
                         <span>Achieved ({maturityModel.achievedPct}%)</span>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-[#8D5C1A]" />
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#8D5C1A]" />
                         <span>Target ({maturityModel.targetPct}%)</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Circular Maturity Dial */}
-                  <div className="relative w-15 h-15 sm:w-16 sm:h-16 shrink-0 flex items-center justify-center">
+                  {/* Circular Maturity Dial - Larger to Fill Space */}
+                  <div className="relative w-24 h-24 sm:w-28 sm:h-28 lg:w-30 lg:h-30 shrink-0 flex items-center justify-center">
                     <svg className="w-full h-full -rotate-90 transform" viewBox="0 0 120 120">
                       <circle
                         cx="60"
@@ -564,10 +581,10 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                       />
                     </svg>
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-                      <span className="text-[8px] font-semibold text-[#4D4D4F] dark:text-slate-400 leading-tight">
+                      <span className="text-[9px] sm:text-[10px] font-semibold text-[#4D4D4F] dark:text-slate-400 leading-tight">
                         Achieved
                       </span>
-                      <span className="text-sm sm:text-base font-bold text-[#10B981] leading-none mt-0.5">
+                      <span className="text-lg sm:text-xl font-bold text-[#10B981] leading-none mt-0.5 font-mono">
                         {animatedChannels.achievedPct}%
                       </span>
                     </div>
@@ -787,13 +804,13 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                   } else if (selectedOffloadSlice === 'techhub') {
                     setActiveModal('techhub');
                   } else {
-                    setActiveModal('volume-maturity');
+                    setActiveModal('total-demand');
                   }
                 }}
                 title={
                   selectedOffloadSlice
                     ? `Click to view overall ${selectedOffloadSlice === 'zero-touch' ? 'Zero-Touch' : 'TechHub'} details`
-                    : 'Click % badges or slices to inspect breakdown'
+                    : 'Click to view Total Inbound Demand & Automation Offload details'
                 }
                 className={`absolute w-24 h-24 sm:w-26 sm:h-26 lg:w-28 lg:h-28 rounded-full flex flex-col items-center justify-center text-center px-1.5 cursor-pointer transition-all duration-300 z-10 group/card ${
                   selectedOffloadSlice === 'zero-touch'
@@ -852,10 +869,10 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
       </div>
 
       {/* 4. OVERALL AUTOMATION PIPELINE: EXPANDED SECTION (32 Total Center Hub & Focus Areas with InfraOps & SecOps Trends) */}
-      <div className={`shrink-0 min-h-[148px] max-h-[162px] lg:h-[156px] transition-all duration-700 ${animStage >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
+      <div className={`shrink-0 min-h-[126px] max-h-[140px] lg:h-[134px] transition-all duration-700 ${animStage >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}>
 
         {/* UNIFIED OVERALL AUTOMATION PIPELINE CARD CONTAINER */}
-        <div className="bg-[#F6F2EA] dark:bg-white/5 rounded-2xl p-2.5 sm:p-3 px-3.5 sm:px-4 border border-[#E5DFD3] dark:border-white/10 shadow-xs flex flex-col justify-between h-full group hover:border-[#0A0838]/40 transition-all">
+        <div className="bg-[#F6F2EA] dark:bg-white/5 rounded-2xl p-2 sm:p-2.5 px-3 sm:px-3.5 border border-[#E5DFD3] dark:border-white/10 shadow-xs flex flex-col justify-between h-full group hover:border-[#0A0838]/40 transition-all">
 
           {/* Top Bar: Title & Status */}
           <div className="flex items-center justify-between gap-3 border-b border-[#E5DFD3] dark:border-white/10 pb-1">
@@ -912,7 +929,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                       <ArrowRight className="w-2 h-2" />
                     </div>
                   </div>
-                  <span className="text-[9.5px] sm:text-[10px] text-[#4D4D4F] dark:text-slate-400 block truncate mt-0.5">
+                  <span className="text-[9.5px] sm:text-[10px] text-[#4D4D4F] dark:text-slate-400 block mt-0.5">
                     Infrastructure &amp; Systems Automation
                   </span>
                 </div>
@@ -1055,7 +1072,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                       <ArrowRight className="w-2 h-2" />
                     </div>
                   </div>
-                  <span className="text-[9.5px] sm:text-[10px] text-[#4D4D4F] dark:text-slate-400 block truncate mt-0.5">
+                  <span className="text-[9.5px] sm:text-[10px] text-[#4D4D4F] dark:text-slate-400 block mt-0.5">
                     Security, Identity &amp; Compliance Ops
                   </span>
                 </div>
@@ -1464,7 +1481,7 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                               <Icon className="w-4 h-4" />
                             </div>
                           </div>
-                          <div>
+                          <div className="text-center">
                             <span className="text-xs font-medium text-[#4D4D4F] dark:text-slate-400 block mb-0.5">
                               {ch.label}
                             </span>
@@ -1548,6 +1565,112 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                           {animatedChannels.achievedPct}%
                         </span>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+
+            {/* TOTAL DEMAND & AUTOMATION OFFLOADING FLOW MODAL */}
+            {activeModal === 'total-demand' && (
+              <>
+                <div className="p-4 border-b border-[#E5DFD3] dark:border-white/10 bg-[#FFFFFF] dark:bg-white/5 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-[#0A0838]/10 text-[#0A0838] dark:text-white flex items-center justify-center shadow-2xs">
+                      <Workflow className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold text-[#29251D] dark:text-white">
+                        Automation Offloading Flow &amp; Total Demand
+                      </h3>
+                      <p className="text-xs text-[#4D4D4F] dark:text-slate-400">
+                        {totalDemandSR.toLocaleString()} Total Inbound Requests (Apr–Jul '26) • {heroKPIs.automationAchievedPct.toFixed(1)}% Automated Offload
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setActiveModal(null)}
+                    className="w-8 h-8 rounded-full bg-[#F6F2EA] dark:bg-white/10 text-[#4D4D4F] hover:bg-[#E31837] hover:text-white dark:hover:bg-[#E31837] flex items-center justify-center transition-all cursor-pointer"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+
+                <div className="p-4 overflow-y-auto space-y-3.5 max-h-[60vh] bg-[#FAF8F5] dark:bg-transparent">
+                  {/* 3 Summary Split Cards */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                    {/* Zero-Touch */}
+                    <div className="p-3 rounded-xl bg-[#E0ECE0]/50 dark:bg-[#10B981]/10 border border-[#10B981]/30 flex flex-col justify-between text-center shadow-2xs">
+                      <div className="flex items-center justify-center gap-1.5 mb-1">
+                        <span className="w-2 h-2 rounded-full bg-[#10B981]" />
+                        <span className="text-xs font-semibold text-[#2E7D32] dark:text-[#6EE7B7]">
+                          Zero-Touch Automation
+                        </span>
+                      </div>
+                      <span className="text-2xl font-bold font-mono text-[#10B981] my-1">
+                        {heroKPIs.srsProcessedByAutomation.toLocaleString()}
+                      </span>
+                      <span className="text-[11px] text-[#4D4D4F] dark:text-slate-300 font-medium">
+                        {((heroKPIs.srsProcessedByAutomation / totalDemandSR) * 100).toFixed(1)}% of Total Scoped
+                      </span>
+                    </div>
+
+                    {/* TechHub Assisted */}
+                    <div className="p-3 rounded-xl bg-[#FEF3C7]/50 dark:bg-[#F59E0B]/10 border border-[#F59E0B]/30 flex flex-col justify-between text-center shadow-2xs">
+                      <div className="flex items-center justify-center gap-1.5 mb-1">
+                        <span className="w-2 h-2 rounded-full bg-[#F59E0B]" />
+                        <span className="text-xs font-semibold text-[#D97706] dark:text-[#FCD34D]">
+                          TechHub Assisted
+                        </span>
+                      </div>
+                      <span className="text-2xl font-bold font-mono text-[#D97706] my-1">
+                        {heroKPIs.srsProcessedByTechHub.toLocaleString()}
+                      </span>
+                      <span className="text-[11px] text-[#4D4D4F] dark:text-slate-300 font-medium">
+                        {((heroKPIs.srsProcessedByTechHub / totalDemandSR) * 100).toFixed(1)}% Assisted Resolution
+                      </span>
+                    </div>
+
+                    {/* Total Demand */}
+                    <div className="p-3 rounded-xl bg-[#FFFFFF] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 flex flex-col justify-between text-center shadow-2xs">
+                      <div className="flex items-center justify-center gap-1.5 mb-1">
+                        <span className="w-2 h-2 rounded-full bg-[#0A0838] dark:bg-white" />
+                        <span className="text-xs font-semibold text-[#0A0838] dark:text-white">
+                          Total Inbound Demand
+                        </span>
+                      </div>
+                      <span className="text-2xl font-bold font-mono text-[#29251D] dark:text-white my-1">
+                        {totalDemandSR.toLocaleString()}
+                      </span>
+                      <span className="text-[11px] text-[#4D4D4F] dark:text-slate-300 font-medium">
+                        100% Inbound Service Requests
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Monthly Trend from Source Excel */}
+                  <div>
+                    <h4 className="text-xs font-medium text-[#4D4D4F] dark:text-slate-300 mb-2 flex items-center gap-1.5">
+                      <BarChart3 className="w-3.5 h-3.5 text-[#0A0838] dark:text-white" />
+                      Monthly Inbound &amp; Offload Trajectory (Apr–Jul '26)
+                    </h4>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      {monthlyTrends.map((m) => (
+                        <div key={m.monthKey} className="p-3 rounded-xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 text-center shadow-2xs">
+                          <span className="text-xs font-medium text-[#4D4D4F] dark:text-slate-400 block">{m.monthLabel}</span>
+                          <span className="text-base sm:text-lg font-bold text-[#29251D] dark:text-white block mt-0.5 font-mono">
+                            {m.totalSRs.toLocaleString()}
+                          </span>
+                          <div className="mt-1.5 pt-1.5 border-t border-[#E5DFD3]/70 dark:border-white/10 text-[10.5px] space-y-0.5">
+                            <div className="text-[#10B981] font-semibold font-mono">
+                              {m.automationSRs.toLocaleString()} Auto ({m.automationPct.toFixed(1)}%)
+                            </div>
+                            <div className="text-[#D97706] font-medium font-mono">
+                              {m.techHubSRs.toLocaleString()} TechHub
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -1656,7 +1779,8 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
             <div className="p-3 border-t border-[#E5DFD3] dark:border-white/10 bg-[#FAF8F5] dark:bg-white/3 flex items-center justify-end">
               <button
                 onClick={() => setActiveModal(null)}
-                className="px-5 py-2 rounded-xl bg-[#2B2B36] hover:bg-[#1E1E24] text-white text-xs font-bold transition-all shadow-xs cursor-pointer border border-slate-700/30"
+                className="px-5 py-2 rounded-xl bg-[#0A0838] hover:bg-[#0A0838]/90 text-white !text-white text-xs font-bold transition-all shadow-xs cursor-pointer"
+                style={{ color: '#ffffff' }}
               >
                 Close
               </button>
@@ -1723,16 +1847,16 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                 className="group p-4 rounded-2xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 shadow-xs hover:shadow-md hover:scale-[1.01] transition-all cursor-pointer flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
+                  <div className="flex items-center justify-center gap-1.5 mb-1 text-center">
+                    <Layers className="w-4 h-4 text-[#0A0838] dark:text-slate-300 group-hover:scale-110 transition-transform shrink-0" />
                     <span className="text-xs font-medium text-[#4D4D4F] dark:text-slate-300">
                       Total Use Cases
                     </span>
-                    <Layers className="w-4 h-4 text-[#0A0838] dark:text-slate-300 group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="text-3xl font-semibold text-[#29251D] dark:text-white my-1 font-mono">
+                  <div className="text-3xl font-semibold text-[#29251D] dark:text-white my-1 font-mono text-center">
                     {activeStreamMeta.stats.total}
                   </div>
-                  <p className="text-xs text-[#4D4D4F] dark:text-slate-400">
+                  <p className="text-xs text-[#4D4D4F] dark:text-slate-400 text-center">
                     Comprehensive automation scope
                   </p>
                 </div>
@@ -1748,16 +1872,16 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                 className="group p-4 rounded-2xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#2E5F13]/50 shadow-xs hover:shadow-md hover:scale-[1.01] transition-all cursor-pointer flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
+                  <div className="flex items-center justify-center gap-1.5 mb-1 text-center">
+                    <Zap className="w-4 h-4 text-[#2E5F13] dark:text-emerald-400 group-hover:scale-110 transition-transform shrink-0" />
                     <span className="text-xs font-medium text-[#2E5F13] dark:text-emerald-400">
                       Active
                     </span>
-                    <Zap className="w-4 h-4 text-[#2E5F13] dark:text-emerald-400 group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="text-3xl font-semibold text-[#2E5F13] dark:text-emerald-400 my-1">
+                  <div className="text-3xl font-semibold text-[#2E5F13] dark:text-emerald-400 my-1 font-mono text-center">
                     {activeStreamMeta.stats.active}
                   </div>
-                  <p className="text-xs text-[#4D4D4F] dark:text-slate-400">
+                  <p className="text-xs text-[#4D4D4F] dark:text-slate-400 text-center">
                     Live production &amp; self-healing
                   </p>
                 </div>
@@ -1773,16 +1897,16 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
                 className="group p-4 rounded-2xl bg-[#F6F2EA] dark:bg-white/5 border border-[#E5DFD3] dark:border-white/10 hover:border-[#8D5C1A]/50 shadow-xs hover:shadow-md hover:scale-[1.01] transition-all cursor-pointer flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
+                  <div className="flex items-center justify-center gap-1.5 mb-1 text-center">
+                    <Clock className="w-4 h-4 text-[#8D5C1A] dark:text-amber-400 group-hover:scale-110 transition-transform shrink-0" />
                     <span className="text-xs font-medium text-[#8D5C1A] dark:text-amber-400">
                       Planned
                     </span>
-                    <Clock className="w-4 h-4 text-[#8D5C1A] dark:text-amber-400 group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="text-3xl font-semibold text-[#8D5C1A] dark:text-amber-400 my-1">
+                  <div className="text-3xl font-semibold text-[#8D5C1A] dark:text-amber-400 my-1 font-mono text-center">
                     {activeStreamMeta.stats.planned}
                   </div>
-                  <p className="text-xs text-[#4D4D4F] dark:text-slate-400">
+                  <p className="text-xs text-[#4D4D4F] dark:text-slate-400 text-center">
                     Scheduled backlog &amp; milestone ETAs
                   </p>
                 </div>
@@ -2020,7 +2144,8 @@ export const AutonomousServiceDesk: React.FC<AutonomousServiceDeskProps> = ({
 
               <button
                 onClick={closeModal}
-                className="px-5 py-2 rounded-xl bg-[#2B2B36] hover:bg-[#1E1E24] text-white font-heading font-bold text-xs transition-all cursor-pointer border border-slate-700/30 shadow-xs"
+                className="px-5 py-2 rounded-xl bg-[#0A0838] hover:bg-[#0A0838]/90 text-white !text-white font-heading font-bold text-xs transition-all cursor-pointer shadow-xs"
+                style={{ color: '#ffffff' }}
               >
                 Close
               </button>
