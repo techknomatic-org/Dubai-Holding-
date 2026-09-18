@@ -752,3 +752,33 @@
 .brand-text-muted {
   color: #4D4D4F;
 }
+
+/* ====================================================================
+   GLOBAL INTERACTIVE KPI & METRIC CARD HOVER BORDER HIGHLIGHT
+   ==================================================================== */
+.kpi-card,
+.metric-card,
+.executive-glass-card,
+[data-kpi],
+.grid > div[class*="rounded-2xl"][class*="border"],
+.grid > div[class*="rounded-xl"][class*="border"] {
+  transition: border-color 0.22s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.22s cubic-bezier(0.4, 0, 0.2, 1), transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.grid > div[class*="rounded-2xl"][class*="border"]:hover,
+.grid > div[class*="rounded-xl"][class*="border"]:hover,
+.kpi-card:hover,
+.metric-card:hover,
+[data-kpi]:hover {
+  border-color: #0066B2;
+  box-shadow: 0 6px 20px -2px rgba(0, 102, 178, 0.14), 0 2px 6px -1px rgba(10, 8, 56, 0.04);
+}
+
+.dark .grid > div[class*="rounded-2xl"][class*="border"]:hover,
+.dark .grid > div[class*="rounded-xl"][class*="border"]:hover,
+.dark .kpi-card:hover,
+.dark .metric-card:hover,
+.dark [data-kpi]:hover {
+  border-color: #38BDF8;
+  box-shadow: 0 6px 20px -2px rgba(56, 189, 248, 0.22), 0 2px 6px -1px rgba(0, 0, 0, 0.5);
+}

@@ -290,7 +290,7 @@ export const ItOpsPulse: React.FC<ItOpsPulseProps> = ({
               className={`p-4 rounded-2xl transition-all duration-300 cursor-pointer flex flex-col justify-between relative overflow-hidden border ${
                 selectedMetric === 'availability'
                   ? 'bg-[#FFFFFF] dark:bg-white/10 border-2 border-[#0A0838] dark:border-white ring-2 ring-[#0A0838]/10 shadow-md -translate-y-1'
-                  : 'bg-[#F6F2EA] dark:bg-white/5 border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 hover:-translate-y-0.5'
+                  : 'bg-[#F6F2EA] dark:bg-white/5 border-[#E5DFD3] dark:border-white/10 hover:border-[#0066B2] dark:hover:border-sky-400 hover:shadow-md hover:-translate-y-0.5'
               }`}
             >
               <div className="flex items-center justify-between">
@@ -324,7 +324,7 @@ export const ItOpsPulse: React.FC<ItOpsPulseProps> = ({
               className={`p-4 rounded-2xl transition-all duration-300 cursor-pointer flex flex-col justify-between relative overflow-hidden border ${
                 selectedMetric === 'csat'
                   ? 'bg-[#FFFFFF] dark:bg-white/10 border-2 border-[#0A0838] dark:border-white ring-2 ring-[#0A0838]/10 shadow-md -translate-y-1'
-                  : 'bg-[#F6F2EA] dark:bg-white/5 border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 hover:-translate-y-0.5'
+                  : 'bg-[#F6F2EA] dark:bg-white/5 border-[#E5DFD3] dark:border-white/10 hover:border-[#0066B2] dark:hover:border-sky-400 hover:shadow-md hover:-translate-y-0.5'
               }`}
             >
               <div className="flex items-center justify-between">
@@ -359,7 +359,7 @@ export const ItOpsPulse: React.FC<ItOpsPulseProps> = ({
               className={`p-4 rounded-2xl transition-all duration-300 cursor-pointer flex flex-col justify-between relative overflow-hidden border ${
                 selectedMetric === 'change'
                   ? 'bg-[#FFFFFF] dark:bg-white/10 border-2 border-[#0A0838] dark:border-white ring-2 ring-[#0A0838]/10 shadow-md -translate-y-1'
-                  : 'bg-[#F6F2EA] dark:bg-white/5 border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 hover:-translate-y-0.5'
+                  : 'bg-[#F6F2EA] dark:bg-white/5 border-[#E5DFD3] dark:border-white/10 hover:border-[#0066B2] dark:hover:border-sky-400 hover:shadow-md hover:-translate-y-0.5'
               }`}
             >
               <div className="flex items-center justify-between">
@@ -393,7 +393,7 @@ export const ItOpsPulse: React.FC<ItOpsPulseProps> = ({
               className={`p-4 rounded-2xl transition-all duration-300 cursor-pointer flex flex-col justify-between relative overflow-hidden border ${
                 selectedMetric === 'incidents'
                   ? 'bg-[#FFFFFF] dark:bg-white/10 border-2 border-[#0A0838] dark:border-white ring-2 ring-[#0A0838]/10 shadow-md -translate-y-1'
-                  : 'bg-[#F6F2EA] dark:bg-white/5 border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 hover:-translate-y-0.5'
+                  : 'bg-[#F6F2EA] dark:bg-white/5 border-[#E5DFD3] dark:border-white/10 hover:border-[#0066B2] dark:hover:border-sky-400 hover:shadow-md hover:-translate-y-0.5'
               }`}
             >
               <div className="flex items-center justify-between">
@@ -425,7 +425,7 @@ export const ItOpsPulse: React.FC<ItOpsPulseProps> = ({
               className={`p-4 rounded-2xl transition-all duration-300 cursor-pointer flex flex-col justify-between relative overflow-hidden border ${
                 selectedMetric === 'kpis'
                   ? 'bg-[#FFFFFF] dark:bg-white/10 border-2 border-[#0A0838] dark:border-white ring-2 ring-[#0A0838]/10 shadow-md -translate-y-1'
-                  : 'bg-[#F6F2EA] dark:bg-white/5 border-[#E5DFD3] dark:border-white/10 hover:border-[#0A0838]/40 hover:-translate-y-0.5'
+                  : 'bg-[#F6F2EA] dark:bg-white/5 border-[#E5DFD3] dark:border-white/10 hover:border-[#0066B2] dark:hover:border-sky-400 hover:shadow-md hover:-translate-y-0.5'
               }`}
             >
               <div className="flex items-center justify-between">
